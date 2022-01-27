@@ -79,7 +79,7 @@
 .md-typeset h2 {
     font-size: 1.5625em;
     line-height: 1.4;
-    margin: 1.6em 0 .64em;
+    margin: 1em 0 .64em;
     color: #66ff66;
 }
 
@@ -200,4 +200,9 @@ html .md-typeset :is(.admonition,details)>:last-child {
     position: relative;
     white-space: nowrap;
     background-color: #66ff66;
+}
+
+hr {
+    color: #ffffff;
+    border: 1px solid #ffffff;
 }

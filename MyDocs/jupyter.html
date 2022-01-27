@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#index-page" class="md-skip">
+        <a href="#jupyter-notebooks" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index Page
+              Jupyter Notebooks
             
           </span>
         </div>
@@ -292,7 +292,7 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+        <div class="md-nav__link md-nav__link--index ">
           <a href="index.html">My Docs</a>
           
             <label for="__nav_3">
@@ -557,14 +557,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" checked>
       
       
       
@@ -595,11 +597,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="jupyter.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Jupyter Notebooks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="jupyter.html" class="md-nav__link md-nav__link--active">
         Jupyter Notebooks
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loading-json-arrays" class="md-nav__link">
+    Loading JSON Arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-tables" class="md-nav__link">
+    Importing Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-data-sources-and-matplotlib-a-real-world-example" class="md-nav__link">
+    CSV Data Sources and Matplotlib - A Real-World Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -687,22 +744,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dotnet" class="md-nav__link">
-    DotNet
+  <a href="#loading-json-arrays" class="md-nav__link">
+    Loading JSON Arrays
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#database" class="md-nav__link">
-    Database
+  <a href="#importing-tables" class="md-nav__link">
+    Importing Tables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
+  <a href="#csv-data-sources-and-matplotlib-a-real-world-example" class="md-nav__link">
+    CSV Data Sources and Matplotlib - A Real-World Example
   </a>
   
 </li>
@@ -720,36 +777,117 @@
               
                 
 
-<h1 id="index-page">Index Page</h1>
-<ul>
-<li><a href="solid.html">SOLID Development</a></li>
-<li><a href="json-web-tokens.html">JSON Web Tokens</a></li>
-<li><a href="software-architecture-doc.html">Software Architecture Document</a></li>
-<li><a href="linux-kernel-module.html">Linux Kernel Modules</a></li>
-</ul>
+<h1 id="jupyter-notebooks">Jupyter Notebooks</h1>
+<p>Although Jupyter Notebook is designed primarily for data analysts, I think there are other use cases in which it can be an effective method of distributing Python code and associated documentation in a single <em>.ipynb</em> file. There are other editors we can use to handle <em>.ipynb</em> files: JupyterLab, <a href="https://deepnote.com/">Deepnote</a> and Visual Studio Code (with the right extensions) are just a few I've tried.</p>
+<p>Jupyter Notebook is essentially a markdown editor with an embedded Python interpreter that executes whatever code is included in a document. All the code within a document can be run as a single Python script, but it's possible to run the contents of specific code blocks.</p>
+<p>I got started by installing <a href="https://www.anaconda.com/products/individual">the Anaconda Navigator</a>. Anaconda appears to be a Web server that hosts a range of data analysis applications, including Jupyter Notebook and JupyterLab, a Python interpreter and a large collection of modules that a data analyst might use. It can also launch the Spyder IDE and PyQT Console.</p>
+<p>To get started, run the Anaconda Navigator, and in the options select '<em>Jupyter Notebook</em>'. The application's interface is accessible in a Web browser at localhost:8888.</p>
+<p>All the mathematical and arithmetic things are done the same way as with any Python-capable IDE, because that's essentially what's happening here. I haven't tried using specialist Python modules (e.g. networking, cryptography, etc.) with Jupyter yet, though.
+There are functions that are particularly relevant for working with data sets. To find the max and min values in a set of variables:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>min(myFirstVariable, mySecondVariable, myThirdVariable)
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>max(myFirstVariable, mySecondVariable, myThirdVariable)
+</code></pre></div></p>
+<p>And use this to find the range of the set:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>largest = max(myFirstVariable, mySecondVariable, myThirdVariable)
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>smallest = min(myFirstVariable, mySecondVariable, myThirdVariablel)
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>mySetRange = largest - smallest
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>mySetRange
+</code></pre></div></p>
+<p>However, a more efficient way of dealing with relatively small data sets might be to use arrays:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>dataSet = [2312, 1339, 9878, 4521]
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>average = sum(dataSet)/len(dataSet)
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>average
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>for i in dataSet:
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    print(i)
+</code></pre></div>
+<p>If we wanted to find the median of the set, we might be better off using the <em>median()</em> function from the <em>statistics</em> module:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>import statistics as stats
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>stats.median(dataSet)
+</code></pre></div></p>
 <hr />
-<h3 id="dotnet">DotNet</h3>
-<ul>
-<li><a href="ajax-view-injection.html">AJAX View Injection</a></li>
-<li><a href="web-services.html">Web Services</a></li>
-<li><a href="web-apis.html">Web APIs</a></li>
-<li><a href="code-first-setup.html">Setting Up a Data Source Using Code First Entity Framework</a></li>
-<li><a href="identity-users-extension.html">Extending ASP.NET IdentityUsers</a></li>
-</ul>
+<h2 id="loading-json-arrays">Loading JSON Arrays</h2>
+<p>What about if we really wanted to work with data sets with real-world data, and use Jupyter/Python to query data sources with numerous records? One method is to read it from a JSON array.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>jsonData = { &#39;FirstVariable&#39; : {&#39;name&#39;: &#39;First Variable&#39;, &#39;value&#39; : 498 },
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>            &#39;SecondVariable&#39; : {&#39;name&#39;: &#39;Second Variable&#39;, &#39;value&#39; : 677 }, 
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>            &#39;ThirdVariable&#39; : {&#39;name&#39;: &#39;Third Variable&#39;, &#39;value&#39; : 121 }}
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>jsonData
+</code></pre></div>
+<p>To retrieve a specific named element:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>jsonData[&#39;SecondVariable&#39;]
+</code></pre></div></p>
+<p>We can load JSON from an external file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>import json
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>jsonFile = open(&quot;sample.json&quot;,)
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>data = json.load(jsonFile)
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>data
+</code></pre></div></p>
 <hr />
-<h3 id="database">Database</h3>
-<ul>
-<li><a href="basic-sql.html">Basic SQL Scripts</a></li>
-<li><a href="sqlite.html">SQLite3</a></li>
-</ul>
-<hr />
-<h3 id="python">Python</h3>
-<ul>
-<li><a href="jupyter.html">Jupyter Notebooks</a></li>
-<li><a href="python-authentication.html">Authentication with Python</a></li>
-<li><a href="pycrypto-aes.html">PyCrypto AES</a></li>
-<li><a href="smartcards.html">Smart Card Programming</a></li>
-</ul>
+<h2 id="importing-tables">Importing Tables</h2>
+<p>Of course, Jupyter Notebook wouldn't be of much use if it could work only with a limited amount of data. Fortunately there are ways of importing and working with much larger data sets, using the <em>pandas</em> module.
+To read a spreadsheet file and display its contents in Jupyter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>from pandas import *
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>data = read_excel(&#39;MySpreadsheet.xls&#39;)
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>data
+</code></pre></div>
+<p>The table that appears is called a 'dataframe'.</p>
+<p>You'll probably want to work on data in a given column. The following code declares <em>tbColumn</em> as an array of values in the spreadsheet's <em>Value</em> column.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>tbColumn = data[&#39;Value&#39;]
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>tbColumn
+</code></pre></div>
+<p>The output will be something like:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>0     2343
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>1    23653
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>2     5312
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>3     9884
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>Name: Value, dtype: int64
+</code></pre></div></p>
+<p>So, <em>tbColumn</em> is an array of int64 values. We can, of course, retrieve whatever values we want from this, in the usual way. e.g.
+<code>dbColumn[3]</code></p>
+<p>There are a few handy things we can do with an array in Python:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>tbColumn.sum()
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>tbColumn.min()
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>tbColumn.max()
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>tbColumn.mean()
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>tbColumn.median()
+</code></pre></div></p>
+<p>We also have a table sorting function, so we can sort rows by the values in a given column:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>data.sort_values(&#39;Value&#39;)
+</code></pre></div></p>
+<h2 id="csv-data-sources-and-matplotlib-a-real-world-example">CSV Data Sources and Matplotlib - A Real-World Example</h2>
+<p>I've used using <a href="https://pandas.pydata.org"><em>pandas</em></a> to read and query <a href="https://ourworldindata.org/local-covid-uk">real-world data provided by Our World in Data</a> as <em>.csv</em> files - the ones used here were downloaded on 26th November. The first data set is '<em>UK: Daily new confirmed COVID-19 cases per 100,000</em>'.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>from pandas import *
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>csvdata = read_csv(&#39;covid-cases.csv&#39;)
+</code></pre></div>
+<p>As expected, there was a large number of records, and they were for each region in Britain. I wanted just the stats for Wales in 2021. It was at this point that I discovered there's a <em>pandas.query()</em> function that enables us to use SQL-like syntax for this.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>csvdata = read_csv(&#39;covid-cases.csv&#39;)
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>filteredData = csvdata.query(&quot;(Entity==&#39;Wales&#39;) and (Day &gt; &#39;2021-01-01&#39;)&quot;)
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>filteredData
+</code></pre></div>
+<p>For some very basic data visualisation, I used <em>Matplotlib</em>, setting the two columns in my filtered data as the x and y axes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>import matplotlib.pyplot as plt
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>x = filteredData.Day
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>y = filteredData.daily_cases_rate_rolling_average
+</code></pre></div>
+<p>The same could be done with the second data set, which is for '<em>UK: Number of COVID-19 patients in hospital</em>'. It's very important to be very careful when naming the variables here, to avoid accidentally reading, querying or rendering from the previous data set (Note: I didn't filter for 2021 data in this second example). </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>import matplotlib.pyplot as plt2
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a>csvpatients = read_csv(&#39;covid-hospital.csv&#39;)
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a>filteredHospitalData = csvpatients.query(&quot;(Entity==&#39;Wales&#39;) and (Day &gt; &#39;2020-01-01&#39;)&quot;)
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a>xh = filteredHospitalData.Day
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a>yh = filteredHospitalData.people_in_hospital
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a>plt2.plot(xh, yh)
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a>plt2.show()
+</code></pre></div>
+<p>The <em>.ipynb</em> and <em>.csv</em> files used here can be <a href="https://github.com/scarbrough-trx/Python/tree/main/JupyterLab">downloaded from my GitHub repo</a>.</p>
 
               
             </article>
@@ -763,7 +901,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../projects.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Projects" rel="prev">
+        <a href="sqlite.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: SQLite3" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -772,20 +910,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Projects
+              SQLite3
             </div>
           </div>
         </a>
       
       
         
-        <a href="solid.html" class="md-footer__link md-footer__link--next" aria-label="Next: SOLID Development" rel="next">
+        <a href="pycrypto-aes.html" class="md-footer__link md-footer__link--next" aria-label="Next: PyCrypto AES" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              SOLID Development
+              PyCrypto AES
             </div>
           </div>
           <div class="md-footer__button md-icon">

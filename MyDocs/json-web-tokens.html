@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#index-page" class="md-skip">
+        <a href="#json-web-tokens" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index Page
+              JSON Web Tokens
             
           </span>
         </div>
@@ -292,7 +292,7 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+        <div class="md-nav__link md-nav__link--index ">
           <a href="index.html">My Docs</a>
           
             <label for="__nav_3">
@@ -329,11 +329,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="json-web-tokens.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JSON Web Tokens
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="json-web-tokens.html" class="md-nav__link md-nav__link--active">
         JSON Web Tokens
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-implementation" class="md-nav__link">
+    JavaScript Implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -687,22 +735,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dotnet" class="md-nav__link">
-    DotNet
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#database" class="md-nav__link">
-    Database
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
+  <a href="#javascript-implementation" class="md-nav__link">
+    JavaScript Implementation
   </a>
   
 </li>
@@ -720,36 +761,107 @@
               
                 
 
-<h1 id="index-page">Index Page</h1>
+<h1 id="json-web-tokens">JSON Web Tokens</h1>
+<p>An <a href="https://blog.codecentric.de/en/2017/08/use-json-web-tokens-services/">authentication server provides a client</a> with <a href="https://jwt.io/">a JSON Web Token</a>, and the <a href="https://auth0.com/?utm_source=jwtio&amp;utm_campaign=craftedby">authentication server</a> will also handle requests from application servers to verify tokens supplied by clients.</p>
+<h2 id="algorithm">Algorithm</h2>
+<p>Generally, the token generation code follows this process:</p>
 <ul>
-<li><a href="solid.html">SOLID Development</a></li>
-<li><a href="json-web-tokens.html">JSON Web Tokens</a></li>
-<li><a href="software-architecture-doc.html">Software Architecture Document</a></li>
-<li><a href="linux-kernel-module.html">Linux Kernel Modules</a></li>
+<li>Initialise the token header as a set of JSON objects.</li>
+<li>Initialise the token payload as a set of JSON objects.</li>
+<li>Base64-encode the header and payload independently. This gives us the unsigned token.</li>
+<li>Using the HMAC SHA256 algorithm, and a secret key value, generate the signature for the unsigned payload.</li>
 </ul>
-<hr />
-<h3 id="dotnet">DotNet</h3>
+<p>A token, therefore, will have three segments: a) header, b) payload, and c) signature. The first two are Base64-encoded JSON objects, and the third is the encoded signature of the first two segments. This can be seen in action when generating a token with the debugger at jwt.io:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>https://jwt.io/#debugger-io?token=eyJhbGciOiJIUzI1NiIsInR5
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gR
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>G9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36P
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>Ok6yJV_adQssw5c
+</code></pre></div>
+When decoded, the token would look something like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>{ &quot;alg&quot;: &quot;HS256&quot;, &quot;typ&quot;: &quot;JWT&quot; }
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>{ &quot;sub&quot;: &quot;Web Application&quot;, &quot;name&quot;: &quot;Michael&quot;, &quot;iat&quot;: 45435334 }
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>{ SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c }
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>.NET Implementation
+</code></pre></div>
+<p>When working with .NET, one could use <em>System.IdentityModel.Tokens.Jwt</em>, but it can also be done using <em>Newtonsoft.Json</em> and <em>System.Security.Cryptography</em>.</p>
+<p>I defined the header properties in a <em>TokenHeader</em> class:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>public class TokenHeader
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>{
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>public string alg { get; set; }
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>public string typ { get; set; }
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>}
+</code></pre></div>
+<p>Instantiating the TokenHeader class in the main method, we can declare static variables for the objects:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>TokenHeader tokenHeader = new TokenHeader();
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>tokenHeader.alg = &quot;HS256&quot;;
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>tokenHeader.typ = &quot;JWT&quot;;
+</code></pre></div>
+<p>The variables are formatted as JSON objects, then Base64-encoded:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>string headerString = JsonConvert.SerializeObject(tokenHeader);
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>string encodedHeaderString = ConvertHeaderToJson(headerString);
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>private static string ConvertHeaderToJson(string headerString)
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>{
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>byte[] headerStringAsBytes = Encoding.ASCII.GetBytes(headerString);
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>string encodedHeaderString = Convert.ToBase64String(headerStringAsBytes);
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>return encodedHeaderString;
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>}
+</code></pre></div>
+<p>For generating the third segment of the token – the signature – the process is different. In this case, we need to generate a hash digest of the header and payload, along with a 256-bit secret value, then encode that digest. The algorithm for this is given as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>HMACSHA256(
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>base64UrlEncode(header) + &quot;.&quot; +
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>base64UrlEncode(payload), your-256-bit-secret
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>)
+</code></pre></div>
+<p>This algorithm is implemented by the following code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>string message = encodedHeaderString + &quot;.&quot; + encodedPayloadString;
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>byte[] keyByte = encoding.GetBytes(myKey);
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>HMACSHA256 hmacsha256 = new HMACSHA256(keyByte);
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>byte[] messageBytes = encoding.GetBytes(message);
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>byte[] hashmessage = hmacsha256.ComputeHash(messageBytes);
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>string hashAsString = BitConverter.ToString(hashmessage);
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>byte[] signatureStringAsBytes = Encoding.ASCII.GetBytes(hashAsString);
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>string encodedSignature = Convert.ToBase64String(signatureStringAsBytes);
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>return encodedSignature;
+</code></pre></div>
+<h2 id="javascript-implementation">JavaScript Implementation</h2>
+<p>Several JavaScript libraries are needed for the implementation here. The crypto ones are referenced on <a href="https://www.jokecamp.com/blog/examples-of-creating-base64-hashes-using-hmac-sha256-in-different-languages/">Joe Kampschmidt’s blog</a>:</p>
 <ul>
-<li><a href="ajax-view-injection.html">AJAX View Injection</a></li>
-<li><a href="web-services.html">Web Services</a></li>
-<li><a href="web-apis.html">Web APIs</a></li>
-<li><a href="code-first-setup.html">Setting Up a Data Source Using Code First Entity Framework</a></li>
-<li><a href="identity-users-extension.html">Extending ASP.NET IdentityUsers</a></li>
+<li>jquery-3.3.1.min.js</li>
+<li>jquery.base64.min.js</li>
+<li>crypto-js.min.js</li>
+<li>hmac-sha256.min.js</li>
+<li>enc-base64.min.js</li>
 </ul>
-<hr />
-<h3 id="database">Database</h3>
-<ul>
-<li><a href="basic-sql.html">Basic SQL Scripts</a></li>
-<li><a href="sqlite.html">SQLite3</a></li>
-</ul>
-<hr />
-<h3 id="python">Python</h3>
-<ul>
-<li><a href="jupyter.html">Jupyter Notebooks</a></li>
-<li><a href="python-authentication.html">Authentication with Python</a></li>
-<li><a href="pycrypto-aes.html">PyCrypto AES</a></li>
-<li><a href="smartcards.html">Smart Card Programming</a></li>
-</ul>
+<p>To initialise the header and payload as JSON objects, <code>JSON.parse()</code> is used.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>var headerjson = &#39;{ &quot;alg&quot;: &quot;HS256&quot;, &quot;typ&quot;: &quot;JWT&quot; }&#39;,
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>headerobj = JSON.parse(headerjson);
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>var payloadjson = &#39;{ &quot;sub&quot;: &quot;x555&quot;, &quot;name&quot;: &quot;Michael&quot;, &quot;iat&quot;: 445644543534, &quot;issued&quot;: &#39; + Math.floor(Date.now() / 1000) + &#39; }&#39;,
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>payloadobj = JSON.parse(payloadjson);
+</code></pre></div>
+<p>Next, independently encode the header and the payload:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>headerb64 = btoa(unescape(encodeURIComponent(headerjson)));
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>headerb64str = decodeURIComponent(escape(window.atob(headerb64)));
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>payloadb64 = btoa(unescape(encodeURIComponent(payloadjson)));
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>payloadb64str = decodeURIComponent(escape(window.atob(payloadb64)));
+</code></pre></div>
+<p>The unsigned token will consist of two segments, one for the encoded header and the other the encoded payload:
+<code>var unsignedToken = headerb64 + "." + payloadb64;</code></p>
+<p>Finally, the crypto libraries provide the HMAC SHA256 algorithm used here for signing the token:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>var secretKey = &quot;Password1&quot;;
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>var tokenSignature = CryptoJS.HmacSHA256(unsignedToken, secretKey);
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>var encodedTokenSignature = CryptoJS.enc.Base64.stringify(tokenSignature);
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>gentoken.value = encodedTokenSignature;
+</code></pre></div>
+<p>And finally, I’ve put all three segments together to form the signed token:
+<code>allsegments.value = headerb64 + "." + payloadb64 + "." + encodedTokenSignature;</code></p>
 
               
             </article>
@@ -763,7 +875,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../projects.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Projects" rel="prev">
+        <a href="solid.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: SOLID Development" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -772,20 +884,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Projects
+              SOLID Development
             </div>
           </div>
         </a>
       
       
         
-        <a href="solid.html" class="md-footer__link md-footer__link--next" aria-label="Next: SOLID Development" rel="next">
+        <a href="software-architecture-doc.html" class="md-footer__link md-footer__link--next" aria-label="Next: Software Architecture Document" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              SOLID Development
+              Software Architecture Document
             </div>
           </div>
           <div class="md-footer__button md-icon">

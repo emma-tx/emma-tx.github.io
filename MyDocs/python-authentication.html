@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#index-page" class="md-skip">
+        <a href="#login-screens-hashes-and-password-files-with-python" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index Page
+              Authentication with Python
             
           </span>
         </div>
@@ -292,7 +292,7 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+        <div class="md-nav__link md-nav__link--index ">
           <a href="index.html">My Docs</a>
           
             <label for="__nav_3">
@@ -557,14 +557,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" checked>
       
       
       
@@ -623,11 +625,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="python-authentication.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Authentication with Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="python-authentication.html" class="md-nav__link md-nav__link--active">
         Authentication with Python
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hashing-in-python" class="md-nav__link">
+    Hashing in Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-a-password" class="md-nav__link">
+    Checking a Password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-pythoncard-login-screen" class="md-nav__link">
+    A PythonCard Login Screen
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -687,22 +744,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dotnet" class="md-nav__link">
-    DotNet
+  <a href="#hashing-in-python" class="md-nav__link">
+    Hashing in Python
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#database" class="md-nav__link">
-    Database
+  <a href="#checking-a-password" class="md-nav__link">
+    Checking a Password
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
+  <a href="#a-pythoncard-login-screen" class="md-nav__link">
+    A PythonCard Login Screen
   </a>
   
 </li>
@@ -720,36 +777,101 @@
               
                 
 
-<h1 id="index-page">Index Page</h1>
-<ul>
-<li><a href="solid.html">SOLID Development</a></li>
-<li><a href="json-web-tokens.html">JSON Web Tokens</a></li>
-<li><a href="software-architecture-doc.html">Software Architecture Document</a></li>
-<li><a href="linux-kernel-module.html">Linux Kernel Modules</a></li>
-</ul>
-<hr />
-<h3 id="dotnet">DotNet</h3>
-<ul>
-<li><a href="ajax-view-injection.html">AJAX View Injection</a></li>
-<li><a href="web-services.html">Web Services</a></li>
-<li><a href="web-apis.html">Web APIs</a></li>
-<li><a href="code-first-setup.html">Setting Up a Data Source Using Code First Entity Framework</a></li>
-<li><a href="identity-users-extension.html">Extending ASP.NET IdentityUsers</a></li>
-</ul>
-<hr />
-<h3 id="database">Database</h3>
-<ul>
-<li><a href="basic-sql.html">Basic SQL Scripts</a></li>
-<li><a href="sqlite.html">SQLite3</a></li>
-</ul>
-<hr />
-<h3 id="python">Python</h3>
-<ul>
-<li><a href="jupyter.html">Jupyter Notebooks</a></li>
-<li><a href="python-authentication.html">Authentication with Python</a></li>
-<li><a href="pycrypto-aes.html">PyCrypto AES</a></li>
-<li><a href="smartcards.html">Smart Card Programming</a></li>
-</ul>
+<h1 id="login-screens-hashes-and-password-files-with-python">Login Screens, Hashes and Password Files with Python</h1>
+<p>Probably everyone’s seen a program that works something along the lines of:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>read UserInput
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>if UserInput = &#39;password&#39;
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>print &#39;Login Success&#39;
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>else
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>print &#39;Password Incorrect&#39;
+</code></pre></div>
+<p>The flaw with this method should be obvious: someone could either read the source code or reverse engineer the program to determine the password. To get around this, UNIX systems use another method that involves storing password hashes: when a user enters a password, it’s hashed and stored in a file, or its hash is compared with the values already in that file.</p>
+<p>This method is intractable – that is, nobody should be able to determine the password from its digest, since MD5/SHA256 are one-way algorithms. Entering the hash value in the password screen also shouldn’t work, as that value will also be hashed to generate an entirely different digest.</p>
+<h2 id="hashing-in-python">Hashing in Python</h2>
+<p>Let’s start with the basics, with a simple Python script that generates a SHA256 hash from an input string, using the <em>sha256()</em> function from hashlib:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>import os
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>import hashlib
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>#Get txtPassword
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>txtPassword = raw_input(&quot;Enter password: &quot;)
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>#Print the hashed password
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>print hashlib.sha256(txtPassword).hexdigest()
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>HashString
+</code></pre></div>
+<p>Having written a program that hashes user text, the next stage is a simple matter of adding code that writes the output to a file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>import os
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>import hashlib
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>#Load password file for appending
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>f = open(&#39;Passwords.txt&#39;, &#39;a&#39;)
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>#Get password
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>txtPassword = raw_input(&quot;Enter password: &quot;)
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>#Hash newPassword and write to file
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>newPassword = hashlib.sha256(txtPassword).hexdigest()
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>f.write(newPassword)
+</code></pre></div>
+<p>After running the program several times, there should now be a list of digests in Passwords.txt.</p>
+<h2 id="checking-a-password">Checking a Password</h2>
+<p>What turned out to be exceedingly tricky was getting it to work in reverse, with the program again hashing an input string to find a matching value in Passwords.txt. Since I couldn’t get this to work with a conditional branching statement, I resorted to printing ‘Login Fail’ by default and inserting exit() to terminate the program before that point if there’s a match. Probably not a bad thing, security-wise.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>import os, sys
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>import hashlib
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>import string
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>import re
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>#Use hash value of user input as the search term
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>txtPassword = raw_input(&quot;Enter password: &quot;)
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>searchKey = hashlib.sha256(txtPassword).hexdigest()
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>#Open the password file
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>lines = open(&quot;Passwords.txt&quot;, &quot;r&quot; ).readlines()
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>#Search the file for matching hash value
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>for line in lines:
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>if re.search(searchKey, line ):
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>print &quot;Login Success&quot;
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>exit()
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>print &quot;Login Fail&quot;
+</code></pre></div>
+<h2 id="a-pythoncard-login-screen">A PythonCard Login Screen</h2>
+<p>Of course, this wasn’t good enough for me. I wanted to apply this as a PythonCard GUI (which I’ll probably cover in my next post). It works a little differently this time, as the program is event driven.
+Installing PythonCard gives us a couple of tools: resourceEditor GUI designer, and the codeEditor IDE. The resourceEditor is used for creating the interface itself stuff, while the handlers and back-end code are added to the Python script manually in codeEditor, replacing variables with component names.</p>
+<p>When sorting out the Python script (after creating the GUI), the first step is to import the Python modules used in the earlier programs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>from PythonCard import dialog, model
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>import os, sys
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>import hashlib
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>import string
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>import re
+</code></pre></div>
+<p>The handler for the ‘Hash’ button does exactly the same thing as the first script, but I/O is done the same way as with VB.NET:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>#The hash button
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>def on_cmdCancel_mouseClick(self, event):
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>self.components.txtHash.text = hashlib.sha256(self.components.txtPassword.text).hexdigest()
+</code></pre></div>
+<p>Creating the handler for the checking (‘Login’) button was much easier than I expected, and was a matter of renaming the variables:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>#The login button
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>def on_cmdLogin_mouseClick(self, event):
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>searchKey = hashlib.sha256(self.components.txtPassword.text).hexdigest()
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>#Buffer the password file
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>lines = open(&quot;Passwords.txt&quot;, &quot;r&quot; ).readlines()
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>#Search lines in password file for a match
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>for line in lines:
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>if re.search(searchKey, line ):
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>dialog.alertDialog(self, &#39;Login Success&#39;)
+</code></pre></div>
+<p>And as a finishing touch, another function to update the password file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>#Password set button
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>def on_cmdSetPassword_mouseClick(self, event):
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>f = open(&#39;Passwords.txt&#39;, &#39;a&#39;)
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>newPassword = hashlib.sha256(self.components.txtPassword.text).hexdigest()
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>f.write(newPassword)
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>dialog.alertDialog(self, &#39;Password Set&#39;)
+</code></pre></div>
 
               
             </article>
@@ -763,7 +885,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../projects.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Projects" rel="prev">
+        <a href="pycrypto-aes.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: PyCrypto AES" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -772,20 +894,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Projects
+              PyCrypto AES
             </div>
           </div>
         </a>
       
       
         
-        <a href="solid.html" class="md-footer__link md-footer__link--next" aria-label="Next: SOLID Development" rel="next">
+        <a href="smartcards.html" class="md-footer__link md-footer__link--next" aria-label="Next: Smart Card Programming" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              SOLID Development
+              Smart Card Programming
             </div>
           </div>
           <div class="md-footer__button md-icon">
