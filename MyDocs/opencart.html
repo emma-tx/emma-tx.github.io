@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ajax-view-injection" class="md-skip">
+        <a href="#opencart-development-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AJAX View Injection
+              OpenCart Development Notes
             
           </span>
         </div>
@@ -373,11 +373,101 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="opencart.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OpenCart Development Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="opencart.html" class="md-nav__link md-nav__link--active">
         OpenCart Development Notes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#application-structure" class="md-nav__link">
+    Application Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-code-template" class="md-nav__link">
+    Module Code Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-layer-categories-module" class="md-nav__link">
+    Five Layer Categories Module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-changes-to-the-front-end" class="md-nav__link">
+    Viewing Changes to the Front End
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backing-up" class="md-nav__link">
+    Backing Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-study-in-what-could-go-wrong" class="md-nav__link">
+    Case Study in What Could Go Wrong
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-db-table" class="md-nav__link">
+    Settings DB Table
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -387,16 +477,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
       
       
       
@@ -429,66 +517,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          AJAX View Injection
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="ajax-view-injection.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="ajax-view-injection.html" class="md-nav__link">
         AJAX View Injection
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ajax-handler" class="md-nav__link">
-    AJAX Handler
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#controller" class="md-nav__link">
-    Controller
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ajax-response-formatter" class="md-nav__link">
-    AJAX Response Formatter
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -760,22 +793,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ajax-handler" class="md-nav__link">
-    AJAX Handler
+  <a href="#application-structure" class="md-nav__link">
+    Application Structure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#controller" class="md-nav__link">
-    Controller
+  <a href="#module-code-template" class="md-nav__link">
+    Module Code Template
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ajax-response-formatter" class="md-nav__link">
-    AJAX Response Formatter
+  <a href="#five-layer-categories-module" class="md-nav__link">
+    Five Layer Categories Module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-changes-to-the-front-end" class="md-nav__link">
+    Viewing Changes to the Front End
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backing-up" class="md-nav__link">
+    Backing Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-study-in-what-could-go-wrong" class="md-nav__link">
+    Case Study in What Could Go Wrong
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-db-table" class="md-nav__link">
+    Settings DB Table
   </a>
   
 </li>
@@ -793,70 +861,101 @@
               
                 
 
-<h1 id="ajax-view-injection">AJAX View Injection</h1>
-<p>Code for bypassing default MVC controller actions. This is useful if we only want to update specific elements in the application's UI, or to execute a controller action without reloading a view.</p>
-<p>There are three elements: a) AJAX handler, b) Controller action, and c) AJAX response formatter.</p>
-<h2 id="ajax-handler">AJAX Handler</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>$(document).ready(function () {
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    $.ajax({
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>        type: &quot;GET&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>        cache: false,
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>        url: &#39;/Home/MyView&#39;,
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>        dataType: &quot;JSON&quot;,
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        success: function (data) { $(&quot;#myviewcard&quot;).html(data.view); }
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    });
+<h1 id="opencart-development-notes">OpenCart Development Notes</h1>
+<p>Essentially OpenCart is a PHP-based platform that typically runs on a LAMP stack. I have, however, been managing it through cPanel on a conventional hosting plan.</p>
+<p>Application changes will entail the installation, and perhaps the creation or modification of modules. Operating an OpenCart portal is therefore best done with the support of PHP developers who understand something of the MVC pattern.
+The platform must be installed on a Web server, which means backing up the application state and data, contingency planning and security are the responsibility of the business.</p>
+<p>The dashboard is easy enough to navigate, but it's the files that make up the platform that we need to understand.
+The application follows an MVC structure, but there are two main sections: The /admin directory contains the source files for the administration dashboard, and the /catalogue directory has the source for what the site's vistors are presented with.</p>
+<h2 id="application-structure">Application Structure</h2>
+<p>Files are organised into <em>/admin</em> and <em>/catalog</em> directories.</p>
+<p>/admin</p>
+<ul>
+<li>
+<p>/controller</p>
+</li>
+<li>
+<p>/view</p>
+</li>
+</ul>
+<p>/catalog</p>
+<ul>
+<li>
+<p>/controller</p>
+</li>
+<li>
+<p>/view</p>
+</li>
+</ul>
+<p>The scripts in /admin determine what site admins see in the dashboard. Scripts in the /catalog directory determine what others see when visiting the site.</p>
+<p>Defined by .twig Files:
+- The structure of the site's interface. By default, it defines a layout with a header, body, left column, right column and footer.</p>
+<p>Defined by modules:
+- The modules define what appears within each element (e.g. header or body) of the site's interface.</p>
+<h2 id="module-code-template">Module Code Template</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>class ControllerExtensionModule
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    MyModule extends Controller
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>{
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    private $error = array();
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    public function index() {}
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    public function validate() {}
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    $.ajax({
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        type: &quot;GET&quot;,
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        cache: false,
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        url: &#39;/Home/AboutPage&#39;,
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        dataType: &quot;JSON&quot;,
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        success: function (data) { $(&quot;#aboutpagecard&quot;).html(data.view); }
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    });
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>});
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    public function install() {}
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    public function uninstall() {}
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>}
 </code></pre></div>
-<h2 id="controller">Controller</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>[HttpGet]
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>[CheckAjaxRequest]
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>public ActionResult MyView()
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>{
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    ...
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    Controller code here
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    ...
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    return Json(new { success = true, view = RenderPartialViewToString(&quot;_MyPartialView&quot;, model) }, JsonRequestBehavior.AllowGet);
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>}
-</code></pre></div>
-<h2 id="ajax-response-formatter">AJAX Response Formatter</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>public class CheckAjaxRequestAttribute : ActionFilterAttribute
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>{
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    private const string AJAX_HEADER = &quot;X-Requested-With&quot;;
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    public override void OnActionExecuting(ActionExecutingContext filterContext)
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    {
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        bool isAjaxRequest = filterContext.HttpContext.Request.Headers[AJAX_HEADER] != null;
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        if (!isAjaxRequest)
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        {
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>            filterContext.Result = new ViewResult { ViewName = &quot;Unauthorized&quot; };
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        }
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    }
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>}
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>protected string RenderPartialViewToString(string viewName, object model)
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>{
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    if (string.IsNullOrEmpty(viewName))
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    viewName = ControllerContext.RouteData.GetRequiredString(&quot;action&quot;);
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    ViewData.Model = model;
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    using (var sw = new StringWriter())
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>    {
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>        var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>        var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>        viewResult.View.Render(viewContext, sw);
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>        return sw.GetStringBuilder().ToString();
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    }
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>}
-</code></pre></div>
+<h2 id="five-layer-categories-module">Five Layer Categories Module</h2>
+<p>/admin
+- Enable drag-and drop or category customisation in the dashboard.
+- Also features to enable the management of categories.</p>
+<p>/catalogue
+- Show category groups and entries on the page.
+* CategoryManager.php</p>
+<h2 id="viewing-changes-to-the-front-end">Viewing Changes to the Front End</h2>
+<p>The theme cache must be refreshed in order to view application changes. In the <em>Dashboard</em> tab, click the blue cog button at the top right. In the <em>Developer Settings</em> modal, clich the <em>Refresh</em> button for the theme.</p>
+<p>Any additional JavaScript funtions and AJAX calls to be added to <em>common.js</em>.</p>
+<h2 id="backing-up">Backing Up</h2>
+<p>There are a couple of things that should be backed up. One of these is the application state - everything in the home directory that's accessed through cPanel or FTP.</p>
+<p>The OpenCart dashboard allows a backup to be made of the store's database. This can quickly be restored using the <strong>Import</strong> feature.</p>
+<p><em>System</em> -&gt; <em>Maintainence</em> -&gt; <em>Backup/Restore</em></p>
+<h2 id="case-study-in-what-could-go-wrong">Case Study in What Could Go Wrong</h2>
+<ul>
+<li>A dodgy module was installed through the module repository. After installation this screwed up OpenCart core files, causing main features of the application to fail.</li>
+<li>Resolvving this entailed repairing an incorrect reference to a system file in the <em>vqmod</em> cache code.</li>
+<li>The model also needed to be repaired.</li>
+<li>Had to copy a system file from a backup to the current installation.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ol>
+<li>
+<p>See the error log in <em>/home/user/logs</em>. This will indicate the cause of an error.</p>
+</li>
+<li>
+<p>Sometimes the log entries indicate a PHP error. Fixing this should require a minor change to the code.</p>
+</li>
+<li>
+<p>Another useful source of diagnostic information is the Developer tool in the browser. This will reveal the server response codes to a request.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>- 200: Okay
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>- 300: Usually a routing problem
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>- 400: Missing file(s)
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>- 500: Server configuration problem
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="settings-db-table">Settings DB Table</h2>
+<ul>
+<li>setting_id</li>
+<li>store_id (Default value is '0')</li>
+<li>group</li>
+<li>key</li>
+<li>value</li>
+<li>serialized</li>
+</ul>
+<p>Look at the <em>Data</em> tab in <em>Categories</em>, under <em>Catalogue</em>.
+The <em>Columns</em> field might allow the number of subcategories to be set.</p>
 
               
             </article>
@@ -870,7 +969,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="opencart.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: OpenCart Development Notes" rel="prev">
+        <a href="linux-kernel-module.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux Kernel Modules" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -879,20 +978,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              OpenCart Development Notes
+              Linux Kernel Modules
             </div>
           </div>
         </a>
       
       
         
-        <a href="web-services.html" class="md-footer__link md-footer__link--next" aria-label="Next: Web Services" rel="next">
+        <a href="ajax-view-injection.html" class="md-footer__link md-footer__link--next" aria-label="Next: AJAX View Injection" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Web Services
+              AJAX View Injection
             </div>
           </div>
           <div class="md-footer__button md-icon">
