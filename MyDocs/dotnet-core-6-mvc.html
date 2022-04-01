@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -58,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github" class="md-skip">
+        <a href="#thoughts-on-net-core-60-entity-framework-and-the-new-mvc-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHub
+              MVC With .NET Core 6 and Entity Framework
             
           </span>
         </div>
@@ -367,66 +369,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          GitHub
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="github.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="github.html" class="md-nav__link">
         GitHub
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#branches" class="md-nav__link">
-    Branches
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-commands" class="md-nav__link">
-    Useful Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github-wiki" class="md-nav__link">
-    GitHub Wiki
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -506,14 +453,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" checked>
       
       
       
@@ -618,11 +567,101 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="dotnet-core-6-mvc.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DotNET Core 6 MVC and Entity Framework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dotnet-core-6-mvc.html" class="md-nav__link md-nav__link--active">
         DotNET Core 6 MVC and Entity Framework
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mvc-project-changes" class="md-nav__link">
+    MVC Project Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-first-entity-framework-model" class="md-nav__link">
+    Database-First Entity Framework Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-string" class="md-nav__link">
+    Connection String
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programcs" class="md-nav__link">
+    Program.cs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-validation" class="md-nav__link">
+    Data Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#razor-views" class="md-nav__link">
+    Razor Views
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-dbcontext-in-the-controller" class="md-nav__link">
+    Using DbContext in the Controller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-information" class="md-nav__link">
+    Further Information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -838,22 +877,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#branches" class="md-nav__link">
-    Branches
+  <a href="#mvc-project-changes" class="md-nav__link">
+    MVC Project Changes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#useful-commands" class="md-nav__link">
-    Useful Commands
+  <a href="#database-first-entity-framework-model" class="md-nav__link">
+    Database-First Entity Framework Model
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-wiki" class="md-nav__link">
-    GitHub Wiki
+  <a href="#connection-string" class="md-nav__link">
+    Connection String
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programcs" class="md-nav__link">
+    Program.cs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-validation" class="md-nav__link">
+    Data Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#razor-views" class="md-nav__link">
+    Razor Views
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-dbcontext-in-the-controller" class="md-nav__link">
+    Using DbContext in the Controller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-information" class="md-nav__link">
+    Further Information
   </a>
   
 </li>
@@ -871,53 +945,113 @@
               
                 
 
-<h1 id="github">GitHub</h1>
-<p>Each repository should have:
-- Name in lower-case
-- Description
-- README file
-- A .gitignore file</p>
-<h2 id="branches">Branches</h2>
+<h1 id="thoughts-on-net-core-60-entity-framework-and-the-new-mvc-pattern">Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern</h1>
+<p>The following mostly doesn't refer to problems native to the .NET Core 6 Framework itself, but rather some difficulties I encountered while getting an Entity Framework Database-First model working in the MVC project template generated by Visual Studio 2022.</p>
+<p>Some of the problems centred around:</p>
 <ul>
-<li>MAIN</li>
-<li>Release</li>
-<li>Development (e.g. mj-new-feature)</li>
+<li>Breaking changes and things that might be awkward for developers accustomed to working with legacy non-Core versions of .NET (espectially .NET MVC).</li>
+<li>Not much documentation out there, relative to what's published for the older .NET MVC patterns.</li>
+<li>Apparently not many developers having worked with it yet.</li>
+<li>A heavy amount of dependency injection included in the later MVC code patterns. This occasionally made it considerably more difficult to trace errors, and would present a learning curve for less experienced developers.</li>
 </ul>
-<h2 id="useful-commands">Useful Commands</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>$push dev to git
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>$pull request into release
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>$merge changes into release
+<h2 id="mvc-project-changes">MVC Project Changes</h2>
+<p>When the ASP.NET MVC project template is set up by Visual Studio, the code patterns and source file structure are going to be different to what was generated by previous versions. The main three differences are a) a heavy amount of dependency injection, b) the <em>Web.config</em> has been replaced by an <em>appsettings.json</em> file and <em>Startup.cs</em> has been replaced by <em>Program.cs</em> (the code pattern here is also different), and c) The method for setting up an Entity Framework model, <em>DbContext</em> and data source connection is different.</p>
+<h2 id="database-first-entity-framework-model">Database-First Entity Framework Model</h2>
+<p>The first problem is that Visual Studio won't scaffold the application to use Entity Framework or <em>DbContext</em>, and there isn't an Entity Framework model designer.
+A partial solution is to run the following in NuGet Package Manager Console:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Install-Package Microsoft.EntityFrameworkCore.Tools
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>$git status
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>$git checkout -b &#39;mj-new-feature&#39;
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>$git branch
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>$git add .
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>$git commit -a
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>$git commit -m &quot; &quot;
+<p>And:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Scaffold-DbContext &quot;Server=.\SQLExpress;Database=emmatest;Trusted_Connection=True;&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 </code></pre></div>
-<p>Create a new branch:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>$git checkout -b &#39;mj-new&#39;
-</code></pre></div></p>
-<p>Remove a branch:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>$git stash
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>$git push :mj-new
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>$git branch -D mj-new
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>$git status
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>$git checkout
+<p><a href="https://docs.microsoft.com/en-us/ef/core/cli/powershell">Click here for further information about this and related tools...</a></p>
+<p>I recommend this method, as it will save a considerable amount of time setting up the model, and it should be a more reliable way of applying the correct data types.</p>
+<p>In addition to the model, the script will also create a <em>DbContext</em> class. This will need to be modified, if not rewritten. One reason for this is the connection string must be moved into <em>appsettings.json</em>. The following was my rewrite of <em>DbContext</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>using Microsoft.EntityFrameworkCore;
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>using WebApplication8.Models;
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>namespace WebApplication8.Data
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>{
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    public class ApplicationDbContext : DbContext
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    {
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        protected readonly IConfiguration Configuration;
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>        public ApplicationDbContext(DbContextOptions&lt;DbContext&gt; options) : base(options)
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        {
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>        }
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>        public ApplicationDbContext(IConfiguration configuration)
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>        {
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>            Configuration = configuration;
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>        }
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>        protected override void OnConfiguring(DbContextOptionsBuilder options)
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>        {
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>            // connect to sql server with connection string from app settings
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>            options.UseSqlServer(Configuration.GetConnectionString(&quot;DefaultConnection&quot;));
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>        }
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>        public DbSet&lt;Computer&gt; Computers { get; set; }
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>        public DbSet&lt;User&gt; Users { get; set; }
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>        public DbSet&lt;Lab&gt; Labs { get; set; }
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>        protected override void OnModelCreating(ModelBuilder builder)
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>        {
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>            builder.Entity&lt;WebApplication8.Models.Computer&gt;()
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>                .ToTable(&quot;computer&quot;);
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>        }
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>    }
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>}
 </code></pre></div>
-<h2 id="github-wiki">GitHub Wiki</h2>
-<ul>
-<li>Home</li>
-<li>Accessibility</li>
-<li>Deploying</li>
-<li>Development</li>
-<li>Maintainance Mode</li>
-<li>Support</li>
-<li>System Information</li>
-<li>System Overview</li>
-<li>Testing</li>
-</ul>
+<h2 id="connection-string">Connection String</h2>
+<p>Insert the following in the appsettings.json file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>&quot;ConnectionStrings&quot;: {
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>  &quot;DefaultConnection&quot;: &quot;Server=EMMA-LAPTOP\\SQLEXPRESS;Initial Catalog=emmatest;Integrated Security=True&quot;
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>},
+</code></pre></div>
+<p>Here I've included the local machine's name in the connection string, as I might be running the application from within a Docker container.</p>
+<h2 id="programcs">Program.cs</h2>
+<p>In <em>Program.cs</em>, add the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>builder.Services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>{
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    options.UseSqlServer(builder.Configuration.GetConnectionString(&quot;DefaultConnection&quot;));
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>});
+</code></pre></div>
+<p>Make sure to add it before the <code>var app = builder.Build();</code> statement.</p>
+<p>At this point, we could use SQL Server Profiler to check whether the application is reading from the database.
+(<em>SQL Server Management Studio</em> -&gt; <em>Tools</em> -&gt; <em>SQL Server Profiler</em>)</p>
+<h2 id="data-validation">Data Validation</h2>
+<p>It's a good idea to apply data validation to the model itself. In the model class file, add the following reference:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>using System.ComponentModel.DataAnnotations;
+</code></pre></div>
+<h2 id="razor-views">Razor Views</h2>
+<p>Obviously pretty much the same as with the older MVC pattern:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>@model IEnumerable&lt;Test_MVC.Models.Computer&gt;
+</code></pre></div>
+<h2 id="using-dbcontext-in-the-controller">Using DbContext in the Controller</h2>
+<p>Assuming we're just using the <em>DbContext</em> model without a Unit of Work Repository pattern:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>using Microsoft.AspNetCore.Mvc;
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>using System.Diagnostics;
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>using WebApplication8.Models;
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>using WebApplication8.Data;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>private readonly ApplicationDbContext _context;
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>public HomeController(ApplicationDbContext context)
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>{
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    _context = context;
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>}
+</code></pre></div>
+<p>In the controller method:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>public IActionResult Index()
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>{
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>    var model = _context.Computers.ToList();
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    return View(model);
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>}
+</code></pre></div>
+<h2 id="further-information">Further Information</h2>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/core/compatibility/6.0">Microsoft Docs: Breaking Changes in .NET 6</a>
+<a href="https://docs.microsoft.com/en-us/ef/core/cli/powershell">Entity Framework Core tools reference - Package Manager Console in Visual Studio</a></p>
 
               
             </article>
@@ -931,7 +1065,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="software-architecture-doc.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software Architecture Document" rel="prev">
+        <a href="identity-users-extension.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Extending ASP.NET IdentityUsers" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -940,20 +1074,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Software Architecture Document
+              Extending ASP.NET IdentityUsers
             </div>
           </div>
         </a>
       
       
         
-        <a href="docker.html" class="md-footer__link md-footer__link--next" aria-label="Next: Docker" rel="next">
+        <a href="basic-sql.html" class="md-footer__link md-footer__link--next" aria-label="Next: Basic SQL Scripts" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Docker
+              Basic SQL Scripts
             </div>
           </div>
           <div class="md-footer__button md-icon">
