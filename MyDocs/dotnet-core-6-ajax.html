@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pycrypto-aes-text-encryption" class="md-skip">
+        <a href="#implementing-an-ajax-request-in-net-core-6-mvc" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PyCrypto AES
+              AJAX Requests in DotNET Core 6 MVC
             
           </span>
         </div>
@@ -451,14 +451,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" checked>
       
       
       
@@ -495,11 +497,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="dotnet-core-6-ajax.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AJAX Requests in DotNET Core 6 MVC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dotnet-core-6-ajax.html" class="md-nav__link md-nav__link--active">
         AJAX Requests in DotNET Core 6 MVC
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jquery-and-ajax-setup" class="md-nav__link">
+    jQuery and AJAX Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -669,16 +712,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_13" type="checkbox" id="__nav_3_13" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_13" type="checkbox" id="__nav_3_13" >
       
       
       
@@ -723,21 +764,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="pycrypto-aes.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="pycrypto-aes.html" class="md-nav__link">
         PyCrypto AES
       </a>
-      
     </li>
   
 
@@ -804,6 +835,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jquery-and-ajax-setup" class="md-nav__link">
+    jQuery and AJAX Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -815,33 +861,42 @@
               
                 
 
-<h1 id="pycrypto-aes-text-encryption">PyCrypto AES Text Encryption</h1>
-<p>The first problem was that AES and other block ciphers only accept message and key sizes of a certain number or bytes, so both must be padded in some way. AES works on blocks of 128 bits (16 bytes = 128 bits). In Electronic Code Book (EBC) mode it works by encrypting each block against the key. In Cipher Block Chaining (CBC) mode AES will encrypt each block with a previous block, using the key for the first block(s). The latter should be the more secure against known plaintext attacks, plus EBC would potentially output the same bit pattern for each repeating set of characters in the plaintext – if that set of characters can be determined, so can the key and therefore the entire message could be decrypted by a third party.</p>
-<p>Producing a set key length isn’t difficult, as we can simply take any password and always produce a SHA256 value. This is a known method of key hardening, but in this case I only used it for convenience.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Pass = raw_input(&#39;KEY: &#39;)
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>encodedPass = hashlib.sha256(Pass).digest()
+<h1 id="implementing-an-ajax-request-in-net-core-6-mvc">Implementing an AJAX Request in .NET Core 6 MVC</h1>
+<p>One of the problems with implementing a search feature that returns a table in a partial view is the Entity Framework model declarations must be strongly-typed. This means we run into difficulties declarating a model in the containing view and an IEnumerable instance of it for the partial view.
+One way around this is to instead discard the model for the mainview, and use jQuery and AJAX to read values from specific input elements in the main view, and pass those values to the controller action that returns the partial view with the IEnumerable model.
+One of the advantages of this method is the codebase might be cleaner and the application wouldn't need to reload entire sections to update parts of the main view - we can choose to update only the content within specific <em>div</em> tags.</p>
+<h2 id="jquery-and-ajax-setup">jQuery and AJAX Setup</h2>
+<p>Install <em>Microsoft.jQuery.Unobtrusive.Ajax</em> using NuGet. This will be loaded into the <em>/Dependencies/Packages</em> folder of the project. For some reason this was missing in the template project.</p>
+<p>All the AJAX handlers should be in a dedicated JavaScript file. The .NET Core 6 MVC template provides a site.js file for this, but here I've placed the custom JS in <em>~/js/home.js</em>. This should be referenced in <em>~\Views\Shared_Layout.cshtml</em> as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;script src=&quot;~/js/site.js&quot; asp-append-version=&quot;true&quot;&gt;&lt;/script&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>&lt;script src=&quot;~/js/home.js&quot;&gt;&lt;/script&gt;
 </code></pre></div>
-<p>Another method of padding must be used for the text message, as SHA256 is non-reversible. The AES function only allows plaintext lengths that are multiples of 16 bytes, but each character is a byte, and the string functions can be used for rounding a message up to the nearst 16 characters.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>message = raw_input(&#39;MESSAGE: &#39;)
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>length = 16 - (len(message) % 16)
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>message += chr(length)*length
+<p>Note: This should be placed after the line referencing jquery.min.js, as this needs to load first. Alternatively, setting <em>RenderSectionAsync()</em> to true might solve any loading issues related to this.</p>
+<p>An example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>// AJAX handler for user search
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>$(&quot;.btn-submit-user-query&quot;).click(function (e) {
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    var searchTerm = $(&quot;.user-search-term&quot;).val();
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    $.ajax({
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>        url: &#39;/Home/AdminUsersSearch&#39;,
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>        type: &#39;GET&#39;,
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>        contentType: &#39;application/json; charset=utf-8&#39;,
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>        data: { searchTerm },
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>        success: function (data) {
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>            //var message = data.Message;
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>            $(&#39;#user-search-results&#39;).html(data);
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>        }
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>    })
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>   });
 </code></pre></div>
-<p>In the following section I’ve used ECB mode AES anyway. Because the algorithm shifts bits around, and not whole ASCII character bytes, the ciphertext is normally binary data that doesn’t translate well to ASCII, so the output is Base64 encoded:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>EncryptData = AES.new(encodedPass, AES.MODE_ECB)
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>ciphertext = EncryptData.encrypt(message)
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>print base64.b64encode(ciphertext)
-</code></pre></div>
-<p>The password used for encrypting the message will have the same SHA256 value as before, so therefore the key will be exactly the same for decryption.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Pass = raw_input(&#39;KEY: &#39;)
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>encodedPass = hashlib.sha256(Pass).digest()
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>message = raw_input(&#39;CIPHERTEXT: &#39;)
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>length = 16 - (len(message) % 16)
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>message += chr(length)*length
-</code></pre></div>
-<p>The padding sometimes causes the output to be appended with erroneous symbols, but the plaintext is still quite readable. If characters are missing, check that both encryption and decryption functions are using the same mode (CBC or EBC).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>DecryptData = AES.new(encodedPass, AES.MODE_EBC)
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>plaintext = DecryptData.decrypt(base64.b64decode(message))
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>print plaintext
+<p>On success, the above function will replace whatever's within the <em>#user-search-results</em> div with whatever is returned by the IAction controller method. In this case it will be a partial view with a model populated by the search results.</p>
+<p>The controller action will require an [HttpAction] attribute to respond to AJAX calls:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>[HttpGet]
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>public IActionResult AdminUsersSearch(string searchTerm)
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>{
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    var model = _context.Users.Where(m =&gt; m.UserName.Contains(searchTerm)).ToList();
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    return PartialView(&quot;_UsersSearchResults&quot;, model);
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>}
 </code></pre></div>
 
               
@@ -856,7 +911,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="jupyter.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Jupyter Notebooks" rel="prev">
+        <a href="opencart.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: OpenCart Development Notes" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -865,20 +920,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Jupyter Notebooks
+              OpenCart Development Notes
             </div>
           </div>
         </a>
       
       
         
-        <a href="python-authentication.html" class="md-footer__link md-footer__link--next" aria-label="Next: Authentication with Python" rel="next">
+        <a href="ajax-view-injection.html" class="md-footer__link md-footer__link--next" aria-label="Next: AJAX View Injection" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Authentication with Python
+              AJAX View Injection
             </div>
           </div>
           <div class="md-footer__button md-icon">
