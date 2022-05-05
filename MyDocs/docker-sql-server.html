@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#opencart-development-notes" class="md-skip">
+        <a href="#using-a-containerised-net-core-project-with-a-containerised-sql-server-docker" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenCart Development Notes
+              Docker and SQL Server
             
           </span>
         </div>
@@ -437,101 +437,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          OpenCart Development Notes
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="opencart.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="opencart.html" class="md-nav__link">
         OpenCart Development Notes
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#application-structure" class="md-nav__link">
-    Application Structure
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-code-template" class="md-nav__link">
-    Module Code Template
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#five-layer-categories-module" class="md-nav__link">
-    Five Layer Categories Module
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-changes-to-the-front-end" class="md-nav__link">
-    Viewing Changes to the Front End
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backing-up" class="md-nav__link">
-    Backing Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#case-study-in-what-could-go-wrong" class="md-nav__link">
-    Case Study in What Could Go Wrong
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settings-db-table" class="md-nav__link">
-    Settings DB Table
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -706,14 +616,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" checked>
       
       
       
@@ -770,11 +682,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="docker-sql-server.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Docker and SQL Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="docker-sql-server.html" class="md-nav__link md-nav__link--active">
         Docker and SQL Server
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-sql-server-container" class="md-nav__link">
+    The SQL Server Container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-a-containerised-application-communicating-with-a-containerised-database" class="md-nav__link">
+    Getting a Containerised Application Communicating with a Containerised Database
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -921,57 +881,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#application-structure" class="md-nav__link">
-    Application Structure
+  <a href="#the-sql-server-container" class="md-nav__link">
+    The SQL Server Container
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#module-code-template" class="md-nav__link">
-    Module Code Template
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#five-layer-categories-module" class="md-nav__link">
-    Five Layer Categories Module
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-changes-to-the-front-end" class="md-nav__link">
-    Viewing Changes to the Front End
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backing-up" class="md-nav__link">
-    Backing Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#case-study-in-what-could-go-wrong" class="md-nav__link">
-    Case Study in What Could Go Wrong
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settings-db-table" class="md-nav__link">
-    Settings DB Table
+  <a href="#getting-a-containerised-application-communicating-with-a-containerised-database" class="md-nav__link">
+    Getting a Containerised Application Communicating with a Containerised Database
   </a>
   
 </li>
@@ -989,101 +907,61 @@
               
                 
 
-<h1 id="opencart-development-notes">OpenCart Development Notes</h1>
-<p>Essentially OpenCart is a PHP-based platform that typically runs on a LAMP stack. I have, however, been managing it through cPanel on a conventional hosting plan.</p>
-<p>Application changes will entail the installation, and perhaps the creation or modification of modules. Operating an OpenCart portal is therefore best done with the support of PHP developers who understand something of the MVC pattern.
-The platform must be installed on a Web server, which means backing up the application state and data, contingency planning and security are the responsibility of the business.</p>
-<p>The dashboard is easy enough to navigate, but it's the files that make up the platform that we need to understand.
-The application follows an MVC structure, but there are two main sections: The /admin directory contains the source files for the administration dashboard, and the /catalogue directory has the source for what the site's vistors are presented with.</p>
-<h2 id="application-structure">Application Structure</h2>
-<p>Files are organised into <em>/admin</em> and <em>/catalog</em> directories.</p>
-<p>/admin</p>
-<ul>
-<li>
-<p>/controller</p>
-</li>
-<li>
-<p>/view</p>
-</li>
-</ul>
-<p>/catalog</p>
-<ul>
-<li>
-<p>/controller</p>
-</li>
-<li>
-<p>/view</p>
-</li>
-</ul>
-<p>The scripts in /admin determine what site admins see in the dashboard. Scripts in the /catalog directory determine what others see when visiting the site.</p>
-<p>Defined by .twig Files:
-- The structure of the site's interface. By default, it defines a layout with a header, body, left column, right column and footer.</p>
-<p>Defined by modules:
-- The modules define what appears within each element (e.g. header or body) of the site's interface.</p>
-<h2 id="module-code-template">Module Code Template</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>class ControllerExtensionModule
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    MyModule extends Controller
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>{
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    private $error = array();
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    public function index() {}
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    public function validate() {}
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    public function install() {}
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    public function uninstall() {}
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>}
+<h1 id="using-a-containerised-net-core-project-with-a-containerised-sql-server-docker">Using a Containerised .NET Core Project With a Containerised SQL Server (Docker)</h1>
+<p>Since I've done the following as a workaround to get a containerised .NET Core application communicating with a local SQL Server, I've ended up with something that diverged from the standard way of doing things.</p>
+<p>The first step was to set up Docker support in the Visual Studio project:
+- Right-click on the project root, and select '<em>Add</em>' -&gt; '<em>Docker Support...</em>'.
+- Right-click on the project root again, and select '<em>Add</em>' -&gt; '<em>Container Orchestrator Support...</em>'.</p>
+<p>At this point, there should be a docker-compose section in the Visual Studio solution, with <em>.dockerignore</em> and <em>docker-compose.yml</em> files in the solution directory. There will also be a hidden override file there, plus a Dockerfile within the project. Combined, these should enable other developers to replicate the process of creating the images.</p>
+<p>The <em>docker-compose.yml</em> file should initially contain the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>version: &#39;3.4&#39;
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>services:
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>  dotnet-core-6-mvc:
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    image: ${DOCKER_REGISTRY-}dotnetcore6mvc
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    build:
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>      context: .
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>      dockerfile: Test-MVC/Dockerfile
 </code></pre></div>
-<h2 id="five-layer-categories-module">Five Layer Categories Module</h2>
-<p>/admin
-- Enable drag-and drop or category customisation in the dashboard.
-- Also features to enable the management of categories.</p>
-<p>/catalogue
-- Show category groups and entries on the page.
-* CategoryManager.php</p>
-<h2 id="viewing-changes-to-the-front-end">Viewing Changes to the Front End</h2>
-<p>The theme cache must be refreshed in order to view application changes. In the <em>Dashboard</em> tab, click the blue cog button at the top right. In the <em>Developer Settings</em> modal, clich the <em>Refresh</em> button for the theme.</p>
-<p>Any additional JavaScript funtions and AJAX calls to be added to <em>common.js</em>.</p>
-<h2 id="backing-up">Backing Up</h2>
-<p>There are a couple of things that should be backed up. One of these is the application state - everything in the home directory that's accessed through cPanel or FTP.</p>
-<p>The OpenCart dashboard allows a backup to be made of the store's database. This can quickly be restored using the <strong>Import</strong> feature.</p>
-<p><em>System</em> -&gt; <em>Maintainence</em> -&gt; <em>Backup/Restore</em></p>
-<h2 id="case-study-in-what-could-go-wrong">Case Study in What Could Go Wrong</h2>
-<ul>
-<li>A dodgy module was installed through the module repository. After installation this screwed up OpenCart core files, causing main features of the application to fail.</li>
-<li>Resolvving this entailed repairing an incorrect reference to a system file in the <em>vqmod</em> cache code.</li>
-<li>The model also needed to be repaired.</li>
-<li>Had to copy a system file from a backup to the current installation.</li>
-</ul>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<ol>
-<li>
-<p>See the error log in <em>/home/user/logs</em>. This will indicate the cause of an error.</p>
-</li>
-<li>
-<p>Sometimes the log entries indicate a PHP error. Fixing this should require a minor change to the code.</p>
-</li>
-<li>
-<p>Another useful source of diagnostic information is the Developer tool in the browser. This will reveal the server response codes to a request.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>- 200: Okay
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>- 300: Usually a routing problem
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>- 400: Missing file(s)
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>- 500: Server configuration problem
-</code></pre></div></p>
-</li>
-</ol>
-<h2 id="settings-db-table">Settings DB Table</h2>
-<ul>
-<li>setting_id</li>
-<li>store_id (Default value is '0')</li>
-<li>group</li>
-<li>key</li>
-<li>value</li>
-<li>serialized</li>
-</ul>
-<p>Look at the <em>Data</em> tab in <em>Categories</em>, under <em>Catalogue</em>.
-The <em>Columns</em> field might allow the number of subcategories to be set.</p>
+<p>Also, the Visual Studio debug options will be replaced with the configuration for <em>Docker Compose</em>. To run the project using IIS Express again, just click the drop-down with '<em>docker-compose</em>' and select the original project name.</p>
+<p>The .NET Core application will run as a Docker container, referenced in the Docker registry. Aside from not being able to connect to a local database server, it runs well enough.</p>
+<h2 id="the-sql-server-container">The SQL Server Container</h2>
+<p>The second container was created by first pulling the MSSQL image from Microsoft:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>docker pull mcr.microsoft.com/mssql/server:2017-latest
+</code></pre></div>
+<p>Running '$docker images', something like the following should appear in the registry:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>mcr.microsoft.com/mssql/server  2019-latest  d78e982c2f2b  3 months ago  1.48GB
+</code></pre></div>
+<p>Now we want to initialise the SQL server image, making sure to specify a reasonably complex password (or the service will fail to start):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>docker run -e &quot;ACCEPT_EULA=Y&quot; -e &quot;SA_PASSWORD=StandardPass56&quot; -p 1433:1433 --name RBC  -d mcr.microsoft.com/mssql/server:2019-latest
+</code></pre></div>
+<p>If the service container is running (we can check using Docker Desktop or the CLI), it should be possible to connect to it using SQL Server Management Studio on port 1433. At this point I also ran a few more SQL scripts to recreate the tables that were present in the original database (see the Azure Data Studio notebook).</p>
+<h2 id="getting-a-containerised-application-communicating-with-a-containerised-database">Getting a Containerised Application Communicating with a Containerised Database</h2>
+<p>I had to resort to Stack Overflow to learn why the application wouldn't communicate with a local SQL Server, even when trying it with an explicit loopback address and the local machine hostname, and checking it was configured to accept TCP connections. Using 'host.docker.internal' in the connection string seemed to resolve this.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>&quot;ConnectionStrings&quot;: {
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>  &quot;DefaultConnection&quot;: &quot;Server=host.docker.internal;Initial Catalog=dockertest;Integrated Security=false;User ID=SA;Password=StandardPass56&quot;
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>}
+</code></pre></div>
+<p>If, for some reason, the project references an older database connection in <em>Connected Services</em> and <em>Secrets.json</em>, these must be removed, as the application will otherwise revert to that.</p>
+<p>As for the <em>docker-compose.yml</em> configuration, this seems to work:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>version: &#39;3.4&#39;
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>services:
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>  dotnet-core-6-mvc:
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>    image: ${DOCKER_REGISTRY-}dotnetcore6mvc
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>    build:
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>      context: .
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>      dockerfile: Test-MVC/Dockerfile
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>  DockerSqlServerNew:
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>    image: mcr.microsoft.com/mssql/server
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    environment:
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    - SA_PASSWORD=StandardPass56
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>    - ACCEPT_EULA=Y
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>    ports:
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>    - &quot;1443:1433&quot;
+</code></pre></div>
+<p>After running '<em>docker-compose build</em>' and '<em>docker-compose up</em>', the Docker registry should list a container that includes the DB service with the application.</p>
 
               
             </article>
@@ -1097,7 +975,7 @@ The <em>Columns</em> field might allow the number of subcategories to be set.</p
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="linux-kernel-module.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux Kernel Modules" rel="prev">
+        <a href="sqlite.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: SQLite3" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1106,20 +984,20 @@ The <em>Columns</em> field might allow the number of subcategories to be set.</p
               <span class="md-footer__direction">
                 Previous
               </span>
-              Linux Kernel Modules
+              SQLite3
             </div>
           </div>
         </a>
       
       
         
-        <a href="dotnet-core-6-ajax.html" class="md-footer__link md-footer__link--next" aria-label="Next: AJAX Requests in DotNET Core 6 MVC" rel="next">
+        <a href="jupyter.html" class="md-footer__link md-footer__link--next" aria-label="Next: Jupyter Notebooks" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              AJAX Requests in DotNET Core 6 MVC
+              Jupyter Notebooks
             </div>
           </div>
           <div class="md-footer__button md-icon">

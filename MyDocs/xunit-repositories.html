@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#opencart-development-notes" class="md-skip">
+        <a href="#net-core-creating-an-xunit-test-for-an-application-with-a-generic-repository-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenCart Development Notes
+              Unit Testing with xUnit and Repositories
             
           </span>
         </div>
@@ -437,101 +437,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          OpenCart Development Notes
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="opencart.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="opencart.html" class="md-nav__link">
         OpenCart Development Notes
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#application-structure" class="md-nav__link">
-    Application Structure
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-code-template" class="md-nav__link">
-    Module Code Template
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#five-layer-categories-module" class="md-nav__link">
-    Five Layer Categories Module
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-changes-to-the-front-end" class="md-nav__link">
-    Viewing Changes to the Front End
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backing-up" class="md-nav__link">
-    Backing Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#case-study-in-what-could-go-wrong" class="md-nav__link">
-    Case Study in What Could Go Wrong
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settings-db-table" class="md-nav__link">
-    Settings DB Table
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -541,14 +451,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" checked>
       
       
       
@@ -629,11 +541,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="xunit-repositories.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit Testing with xUnit and Repositories
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="xunit-repositories.html" class="md-nav__link md-nav__link--active">
         Unit Testing with xUnit and Repositories
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-unit-test-project" class="md-nav__link">
+    Setting Up a Unit Test Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-a-home-controller-method" class="md-nav__link">
+    Testing a Home Controller Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-repositories-using-setup" class="md-nav__link">
+    Attaching Repositories Using Setup()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-mock-entities" class="md-nav__link">
+    Adding Mock Entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-return-data" class="md-nav__link">
+    Testing the Return Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -921,57 +902,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#application-structure" class="md-nav__link">
-    Application Structure
+  <a href="#setting-up-a-unit-test-project" class="md-nav__link">
+    Setting Up a Unit Test Project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#module-code-template" class="md-nav__link">
-    Module Code Template
+  <a href="#testing-a-home-controller-method" class="md-nav__link">
+    Testing a Home Controller Method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#five-layer-categories-module" class="md-nav__link">
-    Five Layer Categories Module
+  <a href="#attaching-repositories-using-setup" class="md-nav__link">
+    Attaching Repositories Using Setup()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-changes-to-the-front-end" class="md-nav__link">
-    Viewing Changes to the Front End
+  <a href="#adding-mock-entities" class="md-nav__link">
+    Adding Mock Entities
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backing-up" class="md-nav__link">
-    Backing Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#case-study-in-what-could-go-wrong" class="md-nav__link">
-    Case Study in What Could Go Wrong
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settings-db-table" class="md-nav__link">
-    Settings DB Table
+  <a href="#testing-the-return-data" class="md-nav__link">
+    Testing the Return Data
   </a>
   
 </li>
@@ -989,101 +949,111 @@
               
                 
 
-<h1 id="opencart-development-notes">OpenCart Development Notes</h1>
-<p>Essentially OpenCart is a PHP-based platform that typically runs on a LAMP stack. I have, however, been managing it through cPanel on a conventional hosting plan.</p>
-<p>Application changes will entail the installation, and perhaps the creation or modification of modules. Operating an OpenCart portal is therefore best done with the support of PHP developers who understand something of the MVC pattern.
-The platform must be installed on a Web server, which means backing up the application state and data, contingency planning and security are the responsibility of the business.</p>
-<p>The dashboard is easy enough to navigate, but it's the files that make up the platform that we need to understand.
-The application follows an MVC structure, but there are two main sections: The /admin directory contains the source files for the administration dashboard, and the /catalogue directory has the source for what the site's vistors are presented with.</p>
-<h2 id="application-structure">Application Structure</h2>
-<p>Files are organised into <em>/admin</em> and <em>/catalog</em> directories.</p>
-<p>/admin</p>
-<ul>
-<li>
-<p>/controller</p>
-</li>
-<li>
-<p>/view</p>
-</li>
-</ul>
-<p>/catalog</p>
-<ul>
-<li>
-<p>/controller</p>
-</li>
-<li>
-<p>/view</p>
-</li>
-</ul>
-<p>The scripts in /admin determine what site admins see in the dashboard. Scripts in the /catalog directory determine what others see when visiting the site.</p>
-<p>Defined by .twig Files:
-- The structure of the site's interface. By default, it defines a layout with a header, body, left column, right column and footer.</p>
-<p>Defined by modules:
-- The modules define what appears within each element (e.g. header or body) of the site's interface.</p>
-<h2 id="module-code-template">Module Code Template</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>class ControllerExtensionModule
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    MyModule extends Controller
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>{
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    private $error = array();
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    public function index() {}
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    public function validate() {}
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    public function install() {}
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    public function uninstall() {}
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>}
+<h1 id="net-core-creating-an-xunit-test-for-an-application-with-a-generic-repository-pattern">.NET Core: Creating an xUnit Test for an Application with a Generic Repository Pattern</h1>
+<p>In all honesty I found it pretty damn hard to get this working, and I was questioning whether I should have used Unit of Work in the first place (there are already layers of abstraction in the standard .NET Core template project). I managed to get a functioning <a href="https://xunit.net">xUnit test</a> method that mocks the repositories, populates them with data and verifies the model returned by a controller method.</p>
+<h2 id="setting-up-a-unit-test-project">Setting Up a Unit Test Project</h2>
+<p>Add a xUnit project to the solution, then add an assembly reference in that to the project being tested. Just to check the test method executes and to show the format of a basic class:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>using Xunit;
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>public class UnitTest1
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>{
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  [Fact]
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>  public void SimpleTest()
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>  {
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    int five = 5;
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    Assert.Equal(5, five);
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>  }
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>}
 </code></pre></div>
-<h2 id="five-layer-categories-module">Five Layer Categories Module</h2>
-<p>/admin
-- Enable drag-and drop or category customisation in the dashboard.
-- Also features to enable the management of categories.</p>
-<p>/catalogue
-- Show category groups and entries on the page.
-* CategoryManager.php</p>
-<h2 id="viewing-changes-to-the-front-end">Viewing Changes to the Front End</h2>
-<p>The theme cache must be refreshed in order to view application changes. In the <em>Dashboard</em> tab, click the blue cog button at the top right. In the <em>Developer Settings</em> modal, clich the <em>Refresh</em> button for the theme.</p>
-<p>Any additional JavaScript funtions and AJAX calls to be added to <em>common.js</em>.</p>
-<h2 id="backing-up">Backing Up</h2>
-<p>There are a couple of things that should be backed up. One of these is the application state - everything in the home directory that's accessed through cPanel or FTP.</p>
-<p>The OpenCart dashboard allows a backup to be made of the store's database. This can quickly be restored using the <strong>Import</strong> feature.</p>
-<p><em>System</em> -&gt; <em>Maintainence</em> -&gt; <em>Backup/Restore</em></p>
-<h2 id="case-study-in-what-could-go-wrong">Case Study in What Could Go Wrong</h2>
-<ul>
-<li>A dodgy module was installed through the module repository. After installation this screwed up OpenCart core files, causing main features of the application to fail.</li>
-<li>Resolvving this entailed repairing an incorrect reference to a system file in the <em>vqmod</em> cache code.</li>
-<li>The model also needed to be repaired.</li>
-<li>Had to copy a system file from a backup to the current installation.</li>
-</ul>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<ol>
-<li>
-<p>See the error log in <em>/home/user/logs</em>. This will indicate the cause of an error.</p>
-</li>
-<li>
-<p>Sometimes the log entries indicate a PHP error. Fixing this should require a minor change to the code.</p>
-</li>
-<li>
-<p>Another useful source of diagnostic information is the Developer tool in the browser. This will reveal the server response codes to a request.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>- 200: Okay
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>- 300: Usually a routing problem
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>- 400: Missing file(s)
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>- 500: Server configuration problem
-</code></pre></div></p>
-</li>
-</ol>
-<h2 id="settings-db-table">Settings DB Table</h2>
-<ul>
-<li>setting_id</li>
-<li>store_id (Default value is '0')</li>
-<li>group</li>
-<li>key</li>
-<li>value</li>
-<li>serialized</li>
-</ul>
-<p>Look at the <em>Data</em> tab in <em>Categories</em>, under <em>Catalogue</em>.
-The <em>Columns</em> field might allow the number of subcategories to be set.</p>
+<p>When the test is run, the method will execute and show in the results as a test that passed. That's because I declared five as '5', and used <em>Assert.Equal</em> to check the two values match.</p>
+<p>Test methods typically have sections for Arrange, Act and Assert - instantiating a data model, defining an expected result and comparing the actual result against it - and, of course, there are multiple Assert methods that could be used for testing various other conditions.
+And, if your code is anything like mine (which deviated somewhat from the prescribed way of doing things), it will need to:
+- Create a test instance of IUnitOfWork and pass that to the application's controller
+- Create mock repositories
+- Associate test entities with the repositories
+- Check the test entities against what's returned by the controller being tested</p>
+<h2 id="testing-a-home-controller-method">Testing a Home Controller Method</h2>
+<p>Unit testing a <em>HomeController</em> in a .NET Core application that's using the repository pattern is less straightforward. I'm not using DbContext or the Entity Framework model directly. The good news is it's not necessary to duplicate the Repository Pattern or the Unit of Work, as they can be imported from the application project:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>using DotNetCore6.Controllers;
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>using DotNetCore6.Data;
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>using DotNetCore6.Models;
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>using Microsoft.AspNetCore.Mvc;
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>using System.Collections.Generic;
+</code></pre></div>
+<p>The unit test must create an instance of <em>HomeController</em>, which requires <em>something</em> like <em>IUnitOfWork</em> to be passed to it. This takes the place of DbContext.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>public HomeController(IUnitOfWork unitOfWork)
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>{
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>  _unitOfWork = unitOfWork;
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>}
+</code></pre></div>
+<p><a href="https://github.com/Moq/moq4/wiki/Quickstart">Moq</a> can be used for creating a test instance of <em>IUnitOfWork</em> and the repositories, and for passing them to <em>HomeController</em>. The method under test, <em>PowerOn()</em>, simply fetches a list of computers from the <em>Computers</em> model and returns that in a view.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>[Fact]
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>public void TestPowerOnView()
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>{
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    var mockUoW = new Mock&lt;IUnitOfWork&gt;();
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    var powerOnService = new HomeController(mockUoW.Object).PowerOn();
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    var result = powerOnService.View();
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    Assert.IsType&lt;ViewResult&gt;(result);
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>}
+</code></pre></div>
+<p>After setting a breakpoint within the <em>HomeController</em> constructor and running the test in debug mode, it will be evident that something like <em>IUnitOfWork</em> had been passed to it, and there are references to the Entity Framework models.</p>
+<h2 id="attaching-repositories-using-setup">Attaching Repositories Using Setup()</h2>
+<p>The next step is to attach the repositories to the Unit of Work being passed to <em>HomeController</em>. The <em>Setup()</em> method will do all the work of adding them to <em>Mock<IUnitOfWork>()</em> anyway.</p>
+<p>If we use something like the following code (the <em>GetAll()</em> method is defined in <em>my</em> implementation of Unit of Work) and set a breakpoint on the <em>HomeController</em> again, we find that it's discovered <em>IComputersRepository</em>, <em>ILabsRepository</em> and <em>IUsersRepository</em>. The interfaces don't refer to actual repositories or entities yet.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>[Fact]
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>public void TestPowerOnView()
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>{
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>      var mockUoW = new Mock&lt;IUnitOfWork&gt;();
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>      mockUoW.Setup(a =&gt; a.Computers.GetAll());
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>      mockUoW.Setup(a =&gt; a.Labs.GetAll());
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>      mockUoW.Setup(a =&gt; a.Users.GetAll());
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>      var powerOnService = new HomeController(mockUoW.Object).PowerOn();
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>      var result = powerOnService;
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>      Assert.IsType&lt;ViewResult&gt;(result);
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>}
+</code></pre></div>
+<h2 id="adding-mock-entities">Adding Mock Entities</h2>
+<p>The next problem is that of getting the entities passed to the controller. Normally a repository will refer to an IEnumerable/List<Entities>. For the sake of making things easier to follow, I've created a mock repository within the test method.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>[Fact]
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>public void TestPowerOnView()
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>{
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>  List&lt;Computers&gt; mockComputer = new List&lt;Computers&gt;()
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>  {
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>      new Computers()
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>      {
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>          id = 1,
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>          host = &quot;TEST COMPUTER&quot;,
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>          ip = &quot;193.134.9.5&quot;,
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>          mac = &quot;TEST MAC ADDRESS&quot;,
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>          subnet = &quot;255.255.0.0&quot;,
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>          broadcast = &quot;255.255.255.255&quot;,
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>          created_at = System.DateTime.Now,
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>          updated_at = System.DateTime.Now
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>      }
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>    };
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    var mockUoW = new Mock&lt;IUnitOfWork&gt;();
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>    mockUoW.Setup(a =&gt; a.Computers.GetAll()).Returns(mockComputer);
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>    var powerOnService = new HomeController(mockUoW.Object).PowerOn();
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    var result = powerOnService;
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a>    Assert.IsType&lt;ViewResult&gt;(result);
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a>}
+</code></pre></div>
+<p>The method will try <em>GetAll()</em> with an empty repository, but still return the entities in <em>mockComputer</em>. What I didn't realise is we need to put a breakpoint in the method being tested itself to see the model being passed into it.</p>
+<p>This test will pass, but it only verifies that a view was returned by PowerOn(). It doesn't tell us anything about the data being returned.</p>
+<h2 id="testing-the-return-data">Testing the Return Data</h2>
+<p>In this case, getting the model returned also wasn't straightforward, as I couldn't access the model directly. I needed to add some extra code to extract that.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>var viewResult = Assert.IsType&lt;ViewResult&gt;(result);
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>var model = Assert.IsAssignableFrom&lt;IEnumerable&lt;Computers&gt;&gt;(viewResult.ViewData.Model);
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>Assert.Equal(mockComputer, model);
+</code></pre></div>
 
               
             </article>
@@ -1097,7 +1067,7 @@ The <em>Columns</em> field might allow the number of subcategories to be set.</p
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="linux-kernel-module.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux Kernel Modules" rel="prev">
+        <a href="web-services.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Web Services" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1106,20 +1076,20 @@ The <em>Columns</em> field might allow the number of subcategories to be set.</p
               <span class="md-footer__direction">
                 Previous
               </span>
-              Linux Kernel Modules
+              Web Services
             </div>
           </div>
         </a>
       
       
         
-        <a href="dotnet-core-6-ajax.html" class="md-footer__link md-footer__link--next" aria-label="Next: AJAX Requests in DotNET Core 6 MVC" rel="next">
+        <a href="web-apis.html" class="md-footer__link md-footer__link--next" aria-label="Next: Web APIs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              AJAX Requests in DotNET Core 6 MVC
+              Web APIs
             </div>
           </div>
           <div class="md-footer__button md-icon">
