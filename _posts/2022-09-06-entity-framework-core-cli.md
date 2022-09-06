@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Entity Framework Core Command Line Interface"
 date:   2022-09-06 12:07:34 +0100
-categories: jekyll update
+categories: DotNet EntityFramework Migrations Reference PowerShell
 ---
 
 # .NET Core Entity Framework Command Line Reference
@@ -63,6 +63,3 @@ dotnet ef migrations script
 ```
 dotnet ef migrations bundle
 ```
-
-
-#DotNet #EntityFramework #Migrations #Reference #PowerShell
