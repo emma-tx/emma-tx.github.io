@@ -5,8 +5,6 @@
 layout: home
 ---
 
-# Welcome
-
 See the [Repositories](/repositories) page for information on repositories.
 
 Other guides are below. 
