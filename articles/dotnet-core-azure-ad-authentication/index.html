@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -663,8 +677,8 @@
 <li>Microsoft.Identity.Web</li>
 <li>Microsoft.Identity.Web.UI</li>
 </ul>
-<p>Along with the following <em>builder.Services</em> sections:</p>
-<pre><code>builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+<p>Along with the following <em>builder.Services</em> sections:
+<div class="highlight"><pre><span></span><code>builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection(&quot;AzureAd&quot;));
 
 builder.Services.AddAuthorization(options =&gt;
@@ -673,13 +687,13 @@ builder.Services.AddAuthorization(options =&gt;
 });
 builder.Services.AddRazorPages()
     .AddMicrosoftIdentityUI();
-</code></pre>
-<pre><code>app.UseAuthentication();
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>app.UseAuthentication();
 app.UseAuthorization();
-</code></pre>
+</code></pre></div>
 <h2 id="appsettingsjson">appsettings.json</h2>
 <p>The following section is added for the App Registrations entry:</p>
-<pre><code>&quot;AzureAd&quot;: {
+<div class="highlight"><pre><span></span><code>&quot;AzureAd&quot;: {
     &quot;Instance&quot;: &quot;https://login.microsoftonline.com/&quot;,
     &quot;Domain&quot;: &quot;[Domain]&quot;,
     &quot;TenantId&quot;: &quot;e5aafe7c-971b-4ab7-b039-141ad36acec0&quot;,
@@ -688,12 +702,12 @@ app.UseAuthorization();
     &quot;Scopes&quot;: &quot;access_as_user&quot;,
     &quot;SignedOutCallbackPath&quot;: &quot;/signout-callback-oidc&quot;
   }
-</code></pre>
+</code></pre></div>
 <p>It should be possible to just replace the <em>ClientId</em>  and <em>Scopes</em> values, as required, after an App Registration is created by the Azure service administrator.</p>
 <h2 id="propertieslaunchsettingsjson">Properties/launchSettings.json</h2>
 <p>There don't appear to be any changes in this file relevant to Azure AD authentication.</p>
 <h2 id="propertiesservicesdepenciesjson">Properties/servicesDepencies.json</h2>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;dependencies&quot;: {
     &quot;identityapp1&quot;: {
       &quot;type&quot;: &quot;identityapp&quot;
@@ -703,7 +717,7 @@ app.UseAuthorization();
     }
   }
 }
-</code></pre>
+</code></pre></div>
 <h2 id="connected-services">Connected Services</h2>
 <p>A reference to Microsoft identity platform is added under the <em>Connected Services</em> section. This can be edited at any point to add a new TenantId and/or ClientId.</p>
 <h2 id="dependencies">Dependencies</h2>
@@ -731,7 +745,7 @@ app.UseAuthorization();
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
+        <a href="../sql-server-db-vs-project/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Visual Studio SQL Server Database Project" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -740,7 +754,7 @@ app.UseAuthorization();
               <span class="md-footer__direction">
                 Previous
               </span>
-              About
+              Visual Studio SQL Server Database Project
             </div>
           </div>
         </a>

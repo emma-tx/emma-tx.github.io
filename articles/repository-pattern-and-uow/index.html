@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dotnet-core-azure-ad-authentication/" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -642,7 +656,7 @@
 <p>In my project, all the repository and Unit of Work code is within the <em>DotNetCore6.Data</em> namespace.</p>
 <h2 id="add-igeneric-repository-interface">Add IGeneric Repository Interface</h2>
 <p>This is essentially a boilerplate interface, and will be exposed to the application controller methods. It points to methods in the <em>Generic</em> class that implement fetch and write operations.</p>
-<pre><code>public interface IGenericRepository&lt;T&gt; where T : class
+<div class="highlight"><pre><span></span><code>public interface IGenericRepository&lt;T&gt; where T : class
 {
   T GetById(int id);
   IEnumerable&lt;T&gt; GetAll();
@@ -652,11 +666,11 @@
   void Remove(T entity);
   void RemoveRange(IEnumerable&lt;T&gt; entities);
 }
-</code></pre>
+</code></pre></div>
 <h2 id="add-a-generic-repository-class">Add a Generic Repository Class</h2>
 <p>The <em>GenericRepository</em> class is where <em>generic</em> services exposed by the interface are implemented, and it uses the <em>ApplicationDbContext</em> directly. It passes <em>ApplicationDbContext</em> to a class and constructs it as '<em>_context</em>', just as I did in the <em>HomeController</em> referred to in an earlier post.</p>
 <p>Notice that this is a generic repository, which isn't specific to anything in the Entity Framework model. This means I'm not duplicating the same data access code for each model class - though the code would likely be easier to follow if I did. Instead we'll declare and extend this class elsewhere, as needed.</p>
-<pre><code>public class GenericRepository&lt;T&gt; : IGenericRepository&lt;T&gt; where T : class
+<div class="highlight"><pre><span></span><code>public class GenericRepository&lt;T&gt; : IGenericRepository&lt;T&gt; where T : class
 {
   protected readonly ApplicationDbContext _context;
   public GenericRepository(ApplicationDbContext context)
@@ -678,11 +692,11 @@
   }
   ...
 }
-</code></pre>
+</code></pre></div>
 <p>The above sections can be considered (and used as) boilerplate code, though I'll likely be adding several other methods for other read/write/update functions later on. From this point, we need to extend this generic repository for working with the Entity Framework model classes.</p>
 <h2 id="extend-the-generic-repository-for-the-entity-framework-classes">Extend the Generic Repository for the Entity Framework Classes</h2>
 <p>In this section of code (<em>ComputersRepository.cs</em>), we create a <em>non-generic</em> repository for each model class. In this case, <em>IComputersRepository</em> will extend <em>IGenericRepository</em>. As we can see, I've also placed its implementation, <em>ComputersRepository</em>, in the same file.</p>
-<pre><code>public interface IComputersRepository : IGenericRepository&lt;Computer&gt;
+<div class="highlight"><pre><span></span><code>public interface IComputersRepository : IGenericRepository&lt;Computer&gt;
 {
   IEnumerable&lt;Computer&gt; GetComputers(int count);
 }
@@ -697,19 +711,19 @@ public class ComputersRepository : GenericRepository&lt;Computer&gt;, IComputers
     return _context.Computers.ToList();
   }
 }
-</code></pre>
+</code></pre></div>
 <h2 id="unit-of-work-classes">Unit of Work Classes</h2>
 <p>Next I wanted to add a Unit of Work pattern to the project. Instead of using <em>_context.Computers</em> or <em>_context.Labs</em>, as I did originally, I'm defining them as interfaces within <em>IUnitOfWork</em>, containing an interface for each model class.</p>
-<pre><code>public interface IUnitOfWork : IDisposable
+<div class="highlight"><pre><span></span><code>public interface IUnitOfWork : IDisposable
 {
   IComputersRepository Computers { get; }
   ILabsRepository Labs { get; }
   IUsersRepository Users { get; }
   int Complete();
 }
-</code></pre>
+</code></pre></div>
 <p>Only when whichever operation is completed is <em>Complete()</em> called, which in turn saves changes to the DbContext. This should prevent partial updates that might corrupt the data source.</p>
-<pre><code>public class UnitOfWork : IUnitOfWork
+<div class="highlight"><pre><span></span><code>public class UnitOfWork : IUnitOfWork
 {
   private readonly ApplicationDbContext _context;
   public UnitOfWork(ApplicationDbContext context)
@@ -731,9 +745,9 @@ public class ComputersRepository : GenericRepository&lt;Computer&gt;, IComputers
     _context.Dispose();
   }
 }
-</code></pre>
+</code></pre></div>
 <p>At this point, the project will include something like the following for the Repository Pattern, Unit of Work and Entity Framework code:</p>
-<pre><code>|-- Data
+<div class="highlight"><pre><span></span><code>|-- Data
   |-- dbcontext.cs
   |-- UnitOfWork.cs
 |-- Models
@@ -746,28 +760,28 @@ public class ComputersRepository : GenericRepository&lt;Computer&gt;, IComputers
   |-- IGenericRepository.cs
   |-- LabsRepository.cs
   |-- UsersRepository.cs
-</code></pre>
+</code></pre></div>
 <h2 id="registering-the-services">Registering the Services</h2>
 <p>When registering the interfaces in Program.cs in .NET Core 6, we must use '<em>builder.Services</em>' instead of just the '<em>services</em>' namespace:</p>
-<pre><code>builder.Services.AddTransient(typeof(IGenericRepository&lt;&gt;), typeof(GenericRepository&lt;&gt;));
+<div class="highlight"><pre><span></span><code>builder.Services.AddTransient(typeof(IGenericRepository&lt;&gt;), typeof(GenericRepository&lt;&gt;));
 builder.Services.AddTransient&lt;IComputersRepository, ComputersRepository&gt;();
 builder.Services.AddTransient&lt;ILabsRepository, LabsRepository&gt;();
 builder.Services.AddTransient&lt;IUsersRepository, UsersRepository&gt;();
 builder.Services.AddScoped&lt;IUnitOfWork, UnitOfWork&gt;();
-</code></pre>
+</code></pre></div>
 <h2 id="using-the-repository-pattern-in-the-controller">Using the Repository Pattern in the Controller</h2>
 <p>Swap <em>ApplicationDbContext</em> with a constructor for the Unit of Work service:</p>
-<pre><code>private readonly IUnitOfWork _unitOfWork;
+<div class="highlight"><pre><span></span><code>private readonly IUnitOfWork _unitOfWork;
 
 public HomeController(IUnitOfWork unitOfWork)
 {
     _unitOfWork = unitOfWork;
 }
-</code></pre>
+</code></pre></div>
 <p>Accessing data with LINQ:</p>
-<pre><code>var model = _unitOfWork.Users.GetById(id);
+<div class="highlight"><pre><span></span><code>var model = _unitOfWork.Users.GetById(id);
 var model = _unitOfWork.Labs.GetAll().Where(m =&gt; m.Name.Contains(searchTerm)).ToList();
-</code></pre>
+</code></pre></div>
 
 
 

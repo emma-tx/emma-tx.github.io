@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dotnet-core-azure-ad-authentication/" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -563,31 +577,31 @@
 
 <h1 id="kestrel-https-error-net-core-and-docker">Kestrel HTTPS Error - .Net Core and Docker</h1>
 <p>The following is another commonly-posted question in Stack Overflow, which I've been looking at while debugging the same problem:</p>
-<pre><code>System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date.
-</code></pre>
-<p>The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:</p>
-<pre><code>[...]
+<div class="highlight"><pre><span></span><code>System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date.
+</code></pre></div>
+<p>The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:
+<div class="highlight"><pre><span></span><code>[...]
 [15:25:25 FTL] Unable to start Kestrel.
-System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. To generate a developer certificate run 'dotnet dev-certs https'. To trust the certificate (Windows and macOS only) run 'dotnet dev-certs https --trust'.
+System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. To generate a developer certificate run &#39;dotnet dev-certs https&#39;. To trust the certificate (Windows and macOS only) run &#39;dotnet dev-certs https --trust&#39;.
 [...]
-</code></pre>
-<p>And is followed by:</p>
-<pre><code>[...] Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
-</code></pre>
+</code></pre></div></p>
+<p>And is followed by:
+<div class="highlight"><pre><span></span><code>[...] Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+</code></pre></div></p>
 <p>So, the real problem could have been anything from Kestrel simply being unable to start, which is less likely, to Kestrel being unable to bind the service to a port. The easiest thing to check is that the development certificates are valid anyway, using the following:</p>
-<pre><code>dotnet dev-certs https --clean
+<div class="highlight"><pre><span></span><code>dotnet dev-certs https --clean
 dotnet dev-certs https
 dotnet dev-certs https --trust
-</code></pre>
+</code></pre></div>
 <p>And, after this, restarting Visual Studio.</p>
 <h2 id="the-actual-problem">The Actual Problem</h2>
 <p>As it turned out, the problem was caused by the exposed ports and port mappings being incorrectly defined in the Docker configuration. First, shift the ASPNETCORE_URLS variables from the <em>Dockerfile</em> to <em>docker-compose.yml</em> environment section. This is good practice, in my opinion, because all environment variables should ideally be in one place. Next, explicitly set the Kestrel endpoint.</p>
-<pre><code>environment:
+<div class="highlight"><pre><span></span><code>environment:
     - ASPNETCORE_URLS=https://+:443;http://+:80
     - ASPNETCORE_HTTPS_PORT=5001
     - Kestrel__Endpoints__Http__Url=http://*:80
     - ASPNETCORE_ENVIRONMENT= Development
-</code></pre>
+</code></pre></div>
 
 
 

@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dotnet-core-azure-ad-authentication/" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -647,37 +661,37 @@
 
 <h1 id="net-core-entity-framework-command-line-reference">.NET Core Entity Framework Command Line Reference</h1>
 <h2 id="installing-entity-command-line">Installing Entity command line</h2>
-<p>The .NET Entity Framework command line tools can be installed globally in PowerShell, or just for a specific project.</p>
-<pre><code>dotnet tool install --global dotnet-ef
-</code></pre>
-<p>After installation, it might be a good idea to update the tools:</p>
-<pre><code>dotnet tool update --global dotnet-ef
-</code></pre>
+<p>The .NET Entity Framework command line tools can be installed globally in PowerShell, or just for a specific project.
+<div class="highlight"><pre><span></span><code>dotnet tool install --global dotnet-ef
+</code></pre></div></p>
+<p>After installation, it might be a good idea to update the tools:
+<div class="highlight"><pre><span></span><code>dotnet tool update --global dotnet-ef
+</code></pre></div></p>
 <h2 id="add-the-entity-framework-packages-to-a-project">Add the Entity Framework Packages to a Project</h2>
 <p>In order to use the Entity Framework command line tools for a .NET Core project, it's necessary to install the Design package. This could be done using the EF Core CLI or the NuGet Package Manager.</p>
-<pre><code>dotnet add package Microsoft.EntityFrameworkCore.Design
-</code></pre>
+<div class="highlight"><pre><span></span><code>dotnet add package Microsoft.EntityFrameworkCore.Design
+</code></pre></div>
 <p>I also recommend ensuring the following packages are also installed:
 - Microsoft.EntityFrameworkCore 
 - Microsoft.EntityFrameworkCore.SqlServer 
 - Microsoft.EntityFrameworkCore.Tools </p>
 <h2 id="scaffolding-dbcontext">Scaffolding DbContext</h2>
 <p>To generate the migrations, Entity Framework will require the project to have a DbContext. If there isn't one present (there should be), this can be scaffolded from whatever connection string(s) might exist in the configuration file. For this, it might be necessary to define the connection string and the provider.</p>
-<pre><code>dotnet ef dbcontext scaffold [Connection String] [Microsoft.EntityFrameworkCore.SqlServer] -o Models
-</code></pre>
+<div class="highlight"><pre><span></span><code>dotnet ef dbcontext scaffold [Connection String] [Microsoft.EntityFrameworkCore.SqlServer] -o Models
+</code></pre></div>
 <p>This should create the DbContext and place the model <em>.cs</em> files in the Models directory.</p>
 <h2 id="generate-a-sql-script-from-the-dbcontext">Generate a SQL script from the DbContext</h2>
-<pre><code>dotnet ef dbcontext script
-</code></pre>
+<div class="highlight"><pre><span></span><code>dotnet ef dbcontext script
+</code></pre></div>
 <h2 id="add-a-migration-for-the-project">Add a migration for the project</h2>
-<pre><code>dotnet ef migrations add [Name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>dotnet ef migrations add [Name]
+</code></pre></div>
 <h2 id="generate-a-sql-script-for-the-latest-migration">Generate a SQL script for the latest migration</h2>
-<pre><code>dotnet ef migrations script
-</code></pre>
+<div class="highlight"><pre><span></span><code>dotnet ef migrations script
+</code></pre></div>
 <h2 id="create-a-bundleexecutable-to-update-the-database">Create a bundle/executable to update the database</h2>
-<pre><code>dotnet ef migrations bundle
-</code></pre>
+<div class="highlight"><pre><span></span><code>dotnet ef migrations bundle
+</code></pre></div>
 
 
 

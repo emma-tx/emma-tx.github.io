@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dotnet-core-azure-ad-authentication/" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -620,29 +634,29 @@
 <h1 id="several-potential-fixes-for-the-missing-net-sdk-error-docker-and-net-core">Several potential fixes for the missing .NET SDK error (Docker and .NET Core)</h1>
 <p>There have been many people asking about this on Stack Overflow, and none of the answers there brought me closer to resolving the problem, which, it later transpired, was caused by something really silly I'd overlooked.
 When running '<em>docker-compose up</em>' in the Docker CLI, for a .NET Core service, the output reports that it cannot find an installed SDK:</p>
-<pre><code>It was not possible to find any installed .NET Core SDKs
+<div class="highlight"><pre><span></span><code>It was not possible to find any installed .NET Core SDKs
 Did you mean to run .NET Core SDK commands? Install a .NET Core SDK from:
 https://aka.ms/dotnet-download
-</code></pre>
+</code></pre></div>
 <p>The error message can be misleading, as the cause isn't necessarily a missing SDK. In my case, the cause was missing dependencies that were almost entirely unrelated to the SDK itself. I tried the following:</p>
 <h2 id="check-the-sdk-image-is-installed">Check the SDK image is installed</h2>
 <p>The most obvious thing to check is that the SDK it's looking for actually exists on the local system. Using '<em>dotnet --info</em>', we can get a list of SDKs currently installed. Removing the Docker image for the relevant one and pulling it again from the official repository could be a solution if the image was corrupted somehow.</p>
-<pre><code>docker pull mcr.microsoft.com/dotnet/sdk:6.0
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker pull mcr.microsoft.com/dotnet/sdk:6.0
+</code></pre></div>
 <h2 id="check-references-to-the-sdk-in-the-dockerfile">Check references to the SDK in the Dockerfile</h2>
 <p>Are the correct .NET base images and versions being referenced in the Dockerfile? Again, the '<em>dotnet --info</em>' command will provide the image names and version numbers, and they can be checked against the ones being referenced in the Dockerfile.</p>
 <h2 id="check-entry-points">Check entry points</h2>
 <p>As I've said, the cause isn't always a missing SDK or an incorrect reference to it. Sometimes the same error message will appear if Docker can't find the entry point for the service it's trying to run - basically the EXE or DLL for the compiled application/service. This would be caused by an incorrect file path somewhere in the Dockerfile. To check for this, I opened the command line for the Docker image I was trying to run, and used the usual Linux commands to inspect its filesystem.</p>
 <h2 id="getting-more-details-in-visual-studios-powershell">Getting more details in Visual Studio's PowerShell</h2>
 <p>Run '<em>docker build -t</em>' in the PowerShell window in Visual Studio. This might provide more specific exception messages pointing to the cause of the problem.</p>
-<p>In my case, it displayed the following somewhere in the output:</p>
-<pre><code>warning MSB3245: Could not resolve this reference. Could not locate the assembly &quot;*System.Configuration*&quot;. Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [/src/Application.Web/Application.Web.csproj]
-</code></pre>
+<p>In my case, it displayed the following somewhere in the output:
+<div class="highlight"><pre><span></span><code>warning MSB3245: Could not resolve this reference. Could not locate the assembly &quot;*System.Configuration*&quot;. Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [/src/Application.Web/Application.Web.csproj]
+</code></pre></div></p>
 <h2 id="visual-studio-solution-with-multiple-projects">Visual Studio solution with multiple projects</h2>
 <p>In my case, I encountered the problem because another project in the Visual Studio solution (<em>Application.Common</em>) provided the dependencies for the one I was attempting to build (<em>Application.Web</em>). 
 What I was doing wrong was trying to build and run <em>Application.Web</em> using a <em>docker-compose.yml</em> file within that project's directory, without referencing <em>Application.Common</em> or anything else in the solution directory.</p>
-<p>As a first step, I shifted <em>docker-compose.yml</em> and Dockerfile to the solution's root directory. Next, I added several lines to copy the entire solution to the virtual directory before building the projects/dependencies that were needed. e.g.</p>
-<pre><code>[...]
+<p>As a first step, I shifted <em>docker-compose.yml</em> and Dockerfile to the solution's root directory. Next, I added several lines to copy the entire solution to the virtual directory before building the projects/dependencies that were needed. e.g.
+<div class="highlight"><pre><span></span><code>[...]
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY *.sln ./
@@ -651,10 +665,10 @@ COPY . .
 RUN dotnet restore Application.Web/Application.Web.csproj
 WORKDIR /src/Application.Web
 [...]
-</code></pre>
-<p>Then, using the following command, I was able to build the service (and its dependencies) and run its image in the Docker container:</p>
-<pre><code>docker-compose up --build
-</code></pre>
+</code></pre></div></p>
+<p>Then, using the following command, I was able to build the service (and its dependencies) and run its image in the Docker container:
+<div class="highlight"><pre><span></span><code>docker-compose up --build
+</code></pre></div></p>
 
 
 

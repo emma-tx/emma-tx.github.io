@@ -52,3 +52,22 @@ hr {
     padding: 0;
     color: #000000 !important;
 }
+
+.admonition-title {
+    background-color: #be0f34 !important;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.md-typeset :is(.info,.todo)>:is(.admonition-title,summary):before {
+    background-color: #ffffff;
+}
+
+.md-typeset :is(.admonition,details):is(.info,.todo) {
+    border-color: #be0f34;
+}
+
+.md-typeset a, .md-typeset a:before {
+    transition: color 125ms;
+    font-size: 1.2em;
+}

@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dotnet-core-azure-ad-authentication/" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -698,37 +712,37 @@
 - Microsoft.EntityFrameworkCore.Tools</p>
 <h2 id="install-the-entity-framework-command-line-tools">Install the Entity Framework Command Line Tools</h2>
 <p>The method for generating the migration scripts will be different, according to whether it's being done through PowerShell or Visual Studio's Package Manager Console.</p>
-<p>In the Windows Terminal, the Entity Framework tools are installed globally:</p>
-<pre><code>dotnet tool install --global dotnet-ef
-</code></pre>
-<p>The tools can also be installed for the Visual Studio project using the Package Manager Console:</p>
-<pre><code>Install-Package Microsoft.EntityFrameworkCore.Tools
+<p>In the Windows Terminal, the Entity Framework tools are installed globally:
+<div class="highlight"><pre><span></span><code>dotnet tool install --global dotnet-ef
+</code></pre></div></p>
+<p>The tools can also be installed for the Visual Studio project using the Package Manager Console:
+<div class="highlight"><pre><span></span><code>Install-Package Microsoft.EntityFrameworkCore.Tools
 Update-Package Microsoft.EntityFrameworkCore.Tools
-</code></pre>
+</code></pre></div></p>
 <h2 id="create-a-migration">Create a migration:</h2>
 <p>If there is more than one project in the Visual Studio solution (such as unit tests), it will be necessary to specify the project to generate the migration source files from, using the '-Project' or '-P' parameter. e.g.</p>
-<pre><code>Add-Migration TestMigration -Project DotNet-Core-6-MVC
-</code></pre>
+<div class="highlight"><pre><span></span><code>Add-Migration TestMigration -Project DotNet-Core-6-MVC
+</code></pre></div>
 <p>This should create a Migrations directory in the Visual Studio project.</p>
 <h2 id="generating-sql-script">Generating SQL Script</h2>
-<p>The following generates a SQL script from the last created migration:</p>
-<pre><code>dotnet ef migrations script
-</code></pre>
-<p>Or, in the Package Manager Console:</p>
-<pre><code>script-migration -P DotNet-Core-6-MVC
-</code></pre>
+<p>The following generates a SQL script from the last created migration:
+<div class="highlight"><pre><span></span><code>dotnet ef migrations script
+</code></pre></div></p>
+<p>Or, in the Package Manager Console:
+<div class="highlight"><pre><span></span><code>script-migration -P DotNet-Core-6-MVC
+</code></pre></div></p>
 <p>Again, the project name must be defined, if there are multiple in the currently-opened solution.</p>
 <h2 id="generating-an-entity-framework-migrations-bundle">Generating an Entity Framework Migrations Bundle</h2>
-<p>A bundle is an executable file that applies the migrations. Might be very useful for DevOps, and might be possible to execute through Azure PowerShell. This can be done with the folloing command:</p>
-<pre><code>dotnet ef migrations bundle --self-contained
-</code></pre>
-<p>To apply this to a specific database from a specific migration:</p>
-<pre><code>.\bundle.exe [Migration Name] --connection &quot;[Connection String]&quot;
-</code></pre>
+<p>A bundle is an executable file that applies the migrations. Might be very useful for DevOps, and might be possible to execute through Azure PowerShell. This can be done with the folloing command:
+<div class="highlight"><pre><span></span><code>dotnet ef migrations bundle --self-contained
+</code></pre></div></p>
+<p>To apply this to a specific database from a specific migration:
+<div class="highlight"><pre><span></span><code>.\bundle.exe [Migration Name] --connection &quot;[Connection String]&quot;
+</code></pre></div></p>
 <h2 id="migrations-and-docker">Migrations and Docker</h2>
-<p>One method is to add something like the following command to the Dockerfile:</p>
-<pre><code>RUN dotnet ef database update
-</code></pre>
+<p>One method is to add something like the following command to the Dockerfile:
+<div class="highlight"><pre><span></span><code>RUN dotnet ef database update
+</code></pre></div></p>
 <h2 id="applying-migrations-on-azure">Applying Migrations on Azure</h2>
 <p>There are several potential solutions:
 - Apply migrations by running generated SQL scripts through PowerShell and the AZ command line.

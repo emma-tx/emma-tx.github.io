@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dotnet-core-azure-ad-authentication/" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -857,12 +871,12 @@
 <p>First, register an account with Docker Hub, at https://hub.docker.com/. After registering the account and doing whatever configuration is necessary, install the Docker Desktop client. The Docker CLI will also be required.</p>
 <p><strong>Note:</strong> When registering a Docker Hub account, make a note of the username/ID, as the portal logins sometimes don't work with the registered email address.</p>
 <p>There is a 'Getting Started' container, which has an nginx server and a few Web pages, that can be fetched and run, to check everything is working. To see this demo in action, run the following command in PowerShell or Windows Terminal:</p>
-<pre><code>docker run -d -p 80:80 docker/getting-started
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker run -d -p 80:80 docker/getting-started
+</code></pre></div>
 <p>Navigate the browser to http://localhost to view the site.</p>
 <h2 id="creating-an-image-from-an-existing-project">Creating an Image From an Existing Project</h2>
 <p>To build an image from a software project this into a Docker image, a 'Dockerfile' is added to the project directory. It might look something like:</p>
-<pre><code># syntax=docker/dockerfile:1
+<div class="highlight"><pre><span></span><code># syntax=docker/dockerfile:1
 FROM node:12-alpine
 RUN apk add --no-cache python2 g++ make
 WORKDIR /app
@@ -870,21 +884,21 @@ COPY . .
 RUN yarn install --production
 CMD [&quot;node&quot;, &quot;src/index.js&quot;]
 EXPOSE 3000
-</code></pre>
-<p>Then build the above project as a Docker container with the following command in the containing directory:</p>
-<pre><code>$docker build -t my-project .
-</code></pre>
-<p>The container should be ready to run with the following command:</p>
-<pre><code>$docker run -dp 3000:3000 my-project
-</code></pre>
+</code></pre></div>
+<p>Then build the above project as a Docker container with the following command in the containing directory:
+<div class="highlight"><pre><span></span><code>$docker build -t my-project .
+</code></pre></div></p>
+<p>The container should be ready to run with the following command:
+<div class="highlight"><pre><span></span><code>$docker run -dp 3000:3000 my-project
+</code></pre></div></p>
 <p>The container should appear in the Docker Dashboard, where it could be managed.</p>
 <hr />
 <h2 id="pushing-image-to-azure-container-registry">Pushing Image to Azure Container Registry</h2>
-<pre><code>docker tag local-image:tagname new-repo:tagname
+<div class="highlight"><pre><span></span><code>docker tag local-image:tagname new-repo:tagname
 docker push new-repo:tagname
-</code></pre>
-<p>The following is an example of the commands I used to push an image to the Docker Hub:</p>
-<pre><code>PS C:\Users\emma&gt; docker login
+</code></pre></div>
+<p>The following is an example of the commands I used to push an image to the Docker Hub:
+<div class="highlight"><pre><span></span><code>PS C:\Users\emma&gt; docker login
 Authenticating with existing credentials...
 Login Succeeded
 PS C:\Users\emma&gt; docker tag test-application:dev test-repository/test-application:dev
@@ -897,7 +911,7 @@ d1597429d57f: Pushed
 c891b6c5469a: Pushed
 ad6562704f37: Pushed
 dev: digest: [digest] size: 1578
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h2 id="recommended-image-tags">Recommended Image Tags</h2>
 <ul>
@@ -907,15 +921,15 @@ dev: digest: [digest] size: 1578
 </ul>
 <hr />
 <h2 id="useful-commands">Useful Commands</h2>
-<pre><code>$docker image ls | grep [application-name]
+<div class="highlight"><pre><span></span><code>$docker image ls | grep [application-name]
 $docker build -t [application-name]:latest
 $docker build -t [application-name]:test
 docker run -dp 3000:3000 [my-project]
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="volumes">Volumes</h2>
 <p>In Docker, volumes should be created if application data needs to be made persistent. A Docker volume is very much like a partition, with its own Linux file system. If a service or database image is to use a volume, it must be declared in the service section of docker-compose.yml and at the end of the file, e.g.</p>
-<pre><code>test.db:
+<div class="highlight"><pre><span></span><code>test.db:
     image: mcr.microsoft.com/mssql/server
     environment:
         - SA_PASSWORD=TestDB123
@@ -927,23 +941,23 @@ docker run -dp 3000:3000 [my-project]
 ...
 volumes:
     - test-datastore:/var/opt/mssql
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="sql-server-image">SQL Server Image</h2>
 <p>In order to set up a database for the Docker application, it's necessary to have a base Microsoft SQL Server image. We can pull this from an external repository:</p>
-<pre><code>docker pull mcr.microsoft.com/mssql/server:2019-latest
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker pull mcr.microsoft.com/mssql/server:2019-latest
+</code></pre></div>
 <p>The following command will initialise the database, configuring it to have the name 'testdb', run on port 1433, and with the default login password of 'TestDB123'. The database will use the test-datastore volume to make its data persistent:</p>
-<pre><code>docker run -e &quot;ACCEPT_EULA=Y&quot; -e &quot;SA_PASSWORD=TestDB123&quot; -p 1433:1433 --name testdb -v test-datastore:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2019-latest
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker run -e &quot;ACCEPT_EULA=Y&quot; -e &quot;SA_PASSWORD=TestDB123&quot; -p 1433:1433 --name testdb -v test-datastore:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2019-latest
+</code></pre></div>
 <p>In order to get a .NET application working with a SQL Server running as a Docker image, it might be necessary to use 'host.docker.internal' in the connection string as the host name, e.g.</p>
-<pre><code>&quot;ConnectionStrings&quot;: {
+<div class="highlight"><pre><span></span><code>&quot;ConnectionStrings&quot;: {
   &quot;DefaultConnection&quot;: &quot;Server=host.docker.internal;Initial Catalog=dockertest;Integrated Security=false;User ID=SA;Password=StandardPass56&quot;
 }
-</code></pre>
+</code></pre></div>
 <p>If, for some reason, the project references an older database connection in <em>Connected Services</em> and <em>Secrets.json</em>, these must be removed, as the application will otherwise revert to that.</p>
 <p>As for the <em>docker-compose.yml</em> configuration, this seems to work:</p>
-<pre><code>version: '3.4'
+<div class="highlight"><pre><span></span><code>version: &#39;3.4&#39;
 
 services:
   dotnet-core-6-mvc:
@@ -959,7 +973,7 @@ services:
     - ACCEPT_EULA=Y
     ports:
     - &quot;1443:1433&quot;
-</code></pre>
+</code></pre></div>
 <p>After running '<em>docker-compose build</em>' and '<em>docker-compose up</em>', the Docker registry should list a container that includes the DB service with the application.</p>
 <hr />
 <h2 id="docker-and-visual-studio">Docker and Visual Studio</h2>
@@ -968,7 +982,7 @@ services:
 - Right-click on the project root again, and select '<em>Add</em>' -&gt; '<em>Container Orchestrator Support...</em>'.</p>
 <p>At this point, there should be a docker-compose section in the Visual Studio solution, with <em>.dockerignore</em> and <em>docker-compose.yml</em> files in the solution directory. There will also be a hidden override file there, plus a Dockerfile within the project. Combined, these should enable other developers to replicate the process of creating the images.</p>
 <p>The <em>docker-compose.yml</em> file should initially contain the following:</p>
-<pre><code>version: '3.4'
+<div class="highlight"><pre><span></span><code>version: &#39;3.4&#39;
 
 services:
   dotnet-core-6-mvc:
@@ -976,7 +990,7 @@ services:
     build:
       context: .
       dockerfile: Test-MVC/Dockerfile
-</code></pre>
+</code></pre></div>
 <p>Also, the Visual Studio debug options will be replaced with the configuration for <em>Docker Compose</em>. To run the project using IIS Express again, just click the drop-down with '<em>docker-compose</em>' and select the original project name.</p>
 <p>The .NET Core application will run as a Docker container, referenced in the Docker registry. Aside from not being able to connect to a local database server, it runs well enough.</p>
 <hr />
@@ -992,38 +1006,39 @@ services:
 <h3 id="2-autheticate-the-windows-terminal-or-powershell-session-with-azure">2. Autheticate the Windows Terminal or PowerShell session with Azure.</h3>
 <p>Use the <code>az acr login</code> command.</p>
 <h3 id="3-get-the-image-names-from-the-azure-container-registry">3. Get the image name(s) from the Azure Container Registry</h3>
-<pre><code>az acr repository list --name [registry name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>az acr repository list --name [registry name]
+</code></pre></div>
 <h3 id="4-pull-the-required-images-from-the-azure-container-registry">4. Pull the required images from the Azure Container Registry</h3>
-<pre><code>docker pull [registry].azurecr.io/[image name]
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker pull [registry].azurecr.io/[image name]
+</code></pre></div>
 <p>By default, the Azure client will pull the image tagged 'latest'.</p>
 <h3 id="5-run-the-docker-compose-script">5. Run the docker-compose script</h3>
-<p>How docker-compose should be used will depend on the context in which the container is to be run. To simply compose the container from a number of images, without making changes, navigate to the project's directory and run the following command: </p>
-<pre><code>$ docker-compose -f docker-compose.yml up
-</code></pre>
-<p>To build a new image for the selected project, and run it in a container with other images:</p>
-<pre><code>$ docker-compose -f docker-compose-build.yml
-</code></pre>
-<p>And to build a container that enables debugging in an Integrated Developer Environment, with other images providing the dependencies:</p>
-<pre><code>$ docker-compose -f docker-compose-dependencies.yml
-</code></pre>
+<p>How docker-compose should be used will depend on the context in which the container is to be run. To simply compose the container from a number of images, without making changes, navigate to the project's directory and run the following command: 
+<div class="highlight"><pre><span></span><code>$ docker-compose -f docker-compose.yml up
+</code></pre></div></p>
+<p>To build a new image for the selected project, and run it in a container with other images:
+<div class="highlight"><pre><span></span><code>$ docker-compose -f docker-compose-build.yml
+</code></pre></div></p>
+<p>And to build a container that enables debugging in an Integrated Developer Environment, with other images providing the dependencies:
+<div class="highlight"><pre><span></span><code>$ docker-compose -f docker-compose-dependencies.yml
+</code></pre></div></p>
 <h3 id="5-run-the-docker-compose-script_1">5. Run the docker-compose script</h3>
-<p>How docker-compose should be used will depend on the context in which the container is to be run. To simply compose the container from a number of images, without making changes, navigate to the project's directory and run the following command: </p>
-<pre><code>$ docker-compose -f docker-compose.yml
-</code></pre>
-<p>To build a new image for the selected project, and run it in a container with other images:</p>
-<pre><code>$ docker-compose -f docker-compose-build.yml
-</code></pre>
-<p>And to build a container that enables debugging in an Integrated Developer Environment, with other images providing the dependencies:</p>
-<pre><code>$ docker-compose -f docker-compose-dependencies.yml
-</code></pre>
+<p>How docker-compose should be used will depend on the context in which the container is to be run. To simply compose the container from a number of images, without making changes, navigate to the project's directory and run the following command: 
+<div class="highlight"><pre><span></span><code>$ docker-compose -f docker-compose.yml
+</code></pre></div></p>
+<p>To build a new image for the selected project, and run it in a container with other images:
+<div class="highlight"><pre><span></span><code>$ docker-compose -f docker-compose-build.yml
+</code></pre></div></p>
+<p>And to build a container that enables debugging in an Integrated Developer Environment, with other images providing the dependencies:
+<div class="highlight"><pre><span></span><code>$ docker-compose -f docker-compose-dependencies.yml
+</code></pre></div></p>
 <hr />
 <h2 id="troubleshooting-getting-started">Troubleshooting (Getting Started)</h2>
 <ol>
 <li>Open PowerShell as admin, and use the following:</li>
 </ol>
-<p><code>&amp; 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchDaemon</code></p>
+<div class="highlight"><pre><span></span><code>&amp; &#39;C:\Program Files\Docker\Docker\DockerCli.exe&#39; -SwitchDaemon
+</code></pre></div>
 <ol>
 <li>
 <p>In many cases the problem is caused by the Docker Engine failing to start. The indicators for this are the coloured bar at the lower left of the desktop GUI, and the set of ions to the right of the Windows task bar.</p>

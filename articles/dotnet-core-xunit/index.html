@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dotnet-core-azure-ad-authentication/" class="md-tabs__link md-tabs__link--active">
+      <a href="../sql-server-db-vs-project/" class="md-tabs__link md-tabs__link--active">
         Articles
       </a>
     </li>
@@ -297,6 +297,20 @@
           Articles
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-server-db-vs-project/" class="md-nav__link">
+        Visual Studio SQL Server Database Project
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -607,7 +621,7 @@
 <p>After some hours of frustration and asking myself whether I should have used Unit of Work in the first place (there are already layers of abstraction in the standard .NET Core template project) I managed to get a functioning xUnit test method that mocks the repositories, populates them with data and verifies the model returned by a controller method.</p>
 <h2 id="setting-up-a-unit-test-project">Setting Up a Unit Test Project</h2>
 <p>Add a xUnit project to the solution, then add an assembly reference in that to the project being tested. Just to check the test method executes and to show the format of a basic class:</p>
-<pre><code>using Xunit;
+<div class="highlight"><pre><span></span><code>using Xunit;
 
 public class UnitTest1
 {
@@ -618,25 +632,25 @@ public class UnitTest1
     Assert.Equal(5, five);
   }
 }
-</code></pre>
+</code></pre></div>
 <p>When the test is run, the method will execute and show in the results as a test that passed. That's because I declared five as '5', and used <em>Assert.Equal</em> to check the two values match.</p>
 <p>Test methods typically have sections for Arrange, Act and Assert - instantiating a data model, defining an expected result and comparing the actual result against it - and, of course, there are multiple Assert methods that could be used for testing various other conditions.</p>
 <h2 id="testing-a-home-controller-method">Testing a Home Controller Method</h2>
 <p>Unit testing a <em>HomeController</em> in a .NET Core application that's using the repository pattern is less straightforward, as I'm not using DbContext or the Entity Framework model directly. The good news is it's not necessary to duplicate the Repository Pattern or the Unit of Work, as they can be imported fom the application project:</p>
-<pre><code>using DotNetCore6.Controllers;
+<div class="highlight"><pre><span></span><code>using DotNetCore6.Controllers;
 using DotNetCore6.Data;
 using DotNetCore6.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-</code></pre>
+</code></pre></div>
 <p>The unit test must create an instance of <em>HomeController</em>, which requires <em>something</em> like <em>IUnitOfWork</em> to be passed to it. This takes the place of DbContext.</p>
-<pre><code>public HomeController(IUnitOfWork unitOfWork)
+<div class="highlight"><pre><span></span><code>public HomeController(IUnitOfWork unitOfWork)
 {
   _unitOfWork = unitOfWork;
 }
-</code></pre>
+</code></pre></div>
 <p>Moq can be used for creating a test instance of <em>IUnitOfWork</em> and the repositories, and for passing them to <em>HomeController</em>. The method under test, <em>PowerOn()</em>, simply fetches a list of computers from the <em>Computers</em> model and returns that in a view.</p>
-<pre><code>[Fact]
+<div class="highlight"><pre><span></span><code>[Fact]
 public void TestPowerOnView()
 {
     var mockUoW = new Mock&lt;IUnitOfWork&gt;();
@@ -644,12 +658,12 @@ public void TestPowerOnView()
     var result = powerOnService.View();
     Assert.IsType&lt;ViewResult&gt;(result);
 }
-</code></pre>
+</code></pre></div>
 <p>After setting a breakpoint within the <em>HomeController</em> constructor and running the test in debug mode, it will be evident that something like <em>IUnitOfWork</em> had been passed to it, and there are references to the Entity Framework models.</p>
 <h2 id="attaching-repositories-using-setup">Attaching Repositories Using Setup()</h2>
 <p>The next step is to attach the repositories to the Unit of Work being passed to <em>HomeController</em>. The <em>Setup()</em> method will do all the work of adding them to <em>Mock<IUnitOfWork>()</em> anyway.</p>
 <p>If we use the following code and set a breakpoint on the <em>HomeController</em> again, we find that it's discovered <em>IComputersRepository</em>, <em>ILabsRepository</em> and <em>IUsersRepository</em>. The interfaces don't refer to the actual repositories or entities yet.</p>
-<pre><code>[Fact]
+<div class="highlight"><pre><span></span><code>[Fact]
 public void TestPowerOnView()
 {
       var mockUoW = new Mock&lt;IUnitOfWork&gt;();
@@ -663,10 +677,10 @@ public void TestPowerOnView()
       var result = powerOnService;
       Assert.IsType&lt;ViewResult&gt;(result);
 }
-</code></pre>
+</code></pre></div>
 <h2 id="adding-mock-entities">Adding Mock Entities</h2>
 <p>The next problem is that of getting the entities passed to the controller. Normally a repository will refer to an IEnumerable/List<Entities>.For the sake of making things easier to follow, I've created a mock repository within the test method.</p>
-<pre><code>[Fact]
+<p><div class="highlight"><pre><span></span><code>[Fact]
 public void TestPowerOnView()
 {
   List&lt;Computers&gt; mockComputer = new List&lt;Computers&gt;()
@@ -694,15 +708,14 @@ public void TestPowerOnView()
     Assert.IsType&lt;ViewResult&gt;(result);
 }
 
-The method will try *GetAll()* with an empty repository, but still return the entities in *mockComputer*. What I didn't realise is we need to put a breakpoint in the method being tested itself to see the model being passed into it.
+The method will try *GetAll()* with an empty repository, but still return the entities in *mockComputer*. What I didn&#39;t realise is we need to put a breakpoint in the method being tested itself to see the model being passed into it.
 
-This test will pass, but it only verifies that a view was returned by PowerOn(). It doesn't tell us anything about the data being returned.
+This test will pass, but it only verifies that a view was returned by PowerOn(). It doesn&#39;t tell us anything about the data being returned.
 
 ## Testing the Return Data
-In this case, getting the model returned also wasn't straightforward, as I couldn't access the model directly. I needed to add some extra code to extract that.
-
-</code></pre>
-<p>var viewResult = Assert.IsType<ViewResult>(result);
+In this case, getting the model returned also wasn&#39;t straightforward, as I couldn&#39;t access the model directly. I needed to add some extra code to extract that.
+</code></pre></div>
+var viewResult = Assert.IsType<ViewResult>(result);
 var model = Assert.IsAssignableFrom<IEnumerable\<Computers>>(viewResult.ViewData.Model);</p>
 <p>Assert.Equal(mockComputer, model);
 ```</p>
@@ -712,7 +725,6 @@ var model = Assert.IsAssignableFrom<IEnumerable\<Computers>>(viewResult.ViewData
 </ul>
 <p>Moq Quickstart: https://github.com/Moq/moq4/wiki/Quickstart</p>
 <p>xUnit.Net: https://xunit.net</p>
-<h1 id="testing-dotnet-mvc">Testing #DotNet #MVC</h1>
 
 
 
