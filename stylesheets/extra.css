@@ -1,0 +1,54 @@
+.md-header {
+    background-color: #be0f34;
+    box-shadow: 0 0 .2rem transparent,0 .2rem .4rem transparent;
+    color: var(--md-primary-bg-color);
+    display: block;
+    left: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    right: 0;
+    top: 0;
+    z-index: 4;
+}
+
+@media screen and (max-width: 76.1875em)
+.md-nav--primary .md-nav__title[for=__drawer] {
+    background-color: #be0f34 !important;
+    color: var(--md-primary-bg-color);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 76.1875em)
+.md-nav--primary .md-nav__title[for=__drawer] {
+    background-color: #be0f34;
+    color: var(--md-primary-bg-color);
+    font-weight: 700;
+}
+
+.md-typeset h1 {
+    color: #990000;
+    font-size: 2em;
+    line-height: 1.3;
+    margin: 0 0 1.25em;
+}
+
+.md-tabs {
+    background-color: #101010;
+}
+
+.md-typeset h2 {
+    color: #990000;
+    font-size: 1.8em;
+    line-height: 1.3;
+    margin: 0 0 1.25em;
+}
+
+hr {
+    border-top: #000000 2px solid;
+    box-sizing: initial;
+    display: block;
+    height: 0.5px;
+    overflow: visible;
+    padding: 0;
+    color: #000000 !important;
+}
