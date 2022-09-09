@@ -71,3 +71,12 @@ hr {
     transition: color 125ms;
     font-size: 1.2em;
 }
+
+.md-typeset ol li, .md-typeset ul li {
+    margin-bottom: 0em;
+}
+
+.md-typeset a, .md-typeset a:before {
+    transition: color 125ms;
+    font-size: 1em;
+}
