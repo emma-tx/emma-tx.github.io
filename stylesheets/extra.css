@@ -80,3 +80,50 @@ hr {
     transition: color 125ms;
     font-size: 1em;
 }
+
+html .md-typeset :-webkit-any(.admonition,details)>:last-child {
+    margin-bottom: .6rem;
+    font-size: 1.2em !important;
+}
+
+.md-clipboard:not(.focus-visible) {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    color: #be0f34;
+}
+
+.md-tag {
+    margin-right: .5em;
+    background-color: #cccccc;
+    padding: 4px;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 0.8em;
+    margin-top: 0px;
+}
+
+.md-tag[href] {
+    -webkit-tap-highlight-color: transparent;
+    color: #ffffff;
+    outline: none;
+    transition: color 125ms,background-color 125ms;
+    font-size: 0.8em;
+    background-color: #be0f34;
+}
+
+.md-nav--primary .md-nav__title[for=__drawer] {
+    background-color: #be0f34 !important;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.md-tag {
+    margin-right: .5em;
+    background-color: #be0f34;
+    padding: 4px;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 0.8em;
+    margin-top: 0px;
+}
+
