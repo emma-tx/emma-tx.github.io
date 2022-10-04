@@ -127,3 +127,8 @@ html .md-typeset :-webkit-any(.admonition,details)>:last-child {
     margin-top: 0px;
 }
 
+.centred {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
