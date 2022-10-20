@@ -6,7 +6,20 @@
     <description>Recent content in .NET on scarbrough-trx@GitHub</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some notes on upgrading to .NET 7</title>
+      <link>/post/dotnet-7-release/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-7-release/</guid>
+      <description>The official release for .NET 7.0 is in November 2022, though there have been a number of preview versions this year. In order to upgrade services to this, it might be necessary to update Visual Studio and MSBuild first.
+Target Framework To upgrade, set the target framework as follows:
+&amp;lt;TargetFramework&amp;gt;net7.0&amp;lt;/TargetFramework&amp;gt; And maybe do the following update all package references to 7.0.0 for Microsoft.AspNetCore and Microsoft.Extensions.
+Other target frameworks include:
+net7.0 net7.</description>
+    </item>
+    
     <item>
       <title>Migrations Using Visual Studio SQL Server Database Project</title>
       <link>/post/sql-server-database-vs-project/</link>

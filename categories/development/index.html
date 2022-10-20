@@ -97,6 +97,27 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/dotnet-7-release/" rel="bookmark">
+			Some notes on upgrading to .NET 7
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-10-20T00:00:00Z">October 20, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		The official release for .NET 7.0 is in November 2022, though there have been a number of preview versions this year. In order to upgrade services to this, it might be necessary to update Visual Studio and MSBuild first.
+Target Framework To upgrade, set the target framework as follows:
+&lt;TargetFramework&gt;net7.0&lt;/TargetFramework&gt; And maybe do the following update all package references to 7.0.0 for Microsoft.AspNetCore and Microsoft.Extensions.
+Other target frameworks include:
+net7.0 net7.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/hugo-and-mainroad/" rel="bookmark">
 			Hugo and the Mainroad Theme
 			</a>
@@ -255,23 +276,6 @@ Setting Up a Unit Test Project Add a xUnit project to the solution, then add an 
 dotnet tool install --global dotnet-ef After installation, it might be a good idea to update the tools:
 dotnet tool update --global dotnet-ef Add the Entity Framework Packages to a Project In order to use the Entity Framework command line tools for a .NET Core project, it&rsquo;s necessary to install the Design package.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/repository-pattern-and-uow/" rel="bookmark">
-			.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-25T00:00:00Z">April 25, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		A repository pattern exists to add another layer of abstraction between the application logic and the data layer, using dependency injection to decouple the two. It&rsquo;s not my preferred way of doing things, because of the effort and complexity involved, and I&rsquo;m certainly not the only person who initially struggled to understand the concepts behind it. Plus, it&rsquo;s apparent that Entity Framework makes heavy use of that dependency injection already. But a Repository Pattern is widely considered - by software engineers far more experienced than I am - best practice for engineering services that deal with critical data.
-	</div>
 </article>
 </main>
 
@@ -295,6 +299,7 @@ dotnet tool update --global dotnet-ef Add the Entity Framework Packages to a Pro
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/dotnet-7-release/">Some notes on upgrading to .NET 7</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/hugo-and-mainroad/">Hugo and the Mainroad Theme</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/netlify-cms-hugo/">Netlify CMS and Continuous Deployment for Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/sql-server-database-vs-project/">Migrations Using Visual Studio SQL Server Database Project</a></li>
@@ -309,7 +314,6 @@ dotnet tool update --global dotnet-ef Add the Entity Framework Packages to a Pro
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-ajax/">Implementing an AJAX Request in .NET Core 6 MVC</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-6-ef-mvc/">Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/opencart/">OpenCart Development Notes</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/docker-missing-dotnet-sdk/">Several potential fixes for the missing .NET SDK error (Docker and .NET Core)</a></li>
 		</ul>
 	</div>
 </div>
