@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Development - scarbrough-trx@GitHub</title>
+	<title>DotNET - scarbrough-trx@GitHub</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="Development" />
+		<meta property="og:title" content="DotNET" />
 <meta property="og:description" content="John Doe&#39;s Personal blog about everything" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/categories/development/" />
+<meta property="og:url" content="/tags/dotnet/" />
 
 
-		<meta itemprop="name" content="Development">
+		<meta itemprop="name" content="DotNET">
 <meta itemprop="description" content="John Doe&#39;s Personal blog about everything">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -22,7 +22,7 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/categories/development/index.xml" title="scarbrough-trx@GitHub">
+	<link rel="alternate" type="application/rss+xml" href="/tags/dotnet/index.xml" title="scarbrough-trx@GitHub">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -92,8 +92,102 @@
 			
 <main class="main list" role="main">
 	<header class="main__header">
-		<h1 class="main__title">Development</h1>
+		<h1 class="main__title">DotNET</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/dotnet-7-release/" rel="bookmark">
+			Some notes on upgrading to .NET 7
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-10-20T00:00:00Z">October 20, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		The official release for .NET 7.0 is in November 2022, though there have been a number of preview versions this year. In order to upgrade services to this, it might be necessary to update Visual Studio and MSBuild first.
+Target Framework To upgrade, set the target framework as follows:
+&lt;TargetFramework&gt;net7.0&lt;/TargetFramework&gt; And maybe do the following update all package references to 7.0.0 for Microsoft.AspNetCore and Microsoft.Extensions.
+Other target frameworks include:
+net7.0 net7.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/sql-server-database-vs-project/" rel="bookmark">
+			Migrations Using Visual Studio SQL Server Database Project
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-09-15T00:00:00Z">September 15, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/devops/" rel="category">DevOps</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Migrations Using Visual Studio SQL Server Database Project Setting Up the Migration Project Add a new project to the Visual Studio solution. This project will initially be empty, without assembly references or scaffold files - it appears everything is native to Visual Studio. To this we need to add the connection to the database the schema is to be imported from. There will be a menu option for &lsquo;Import&rsquo; -&gt; &lsquo;Database&rsquo;.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/kestrel-errors/" rel="bookmark">
+			Kestrel HTTPS Error - .Net Core and Docker
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-15T00:00:00Z">August 15, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		The following is another commonly-posted question in Stack Overflow, which I&rsquo;ve been looking at while debugging the same problem:
+System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:
+[...][15:25:25 FTL] Unable to start Kestrel.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/dotnet-core-azure-ad-authentication/" rel="bookmark">
+			Azure Active Directory Authentication for .NET Core Services
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-01T00:00:00Z">June 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/security/" rel="category">Security</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		If upgrading an existing application, the following are required from NuGet:
+Microsoft.Identity.Web Microsoft.Identity.Web.UI Generating the Project The project in this repository was generated from the ASP.NET Core Web App template. When generating the project, select &lsquo;Microsoft identity platform&rsquo; as the Authentication type in the Additional Information section. HTTPS and Docker were also enabled for this project.
+After installing dotnet msidentity tool, Visual Studio will display the Service Dependencies and Service References.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/dotnet-core-xunit/" rel="bookmark">
+			.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-03T00:00:00Z">May 03, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		After some hours of frustration and asking myself whether I should have used Unit of Work in the first place (there are already layers of abstraction in the standard .NET Core template project) I managed to get a functioning xUnit test method that mocks the repositories, populates them with data and verifies the model returned by a controller method.
+Setting Up a Unit Test Project Add a xUnit project to the solution, then add an assembly reference in that to the project being tested.
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -150,24 +244,6 @@ Breaking changes and things that might be awkward for developers accustomed to w
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/opencart/" rel="bookmark">
-			OpenCart Development Notes
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-25T00:00:00Z">August 25, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Overview The OpenCart system follows the MVC (Model, View, Controller) pattern. A simple description of how this works is that a View determines the layout and appearance of a Web site, whereas the content itself is generated and inserted into the View by a Controller. A Model contains data objects that represent database entities being processed by the Controller.
-With OpenCart, we have a more complicated implementation of the MVC pattern, mainly because a site&rsquo;s appearance isn&rsquo;t actually determined by a set of HTML/CSHTML files in the /views directory.
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
 			<a href="/post/docker-missing-dotnet-sdk/" rel="bookmark">
 			Several potential fixes for the missing .NET SDK error (Docker and .NET Core)
 			</a>
@@ -185,10 +261,6 @@ It was not possible to find any installed .NET Core SDKsDid you mean to run .
 </article>
 </main>
 
-<div class="pagination">
-	<a class="pagination__item pagination__item--prev btn" href="/categories/development/">«</a>
-	<span class="pagination__item pagination__item--current">2/2</span>
-</div>
 
 			</div>
 			
