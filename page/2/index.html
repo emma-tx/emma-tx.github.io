@@ -96,189 +96,198 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/hugo-and-mainroad/" rel="bookmark">
-			Hugo and the Mainroad Theme
+			<a href="/post/repository-pattern-and-uow/" rel="bookmark">
+			.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work
 			</a>
 		</h2>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-10-01T00:00:00Z">October 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-25T00:00:00Z">April 25, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		I think I&rsquo;ve found the ideal theme for my Hugo site. Mainroad is relatively simple in design, the layout is roughly what I was looking for, and it&rsquo;s easier to customise. It still has tags and categories features that are essential for a site hosting technical documentation. I spent around six hours learning how the template works, re-arranging the content and tweaking the CSS to make it as clean as my MkDocs site.
+		A repository pattern exists to add another layer of abstraction between the application logic and the data layer, using dependency injection to decouple the two. It&rsquo;s not my preferred way of doing things, because of the effort and complexity involved, and I&rsquo;m certainly not the only person who initially struggled to understand the concepts behind it. Plus, it&rsquo;s apparent that Entity Framework makes heavy use of that dependency injection already. But a Repository Pattern is widely considered - by software engineers far more experienced than I am - best practice for engineering services that deal with critical data.
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/netlify-cms-hugo/" rel="bookmark">
-			Netlify CMS and Continuous Deployment for Hugo
+			<a href="/post/dotnet-core-ajax/" rel="bookmark">
+			Implementing an AJAX Request in .NET Core 6 MVC
 			</a>
 		</h2>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-09-20T00:00:00Z">September 20, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/devops/" rel="category">DevOps</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-20T00:00:00Z">April 20, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Netlify CMS and Continuous Deployment for Hugo Having experimented with this, I think Netlify&rsquo;s idea of tacking a CMS onto a static site generator is tailored for situations where multiple developers, through Continuous Deployment, are providing a corporate site for which the content is being edited by non-technical users. At least it appears that way, because it takes a lot of work to develop the site and configure the CMS for anything more generic than the template provided, and an individual developer working on this as a personal project would most likely dispense with the CMS entirely and modify the files in the /content directory themselves (I&rsquo;ll explain why).
+		One of the problems with implementing a search feature that returns a table in a partial view is the Entity Framework model declarations must be strongly-typed. This means we run into difficulties declarating a model in the containing view and an IEnumerable instance of it for the partial view. One way around this is to instead discard the model for the mainview, and use jQuery and AJAX to read values from specific input elements in the main view, and pass those values to the controller action that returns the partial view with the IEnumerable model.
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/sql-server-database-vs-project/" rel="bookmark">
-			Migrations Using Visual Studio SQL Server Database Project
+			<a href="/post/dotnet-core-6-ef-mvc/" rel="bookmark">
+			Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern
 			</a>
 		</h2>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-09-15T00:00:00Z">September 15, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/devops/" rel="category">DevOps</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-01T00:00:00Z">April 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Migrations Using Visual Studio SQL Server Database Project Setting Up the Migration Project Add a new project to the Visual Studio solution. This project will initially be empty, without assembly references or scaffold files - it appears everything is native to Visual Studio. To this we need to add the connection to the database the schema is to be imported from. There will be a menu option for &lsquo;Import&rsquo; -&gt; &lsquo;Database&rsquo;.
+		The following mostly doesn&rsquo;t refer to problems native to the .NET Core 6 Framework itself, but rather some difficulties I encountered while getting an Entity Framework Database-First model working in the MVC project template generated by Visual Studio 2022.
+Some of the problems centred around:
+Breaking changes and things that might be awkward for developers accustomed to working with legacy non-Core versions of .NET (espectially .NET MVC). Not much documentation out there, relative to what&rsquo;s published for the older .
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/docker-basics/" rel="bookmark">
-			Docker Basics
+			<a href="/post/opencart/" rel="bookmark">
+			OpenCart Development Notes
 			</a>
 		</h2>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-09-02T00:00:00Z">September 02, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-25T00:00:00Z">August 25, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		A Docker container runs as a sandboxed process on a local system or a server, and consists of at least one image. An image is built from the source code of an application or service, and can be distributed, through a repository, to provide others the means of testing an existing software product with minimal setup.
-Containers and images can be managed through the Docker Dashboard application. As such, a Docker container will require its own configurations and script that enable it to run as intended.
+		Overview The OpenCart system follows the MVC (Model, View, Controller) pattern. A simple description of how this works is that a View determines the layout and appearance of a Web site, whereas the content itself is generated and inserted into the View by a Controller. A Model contains data objects that represent database entities being processed by the Controller.
+With OpenCart, we have a more complicated implementation of the MVC pattern, mainly because a site&rsquo;s appearance isn&rsquo;t actually determined by a set of HTML/CSHTML files in the /views directory.
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/entity-framework-migrations/" rel="bookmark">
-			Entity Framework Migrations
+			<a href="/post/docker-missing-dotnet-sdk/" rel="bookmark">
+			Several potential fixes for the missing .NET SDK error (Docker and .NET Core)
 			</a>
 		</h2>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-09-01T00:00:00Z">September 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-04-16T00:00:00Z">April 16, 2018</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		The purpose of generating Entity Framework migrations is to apply database schema changes consistently across Staging, UAT and Production environments.
-The proposed method would involve developers generating migration a migration script whenever changes are made to the Entity Framework model in their projects. The DevOps team would apply that migration script to update the Azure environments. The services and applications being developed themselves should not have permissions to modify the environment.
+		There have been many people asking about this on Stack Overflow, and none of the answers there brought me closer to resolving the problem, which, it later transpired, was caused by something really silly I&rsquo;d overlooked. When running &lsquo;docker-compose up&rsquo; in the Docker CLI, for a .NET Core service, the output reports that it cannot find an installed SDK:
+It was not possible to find any installed .NET Core SDKsDid you mean to run .
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/kestrel-errors/" rel="bookmark">
-			Kestrel HTTPS Error - .Net Core and Docker
+			<a href="/docs/about/about/" rel="bookmark">
+			About
 			</a>
 		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-15T00:00:00Z">August 15, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		The following is another commonly-posted question in Stack Overflow, which I&rsquo;ve been looking at while debugging the same problem:
-System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:
-[...][15:25:25 FTL] Unable to start Kestrel.
+		My name is Michael, and my professional background is in .NET software engineering (C#, MVC, MSSQL, etc), though this is within the context of an ecosystem of other technologies related to deployment, version control, distribution and testing. Aside from that, I do have some expertise with the Linux operating system (mostly variants of Debian and openSUSE), which I have been using since ~2005.
+After several years working for the public sector, where I provided technical support for secure communications networks, I decided to take this in a more academic direction, studying computer security at the University of South Wales, and managing to earn a Masters&rsquo; degree in 2014.
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/powershell/" rel="bookmark">
-			PowerShell Notes
+			<a href="/docs/projects/projects/" rel="bookmark">
+			My Projects
 			</a>
 		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-01T00:00:00Z">August 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/windows/" rel="category">Windows</a>
-	</span>
-</div></div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		There are two categories of PowerShell command:
-External Command: For example, CMD commands, or programs launched from PowerShell. Output is in plain text. They run as separate processes to PowerShell. Native Command: These are relatively easy to discover, as all can be listed within the PowerShell command line. These return objects, not just text. Commands have a naming convention and format. Native commands typically follow this format:
-Command-Name -Parameter Value Searching for PowerShell Commands We can get a list of native PowerShell commands with Get-Command.
+		Multi-Function Terminal Essentially this is a custom Web browser application based on the latest .NET Framework and WebView2, but it is configurable by the persons administrating the terminal and is designed to run on remotely-managed client machines.
+Technical Debt and Legacy Software Essentially making sure that software is more secure, robust, maintainable and documented.
+Wake On LAN Portal This is a Web portal that enables members of an organisation to wake on-premise computers, so they become accessible over Remote Desktop.
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/dotnet-core-azure-ad-authentication/" rel="bookmark">
-			Azure Active Directory Authentication for .NET Core Services
+			<a href="/docs/repositories/repositories/" rel="bookmark">
+			Repositories
 			</a>
 		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-01T00:00:00Z">June 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/security/" rel="category">Security</a>
-	</span>
-</div></div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		If upgrading an existing application, the following are required from NuGet:
-Microsoft.Identity.Web Microsoft.Identity.Web.UI Generating the Project The project in this repository was generated from the ASP.NET Core Web App template. When generating the project, select &lsquo;Microsoft identity platform&rsquo; as the Authentication type in the Additional Information section. HTTPS and Docker were also enabled for this project.
-After installing dotnet msidentity tool, Visual Studio will display the Service Dependencies and Service References.
+		Code Samples Miscellaneous code samples and templates are stored here.
+Go&hellip;
+INFOSEC Computer and network security code and scripts.
+Go&hellip;
+PHAROS Project templates, mainly .NET Core.
+Go&hellip;
+Python A collection of old Python scripts and projects.
+Go&hellip;
+Systems Integration APIs, Web Services, etc. Most the code here is for the older versions of .NET Framework.
+Dataset Lookup Service API Generic Service Bus Consumer Go&hellip;
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/dotnet-core-xunit/" rel="bookmark">
-			.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork
+			<a href="/docs/toolkit/" rel="bookmark">
+			Software Toolkit
 			</a>
 		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-03T00:00:00Z">May 03, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		After some hours of frustration and asking myself whether I should have used Unit of Work in the first place (there are already layers of abstraction in the standard .NET Core template project) I managed to get a functioning xUnit test method that mocks the repositories, populates them with data and verifies the model returned by a controller method.
-Setting Up a Unit Test Project Add a xUnit project to the solution, then add an assembly reference in that to the project being tested.
+		Docker Desktop
+GitHub
+LINQPad
+MkDocs (Material)
+Postman
+Windows Terminal
+Wireshark
+Editors and Development Environments emacs org mode
+Notepad++
+Visual Studio
+Visual Studio Code
+SQL and Databases Azure Data Studio
+Entity Framework Core Tools
+MySQL Server
+MySQL Workbench
+SQL Server Management Studio
 	</div>
 </article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/ef-core-cli-reference/" rel="bookmark">
-			Entity Framework Core Command Line Reference
+			<a href="/docs/resources/" rel="bookmark">
+			Useful Links
 			</a>
 		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-05-03T00:00:00Z">May 03, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Installing Entity command line The .NET Entity Framework command line tools can be installed globally in PowerShell, or just for a specific project.
-dotnet tool install --global dotnet-ef After installation, it might be a good idea to update the tools:
-dotnet tool update --global dotnet-ef Add the Entity Framework Packages to a Project In order to use the Entity Framework command line tools for a .NET Core project, it&rsquo;s necessary to install the Design package.
+		Codemanship Blog Codemanship&rsquo;s Blog
+Babel This is a JavaScript compiler and translator. Could be useful for generating backwards-compatible code.
+Babel JavaScript Compiler
+GitHub Commands Cheat Sheet All the commonly-used GitHub commands.
+GitHub Commands Cheat Sheet
+Hacker News Technology-related news items and blog posts that might be of interest.
+Hacker News
+Netlify Integrate Web site hosting with DevOps and GitHub. Also provides ready-made static site generator templates.
+Netlify
+OWASP Top Ten Open Web Application Security Project&rsquo;s list of top application vulnerabilities and recommendations.
 	</div>
 </article>
 </main>
 
 <div class="pagination">
-	<span class="pagination__item pagination__item--current">1/2</span>
-	<a class="pagination__item pagination__item--next btn" href="/page/2/">»</a>
+	<a class="pagination__item pagination__item--prev btn" href="/">«</a>
+	<span class="pagination__item pagination__item--current">2/2</span>
 </div>
 
 			</div>

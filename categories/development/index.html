@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.102.3" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>scarbrough-trx@GitHub</title>
+	<title>Development - scarbrough-trx@GitHub</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="John Doe&#39;s Personal blog about everything">
-		<meta property="og:title" content="scarbrough-trx@GitHub" />
+	<meta name="description" content="">
+		<meta property="og:title" content="Development" />
 <meta property="og:description" content="John Doe&#39;s Personal blog about everything" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:url" content="/categories/development/" />
 
 
-		<meta itemprop="name" content="scarbrough-trx@GitHub">
+		<meta itemprop="name" content="Development">
 <meta itemprop="description" content="John Doe&#39;s Personal blog about everything">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -23,7 +22,7 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="scarbrough-trx@GitHub">
+	<link rel="alternate" type="application/rss+xml" href="/categories/development/index.xml" title="scarbrough-trx@GitHub">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -92,7 +91,9 @@
 			<div class="primary">
 			
 <main class="main list" role="main">
-	<article class="list__item post">
+	<header class="main__header">
+		<h1 class="main__title">Development</h1>
+	</header><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -202,25 +203,6 @@ System.InvalidOperationException: Unable to configure HTTPS endpoint. No server 
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/powershell/" rel="bookmark">
-			PowerShell Notes
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-01T00:00:00Z">August 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/windows/" rel="category">Windows</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		There are two categories of PowerShell command:
-External Command: For example, CMD commands, or programs launched from PowerShell. Output is in plain text. They run as separate processes to PowerShell. Native Command: These are relatively easy to discover, as all can be listed within the PowerShell command line. These return objects, not just text. Commands have a naming convention and format. Native commands typically follow this format:
-Command-Name -Parameter Value Searching for PowerShell Commands We can get a list of native PowerShell commands with Get-Command.
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
 			<a href="/post/dotnet-core-azure-ad-authentication/" rel="bookmark">
 			Azure Active Directory Authentication for .NET Core Services
 			</a>
@@ -273,16 +255,34 @@ Setting Up a Unit Test Project Add a xUnit project to the solution, then add an 
 dotnet tool install --global dotnet-ef After installation, it might be a good idea to update the tools:
 dotnet tool update --global dotnet-ef Add the Entity Framework Packages to a Project In order to use the Entity Framework command line tools for a .NET Core project, it&rsquo;s necessary to install the Design package.
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/repository-pattern-and-uow/" rel="bookmark">
+			.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-25T00:00:00Z">April 25, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		A repository pattern exists to add another layer of abstraction between the application logic and the data layer, using dependency injection to decouple the two. It&rsquo;s not my preferred way of doing things, because of the effort and complexity involved, and I&rsquo;m certainly not the only person who initially struggled to understand the concepts behind it. Plus, it&rsquo;s apparent that Entity Framework makes heavy use of that dependency injection already. But a Repository Pattern is widely considered - by software engineers far more experienced than I am - best practice for engineering services that deal with critical data.
+	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<span class="pagination__item pagination__item--current">1/2</span>
-	<a class="pagination__item pagination__item--next btn" href="/page/2/">»</a>
+	<a class="pagination__item pagination__item--next btn" href="/categories/development/page/2/">»</a>
 </div>
 
 			</div>
-			<aside class="sidebar"><div class="widget-search widget">
+			
+<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://www.bing.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">

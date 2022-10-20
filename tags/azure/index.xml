@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on scarbrough-trx@GitHub</title>
+    <link>/tags/azure/</link>
+    <description>Recent content in Azure on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Basics</title>
+      <link>/post/docker-basics/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/docker-basics/</guid>
+      <description>A Docker container runs as a sandboxed process on a local system or a server, and consists of at least one image. An image is built from the source code of an application or service, and can be distributed, through a repository, to provide others the means of testing an existing software product with minimal setup.
+Containers and images can be managed through the Docker Dashboard application. As such, a Docker container will require its own configurations and script that enable it to run as intended.</description>
+    </item>
+    
+    <item>
+      <title>Azure Active Directory Authentication for .NET Core Services</title>
+      <link>/post/dotnet-core-azure-ad-authentication/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-azure-ad-authentication/</guid>
+      <description>If upgrading an existing application, the following are required from NuGet:
+Microsoft.Identity.Web Microsoft.Identity.Web.UI Generating the Project The project in this repository was generated from the ASP.NET Core Web App template. When generating the project, select &amp;lsquo;Microsoft identity platform&amp;rsquo; as the Authentication type in the Additional Information section. HTTPS and Docker were also enabled for this project.
+After installing dotnet msidentity tool, Visual Studio will display the Service Dependencies and Service References.</description>
+    </item>
+    
+  </channel>
+</rss>

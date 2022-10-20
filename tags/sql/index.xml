@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on scarbrough-trx@GitHub</title>
+    <link>/tags/sql/</link>
+    <description>Recent content in SQL on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrations Using Visual Studio SQL Server Database Project</title>
+      <link>/post/sql-server-database-vs-project/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sql-server-database-vs-project/</guid>
+      <description>Migrations Using Visual Studio SQL Server Database Project Setting Up the Migration Project Add a new project to the Visual Studio solution. This project will initially be empty, without assembly references or scaffold files - it appears everything is native to Visual Studio. To this we need to add the connection to the database the schema is to be imported from. There will be a menu option for &amp;lsquo;Import&amp;rsquo; -&amp;gt; &amp;lsquo;Database&amp;rsquo;.</description>
+    </item>
+    
+    <item>
+      <title>Docker Basics</title>
+      <link>/post/docker-basics/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/docker-basics/</guid>
+      <description>A Docker container runs as a sandboxed process on a local system or a server, and consists of at least one image. An image is built from the source code of an application or service, and can be distributed, through a repository, to provide others the means of testing an existing software product with minimal setup.
+Containers and images can be managed through the Docker Dashboard application. As such, a Docker container will require its own configurations and script that enable it to run as intended.</description>
+    </item>
+    
+  </channel>
+</rss>

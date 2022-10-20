@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on scarbrough-trx@GitHub</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo and the Mainroad Theme</title>
+      <link>/post/hugo-and-mainroad/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugo-and-mainroad/</guid>
+      <description>I think I&amp;rsquo;ve found the ideal theme for my Hugo site. Mainroad is relatively simple in design, the layout is roughly what I was looking for, and it&amp;rsquo;s easier to customise. It still has tags and categories features that are essential for a site hosting technical documentation. I spent around six hours learning how the template works, re-arranging the content and tweaking the CSS to make it as clean as my MkDocs site.</description>
+    </item>
+    
+    <item>
+      <title>Netlify CMS and Continuous Deployment for Hugo</title>
+      <link>/post/netlify-cms-hugo/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/netlify-cms-hugo/</guid>
+      <description>Netlify CMS and Continuous Deployment for Hugo Having experimented with this, I think Netlify&amp;rsquo;s idea of tacking a CMS onto a static site generator is tailored for situations where multiple developers, through Continuous Deployment, are providing a corporate site for which the content is being edited by non-technical users. At least it appears that way, because it takes a lot of work to develop the site and configure the CMS for anything more generic than the template provided, and an individual developer working on this as a personal project would most likely dispense with the CMS entirely and modify the files in the /content directory themselves (I&amp;rsquo;ll explain why).</description>
+    </item>
+    
+    <item>
+      <title>Migrations Using Visual Studio SQL Server Database Project</title>
+      <link>/post/sql-server-database-vs-project/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sql-server-database-vs-project/</guid>
+      <description>Migrations Using Visual Studio SQL Server Database Project Setting Up the Migration Project Add a new project to the Visual Studio solution. This project will initially be empty, without assembly references or scaffold files - it appears everything is native to Visual Studio. To this we need to add the connection to the database the schema is to be imported from. There will be a menu option for &amp;lsquo;Import&amp;rsquo; -&amp;gt; &amp;lsquo;Database&amp;rsquo;.</description>
+    </item>
+    
+    <item>
+      <title>Docker Basics</title>
+      <link>/post/docker-basics/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/docker-basics/</guid>
+      <description>A Docker container runs as a sandboxed process on a local system or a server, and consists of at least one image. An image is built from the source code of an application or service, and can be distributed, through a repository, to provide others the means of testing an existing software product with minimal setup.
+Containers and images can be managed through the Docker Dashboard application. As such, a Docker container will require its own configurations and script that enable it to run as intended.</description>
+    </item>
+    
+    <item>
+      <title>Entity Framework Migrations</title>
+      <link>/post/entity-framework-migrations/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/entity-framework-migrations/</guid>
+      <description>The purpose of generating Entity Framework migrations is to apply database schema changes consistently across Staging, UAT and Production environments.
+The proposed method would involve developers generating migration a migration script whenever changes are made to the Entity Framework model in their projects. The DevOps team would apply that migration script to update the Azure environments. The services and applications being developed themselves should not have permissions to modify the environment.</description>
+    </item>
+    
+    <item>
+      <title>Kestrel HTTPS Error - .Net Core and Docker</title>
+      <link>/post/kestrel-errors/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/kestrel-errors/</guid>
+      <description>The following is another commonly-posted question in Stack Overflow, which I&amp;rsquo;ve been looking at while debugging the same problem:
+System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:
+[...][15:25:25 FTL] Unable to start Kestrel.</description>
+    </item>
+    
+    <item>
+      <title>PowerShell Notes</title>
+      <link>/post/powershell/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/powershell/</guid>
+      <description>There are two categories of PowerShell command:
+External Command: For example, CMD commands, or programs launched from PowerShell. Output is in plain text. They run as separate processes to PowerShell. Native Command: These are relatively easy to discover, as all can be listed within the PowerShell command line. These return objects, not just text. Commands have a naming convention and format. Native commands typically follow this format:
+Command-Name -Parameter Value Searching for PowerShell Commands We can get a list of native PowerShell commands with Get-Command.</description>
+    </item>
+    
+    <item>
+      <title>Azure Active Directory Authentication for .NET Core Services</title>
+      <link>/post/dotnet-core-azure-ad-authentication/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-azure-ad-authentication/</guid>
+      <description>If upgrading an existing application, the following are required from NuGet:
+Microsoft.Identity.Web Microsoft.Identity.Web.UI Generating the Project The project in this repository was generated from the ASP.NET Core Web App template. When generating the project, select &amp;lsquo;Microsoft identity platform&amp;rsquo; as the Authentication type in the Additional Information section. HTTPS and Docker were also enabled for this project.
+After installing dotnet msidentity tool, Visual Studio will display the Service Dependencies and Service References.</description>
+    </item>
+    
+    <item>
+      <title>.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</title>
+      <link>/post/dotnet-core-xunit/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-xunit/</guid>
+      <description>After some hours of frustration and asking myself whether I should have used Unit of Work in the first place (there are already layers of abstraction in the standard .NET Core template project) I managed to get a functioning xUnit test method that mocks the repositories, populates them with data and verifies the model returned by a controller method.
+Setting Up a Unit Test Project Add a xUnit project to the solution, then add an assembly reference in that to the project being tested.</description>
+    </item>
+    
+    <item>
+      <title>Entity Framework Core Command Line Reference</title>
+      <link>/post/ef-core-cli-reference/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ef-core-cli-reference/</guid>
+      <description>Installing Entity command line The .NET Entity Framework command line tools can be installed globally in PowerShell, or just for a specific project.
+dotnet tool install --global dotnet-ef After installation, it might be a good idea to update the tools:
+dotnet tool update --global dotnet-ef Add the Entity Framework Packages to a Project In order to use the Entity Framework command line tools for a .NET Core project, it&amp;rsquo;s necessary to install the Design package.</description>
+    </item>
+    
+    <item>
+      <title>.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work</title>
+      <link>/post/repository-pattern-and-uow/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/repository-pattern-and-uow/</guid>
+      <description>A repository pattern exists to add another layer of abstraction between the application logic and the data layer, using dependency injection to decouple the two. It&amp;rsquo;s not my preferred way of doing things, because of the effort and complexity involved, and I&amp;rsquo;m certainly not the only person who initially struggled to understand the concepts behind it. Plus, it&amp;rsquo;s apparent that Entity Framework makes heavy use of that dependency injection already. But a Repository Pattern is widely considered - by software engineers far more experienced than I am - best practice for engineering services that deal with critical data.</description>
+    </item>
+    
+    <item>
+      <title>Implementing an AJAX Request in .NET Core 6 MVC</title>
+      <link>/post/dotnet-core-ajax/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-ajax/</guid>
+      <description>One of the problems with implementing a search feature that returns a table in a partial view is the Entity Framework model declarations must be strongly-typed. This means we run into difficulties declarating a model in the containing view and an IEnumerable instance of it for the partial view. One way around this is to instead discard the model for the mainview, and use jQuery and AJAX to read values from specific input elements in the main view, and pass those values to the controller action that returns the partial view with the IEnumerable model.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern</title>
+      <link>/post/dotnet-core-6-ef-mvc/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-6-ef-mvc/</guid>
+      <description>The following mostly doesn&amp;rsquo;t refer to problems native to the .NET Core 6 Framework itself, but rather some difficulties I encountered while getting an Entity Framework Database-First model working in the MVC project template generated by Visual Studio 2022.
+Some of the problems centred around:
+Breaking changes and things that might be awkward for developers accustomed to working with legacy non-Core versions of .NET (espectially .NET MVC). Not much documentation out there, relative to what&amp;rsquo;s published for the older .</description>
+    </item>
+    
+    <item>
+      <title>OpenCart Development Notes</title>
+      <link>/post/opencart/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/opencart/</guid>
+      <description>Overview The OpenCart system follows the MVC (Model, View, Controller) pattern. A simple description of how this works is that a View determines the layout and appearance of a Web site, whereas the content itself is generated and inserted into the View by a Controller. A Model contains data objects that represent database entities being processed by the Controller.
+With OpenCart, we have a more complicated implementation of the MVC pattern, mainly because a site&amp;rsquo;s appearance isn&amp;rsquo;t actually determined by a set of HTML/CSHTML files in the /views directory.</description>
+    </item>
+    
+    <item>
+      <title>Several potential fixes for the missing .NET SDK error (Docker and .NET Core)</title>
+      <link>/post/docker-missing-dotnet-sdk/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/docker-missing-dotnet-sdk/</guid>
+      <description>There have been many people asking about this on Stack Overflow, and none of the answers there brought me closer to resolving the problem, which, it later transpired, was caused by something really silly I&amp;rsquo;d overlooked. When running &amp;lsquo;docker-compose up&amp;rsquo; in the Docker CLI, for a .NET Core service, the output reports that it cannot find an installed SDK:
+It was not possible to find any installed .NET Core SDKsDid you mean to run .</description>
+    </item>
+    
+  </channel>
+</rss>
