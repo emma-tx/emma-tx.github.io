@@ -6,7 +6,19 @@
     <description>Recent content on scarbrough-trx@GitHub</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Function App Migration</title>
+      <link>/post/azure-function-app-migration/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/azure-function-app-migration/</guid>
+      <description>After clicking ‘Create’, select ‘Develop in portal’, and HTTP Trigger or Service Bus Trigger, depending on the type of Function App being added.
+Most the required information – function name, connection, queue name, etc. – can be copied from the original function’s JSON file.
+In Code + Test, copy the code from the old function or the Visual Studio Solution.
+In the Integration section, the values for Trigger, Inputs and Outputs also need to be copied over.</description>
+    </item>
+    
     <item>
       <title>Some notes on upgrading to .NET 7</title>
       <link>/post/dotnet-7-release/</link>
@@ -215,7 +227,8 @@ Dataset Lookup Service API Generic Service Bus Consumer Go&amp;hellip;</descript
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/toolkit/</guid>
-      <description>Docker Desktop
+      <description>Azure Storage Explorer
+Docker Desktop
 GitHub
 LINQPad
 MkDocs (Material)
