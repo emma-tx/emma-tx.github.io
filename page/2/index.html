@@ -96,6 +96,44 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/powershell/" rel="bookmark">
+			PowerShell Notes
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-01T00:00:00Z">August 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/windows/" rel="category">Windows</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		There are two categories of PowerShell command:
+External Command: For example, CMD commands, or programs launched from PowerShell. Output is in plain text. They run as separate processes to PowerShell. Native Command: These are relatively easy to discover, as all can be listed within the PowerShell command line. These return objects, not just text. Commands have a naming convention and format. Native commands typically follow this format:
+Command-Name -Parameter Value Searching for PowerShell Commands We can get a list of native PowerShell commands with Get-Command.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/dotnet-core-azure-ad-authentication/" rel="bookmark">
+			Azure Active Directory Authentication for .NET Core Services
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-01T00:00:00Z">June 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/security/" rel="category">Security</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		If upgrading an existing application, the following are required from NuGet:
+Microsoft.Identity.Web Microsoft.Identity.Web.UI Generating the Project The project in this repository was generated from the ASP.NET Core Web App template. When generating the project, select &lsquo;Microsoft identity platform&rsquo; as the Authentication type in the Additional Information section. HTTPS and Docker were also enabled for this project.
+After installing dotnet msidentity tool, Visual Studio will display the Service Dependencies and Service References.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/dotnet-core-xunit/" rel="bookmark">
 			.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork
 			</a>
@@ -232,43 +270,6 @@ It was not possible to find any installed .NET Core SDKsDid you mean to run .
 		My name is Michael, and my professional background is in .NET software engineering (C#, MVC, MSSQL, etc), though this is within the context of an ecosystem of other technologies related to deployment, version control, distribution and testing. Aside from that, I do have some expertise with the Linux operating system (mostly variants of Debian and openSUSE), which I have been using since ~2005.
 After several years working for the public sector, where I provided technical support for secure communications networks, I decided to take this in a more academic direction, studying computer security at the University of South Wales, and managing to earn a Masters&rsquo; degree in 2014.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/docs/projects/projects/" rel="bookmark">
-			My Projects
-			</a>
-		</h2>
-		
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Multi-Function Terminal Essentially this is a custom Web browser application based on the latest .NET Framework and WebView2, but it is configurable by the persons administrating the terminal and is designed to run on remotely-managed client machines.
-Technical Debt and Legacy Software Essentially making sure that software is more secure, robust, maintainable and documented.
-Wake On LAN Portal This is a Web portal that enables members of an organisation to wake on-premise computers, so they become accessible over Remote Desktop.
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/docs/repositories/repositories/" rel="bookmark">
-			Repositories
-			</a>
-		</h2>
-		
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Code Samples Miscellaneous code samples and templates are stored here.
-Go&hellip;
-INFOSEC Computer and network security code and scripts.
-Go&hellip;
-PHAROS Project templates, mainly .NET Core.
-Go&hellip;
-Python A collection of old Python scripts and projects.
-Go&hellip;
-Systems Integration APIs, Web Services, etc. Most the code here is for the older versions of .NET Framework.
-Dataset Lookup Service API Generic Service Bus Consumer Go&hellip;
-	</div>
 </article>
 </main>
 
@@ -292,6 +293,8 @@ Dataset Lookup Service API Generic Service Bus Consumer Go&hellip;
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/">Upgrading Azure Logic Apps</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/check-sql-server-jobs-errors/">Tracing SQL Server Integration / Job Failures</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-function-app-migration/">Azure Function App Migration</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-7-release/">Some notes on upgrading to .NET 7</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/hugo-and-mainroad/">Hugo and the Mainroad Theme</a></li>
@@ -305,8 +308,6 @@ Dataset Lookup Service API Generic Service Bus Consumer Go&hellip;
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-xunit/">.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/ef-core-cli-reference/">Entity Framework Core Command Line Reference</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/repository-pattern-and-uow/">.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-ajax/">Implementing an AJAX Request in .NET Core 6 MVC</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-6-ef-mvc/">Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern</a></li>
 		</ul>
 	</div>
 </div>
@@ -338,6 +339,7 @@ Dataset Lookup Service API Generic Service Bus Consumer Go&hellip;
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotnet/" title="DotNET">DotNET</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/entity-framework/" title="Entity Framework">Entity Framework</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/integration/" title="Integration">Integration</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/migrations/" title="Migrations">Migrations</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/netlify/" title="Netlify">Netlify</a>

@@ -96,6 +96,42 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/" rel="bookmark">
+			Upgrading Azure Logic Apps
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-11-18T00:00:00Z">November 18, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		One of our static site generators consists of a set of Azure Logic Apps that perform various tasks, from aggregating data to constructing Web pages. The Logic Apps will each call an Azure Function to build specific elements of the Web site. For example, the myDirectoryProcessor Logic App calls the GeneratorHTML and GenerateMainIndexHTML Functions.
+Upgrading the service will involve modifications to the Function App and the Logic Apps that use it.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/check-sql-server-jobs-errors/" rel="bookmark">
+			Tracing SQL Server Integration / Job Failures
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-11-08T00:00:00Z">November 08, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Job Activity Monitor In SQL Server Management Studio’s Object Explorer window, select SQL Server Agent -&gt; Job Activity Monitor.
+In the Job Activity Monitor window, check the Enabled and Status columns for the service(s) of interest. To view the details of a log entry, right-click on that entry and select ‘View History’. This will open the Log File Viewer for the service. Further information about a failed execution can be viewed by expanding the entry or by expanding the details pane below the log entries.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/azure-function-app-migration/" rel="bookmark">
 			Azure Function App Migration
 			</a>
@@ -239,44 +275,6 @@ The proposed method would involve developers generating migration a migration sc
 System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:
 [...][15:25:25 FTL] Unable to start Kestrel.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/powershell/" rel="bookmark">
-			PowerShell Notes
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-01T00:00:00Z">August 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/windows/" rel="category">Windows</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		There are two categories of PowerShell command:
-External Command: For example, CMD commands, or programs launched from PowerShell. Output is in plain text. They run as separate processes to PowerShell. Native Command: These are relatively easy to discover, as all can be listed within the PowerShell command line. These return objects, not just text. Commands have a naming convention and format. Native commands typically follow this format:
-Command-Name -Parameter Value Searching for PowerShell Commands We can get a list of native PowerShell commands with Get-Command.
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/dotnet-core-azure-ad-authentication/" rel="bookmark">
-			Azure Active Directory Authentication for .NET Core Services
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-01T00:00:00Z">June 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/security/" rel="category">Security</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		If upgrading an existing application, the following are required from NuGet:
-Microsoft.Identity.Web Microsoft.Identity.Web.UI Generating the Project The project in this repository was generated from the ASP.NET Core Web App template. When generating the project, select &lsquo;Microsoft identity platform&rsquo; as the Authentication type in the Additional Information section. HTTPS and Docker were also enabled for this project.
-After installing dotnet msidentity tool, Visual Studio will display the Service Dependencies and Service References.
-	</div>
 </article>
 </main>
 
@@ -299,6 +297,8 @@ After installing dotnet msidentity tool, Visual Studio will display the Service 
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/">Upgrading Azure Logic Apps</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/check-sql-server-jobs-errors/">Tracing SQL Server Integration / Job Failures</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-function-app-migration/">Azure Function App Migration</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-7-release/">Some notes on upgrading to .NET 7</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/hugo-and-mainroad/">Hugo and the Mainroad Theme</a></li>
@@ -312,8 +312,6 @@ After installing dotnet msidentity tool, Visual Studio will display the Service 
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-xunit/">.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/ef-core-cli-reference/">Entity Framework Core Command Line Reference</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/repository-pattern-and-uow/">.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-ajax/">Implementing an AJAX Request in .NET Core 6 MVC</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-6-ef-mvc/">Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern</a></li>
 		</ul>
 	</div>
 </div>
@@ -345,6 +343,7 @@ After installing dotnet msidentity tool, Visual Studio will display the Service 
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotnet/" title="DotNET">DotNET</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/entity-framework/" title="Entity Framework">Entity Framework</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/integration/" title="Integration">Integration</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="JavaScript">JavaScript</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/migrations/" title="Migrations">Migrations</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/netlify/" title="Netlify">Netlify</a>

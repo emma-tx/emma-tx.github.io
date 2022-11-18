@@ -4,21 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Azure Function App Migration - scarbrough-trx@GitHub</title>
+	<title>Upgrading Azure Logic Apps - scarbrough-trx@GitHub</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="A general guide to migrating Azure Function Apps to a new environment.">
-		<meta property="og:title" content="Azure Function App Migration" />
-<meta property="og:description" content="A general guide to migrating Azure Function Apps to a new environment." />
+	<meta name="description" content="A process for upgrading Logic Apps in Azure.">
+		<meta property="og:title" content="Upgrading Azure Logic Apps" />
+<meta property="og:description" content="A process for upgrading Logic Apps in Azure." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/azure-function-app-migration/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-10-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-27T00:00:00+00:00" />
+<meta property="og:url" content="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-18T00:00:00+00:00" />
 
 
-		<meta itemprop="name" content="Azure Function App Migration">
-<meta itemprop="description" content="A general guide to migrating Azure Function Apps to a new environment."><meta itemprop="datePublished" content="2022-10-27T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-10-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="161">
+		<meta itemprop="name" content="Upgrading Azure Logic Apps">
+<meta itemprop="description" content="A process for upgrading Logic Apps in Azure."><meta itemprop="datePublished" content="2022-11-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-11-18T00:00:00+00:00" />
+<meta itemprop="wordCount" content="863">
 <meta itemprop="keywords" content="Azure," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -97,44 +97,79 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Azure Function App Migration</h1>
+			<h1 class="post__title">Upgrading Azure Logic Apps</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-10-27T00:00:00Z">October 27, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-11-18T00:00:00Z">November 18, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<ol>
-<li>
-<p>After clicking ‘<em>Create</em>’, select ‘<em>Develop in portal</em>’, and <em>HTTP Trigger</em> or <em>Service Bus Trigger</em>, depending on the type of Function App being added.</p>
-</li>
-<li>
-<p>Most the required information – function name, connection, queue name, etc. – can be copied from the original function’s JSON file.</p>
-</li>
-<li>
-<p>In <em>Code + Test</em>, copy the code from the old function or the Visual Studio Solution.</p>
-</li>
-<li>
-<p>In the Integration section, the values for <em>Trigger</em>, <em>Inputs</em> and <em>Outputs</em> also need to be copied over.</p>
-</li>
-<li>
-<p>Copy any missing variables over from the <em>Settings</em> -&gt; <em>Configuration</em> section of the older environment.</p>
-</li>
+			<p>One of our static site generators consists of a set of Azure Logic Apps that perform various tasks, from aggregating data to constructing Web pages. The Logic Apps will each call an Azure Function to build specific elements of the Web site. For example, the <em>myDirectoryProcessor</em> Logic App calls the <em>GeneratorHTML</em> and <em>GenerateMainIndexHTML</em> Functions.</p>
+<p>Upgrading the service will involve modifications to the Function App and the Logic Apps that use it.</p>
+<ul>
+<li>The Function Apps are deployed to <em>myProfileHTMLGenerator</em>.</li>
+<li>The Logic Apps are deployed to the <em>myDirectorySite</em> resource group.</li>
+</ul>
+<hr>
+<h2 id="upgrading-the-function-app">Upgrading the Function App</h2>
+<p>The Function App includes the following functions, each performing a specific operation that&rsquo;s involved in the generation of the site:</p>
+<ul>
+<li>GenerateMainIndexHTML</li>
+<li>GenerateSiteMap</li>
+<li>GeneratorHTML</li>
+</ul>
+<p>Each function in the app will consist of:</p>
+<ul>
+<li><strong>Code:</strong> This is the C# function code. Most the functions will use assembly references that are native to .NET, and usually include directives to pull a dependency from a common repository.</li>
+<li><strong>Integration:</strong> This section is presented in Azure as a &rsquo;no code&rsquo; designer that defines the HTTP trigger, input(s) and the output method.</li>
+<li><strong>Function Keys:</strong> A function key is an auto-generated API key for the function. A Logic App will require this.</li>
+</ul>
+<p>Unfortunately it doesn&rsquo;t appear possible to upgrade the .NET runtime of the Function App itself, so an upgrade will require a new instance of the app and all its functions. The process for doing this is relatively straightforward, though.</p>
+<ol>
+<li><strong>Create a new Function App.</strong> This will have a newer .NET target framework than the existing one, and it&rsquo;s where new instances of the functions will be created.</li>
+<li><strong>Create new instances of the functions in the Function App.</strong> In the case of our static site generator, all the functions will have HTTP triggers.</li>
 </ol>
-<h2 id="dependencies">Dependencies</h2>
-<p>Copy the DLLs and other dependencies into the environment’s file system.</p>
+<p><img src="../create-http-trigger-function.png" alt="Profile Image"></p>
+<ol start="3">
+<li><strong>Replicate the function&rsquo;s code.</strong> In this new function, navigate to the &lsquo;<em>Code + Test</em>&rsquo; section and replace all the code with that from the older instance of the function.</li>
+<li><strong>Check the integrations.</strong> Usually it&rsquo;s not required to make any changes within the &lsquo;<em>Integration</em>&rsquo; section for the new function, but it should be compared with the Integration of the old function anyway, to ensure there are no mismatches.</li>
+<li><strong>Test the function.</strong> Finally, it&rsquo;s a good idea to test the new function. In the &lsquo;<em>Code + Test</em>&rsquo; section, click the &lsquo;<em>Test/Run</em>&rsquo; option above the code window. It might be necessary to copy the JSON body from the test for the older function. If all goes well, there will be success messages in the log window and the output.</li>
+</ol>
+<p><img src="../function-test.png" alt="Profile Image"></p>
+<h3 id="adding-a-custom-assemblydll">Adding a Custom Assembly/DLL</h3>
+<p>One of the functions references a custom DLL as a dependency. This must either be copied over from the existing function or compiled and uploaded. In order to do this, we must access the Function App&rsquo;s filesystem.</p>
+<ol>
+<li>In the main Function App view, where the functions are listed, select &lsquo;<em>Advanced Tools</em>&rsquo; under the <em>Development Tools</em> heading, and proceed to the Kudu site.</li>
+<li>In the top navigation menu, select &lsquo;<em>Debug console</em>&rsquo; and &lsquo;<em>PowerShell</em>&rsquo;.</li>
+<li>With the console view displayed, it&rsquo;s possible to navigate the Function App&rsquo;s file system through PowerShell or the graphical interface above it. The location of the DLL(s) used will be <em>/site/wwwroot/GenerateSiteMap/bin</em>. The <em>SiteMap.dll</em> file can be downloaded and copied/uploaded to the same path in the new Function App&rsquo;s filesystem.</li>
+</ol>
+<p><img src="../function-app-filesystem.png" alt="Profile Image"></p>
+<hr>
+<h2 id="upgrading-the-logic-apps">Upgrading the Logic Apps</h2>
+<p>The next stage of the upgrade is to modify the <em>myDirectoryProcessor</em> Logic Apps themselves. In the view for the <em>myDirectorySite</em> resource group, it might be easier to filter the list for &lsquo;Logic Apps&rsquo;. In this case, there are several.</p>
 <ol>
 <li>
-<p>In the Azure Portal, select <em>Advanced Tools</em> in the <em>Development Tools</em> section in the left-hand menu. Confirm the selection and proceed.</p>
+<p><strong>Select a Logic App.</strong> The actions and their configurations can be viewed and modified in the Logic app designer. Some of these actions will reference the functions in the Function App.</p>
 </li>
 <li>
-<p>In the new browser tab, select <em>PowerShell</em> from the <em>Debug console</em> option in the navigation menu. There will be a file system view displayed above the command line window.</p>
+<p><strong>Under/after the existing function reference, add a new step (<em>Add an action</em>)</strong>. We want to choose <em>Azure Functions</em> as the operation for this step. This selection will open a view listing the available functions.</p>
 </li>
 <li>
-<p>The DLL should be placed in <em>/home/site/wwwroot/bin</em>.</p>
+<p><strong>Copy the request body from the preceding step in the Logic App, and add an <em>x-functions-key</em> field (select Header from the menu and add x-functions-key as a key).</strong> The <em>x-functions-key</em> value for this can be found in the function it&rsquo;s referencing, under the <em>Function Keys</em> section. When done, delete the preceding step that&rsquo;s referencing the old function.</p>
 </li>
 </ol>
+<p><img src="../replicate-logic-app-step.png" alt="Profile Image"></p>
+<ol start="4">
+<li><strong>Check other references to the older functions.</strong> References to functions might also be found nested within other actions within the Logic App, so they should be checked also. To change the step to reference the new function(s), repeat the above process.</li>
+</ol>
+<hr>
+<h2 id="managed-identity">Managed Identity</h2>
+<p>When a Logic App is created, an object ID for it is added to a registry, and permissions might need to be granted for that in order for the Logic App to run. To do this, we need to determine:
+a) The <em>Object (principal) ID</em>. This can be viewed under the <em>Settings</em> -&gt; <em>Identity</em> section in the Logic App view.
+b) The Azure storage account being used. A reference to this should exist somewhere in the Logic App designer.</p>
+<p>Find the storage account. It will be in the Storage accounts section of the Azure Portal. In the selected account, the section of interest is &lsquo;<em>Access Control (IAM)</em>&rsquo;.</p>
+<p>The Logic App will require Storage Blob Data Reader permissions.</p>
 
 		</div>
 		<footer class="post__footer">
@@ -165,14 +200,8 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/dotnet-7-release/" rel="prev">
+		<a class="pager__link" href="/post/check-sql-server-jobs-errors/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Some notes on upgrading to .NET 7</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/check-sql-server-jobs-errors/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
 			<p class="pager__title">Tracing SQL Server Integration / Job Failures</p>
 		</a>
 	</div>

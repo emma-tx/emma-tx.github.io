@@ -6,7 +6,17 @@
     <description>Recent content in Azure on scarbrough-trx@GitHub</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upgrading Azure Logic Apps</title>
+      <link>/post/azure-logic-app-upgrade/azure-logic-app-upgrade/</link>
+      <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/azure-logic-app-upgrade/azure-logic-app-upgrade/</guid>
+      <description>One of our static site generators consists of a set of Azure Logic Apps that perform various tasks, from aggregating data to constructing Web pages. The Logic Apps will each call an Azure Function to build specific elements of the Web site. For example, the myDirectoryProcessor Logic App calls the GeneratorHTML and GenerateMainIndexHTML Functions.
+Upgrading the service will involve modifications to the Function App and the Logic Apps that use it.</description>
+    </item>
+    
     <item>
       <title>Azure Function App Migration</title>
       <link>/post/azure-function-app-migration/</link>
