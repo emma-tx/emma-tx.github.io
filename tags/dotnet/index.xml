@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DotNET on scarbrough-trx@GitHub</title>
+    <link>/tags/dotnet/</link>
+    <description>Recent content in DotNET on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some notes on upgrading to .NET 7</title>
+      <link>/post/dotnet-7-release/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-7-release/</guid>
+      <description>The official release for .NET 7.0 is in November 2022, though there have been a number of preview versions this year. In order to upgrade services to this, it might be necessary to update Visual Studio and MSBuild first.
+Target Framework To upgrade, set the target framework as follows:
+&amp;lt;TargetFramework&amp;gt;net7.0&amp;lt;/TargetFramework&amp;gt; And maybe do the following update all package references to 7.0.0 for Microsoft.AspNetCore and Microsoft.Extensions.
+Other target frameworks include:
+net7.0 net7.</description>
+    </item>
+    
+    <item>
+      <title>Migrations Using Visual Studio SQL Server Database Project</title>
+      <link>/post/sql-server-database-vs-project/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sql-server-database-vs-project/</guid>
+      <description>Migrations Using Visual Studio SQL Server Database Project Setting Up the Migration Project Add a new project to the Visual Studio solution. This project will initially be empty, without assembly references or scaffold files - it appears everything is native to Visual Studio. To this we need to add the connection to the database the schema is to be imported from. There will be a menu option for &amp;lsquo;Import&amp;rsquo; -&amp;gt; &amp;lsquo;Database&amp;rsquo;.</description>
+    </item>
+    
+    <item>
+      <title>Kestrel HTTPS Error - .Net Core and Docker</title>
+      <link>/post/kestrel-errors/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/kestrel-errors/</guid>
+      <description>The following is another commonly-posted question in Stack Overflow, which I&amp;rsquo;ve been looking at while debugging the same problem:
+System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:
+[...][15:25:25 FTL] Unable to start Kestrel.</description>
+    </item>
+    
+    <item>
+      <title>Azure Active Directory Authentication for .NET Core Services</title>
+      <link>/post/dotnet-core-azure-ad-authentication/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-azure-ad-authentication/</guid>
+      <description>If upgrading an existing application, the following are required from NuGet:
+Microsoft.Identity.Web Microsoft.Identity.Web.UI Generating the Project The project in this repository was generated from the ASP.NET Core Web App template. When generating the project, select &amp;lsquo;Microsoft identity platform&amp;rsquo; as the Authentication type in the Additional Information section. HTTPS and Docker were also enabled for this project.
+After installing dotnet msidentity tool, Visual Studio will display the Service Dependencies and Service References.</description>
+    </item>
+    
+    <item>
+      <title>.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</title>
+      <link>/post/dotnet-core-xunit/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-xunit/</guid>
+      <description>After some hours of frustration and asking myself whether I should have used Unit of Work in the first place (there are already layers of abstraction in the standard .NET Core template project) I managed to get a functioning xUnit test method that mocks the repositories, populates them with data and verifies the model returned by a controller method.
+Setting Up a Unit Test Project Add a xUnit project to the solution, then add an assembly reference in that to the project being tested.</description>
+    </item>
+    
+    <item>
+      <title>.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work</title>
+      <link>/post/repository-pattern-and-uow/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/repository-pattern-and-uow/</guid>
+      <description>A repository pattern exists to add another layer of abstraction between the application logic and the data layer, using dependency injection to decouple the two. It&amp;rsquo;s not my preferred way of doing things, because of the effort and complexity involved, and I&amp;rsquo;m certainly not the only person who initially struggled to understand the concepts behind it. Plus, it&amp;rsquo;s apparent that Entity Framework makes heavy use of that dependency injection already. But a Repository Pattern is widely considered - by software engineers far more experienced than I am - best practice for engineering services that deal with critical data.</description>
+    </item>
+    
+    <item>
+      <title>Implementing an AJAX Request in .NET Core 6 MVC</title>
+      <link>/post/dotnet-core-ajax/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-ajax/</guid>
+      <description>One of the problems with implementing a search feature that returns a table in a partial view is the Entity Framework model declarations must be strongly-typed. This means we run into difficulties declarating a model in the containing view and an IEnumerable instance of it for the partial view. One way around this is to instead discard the model for the mainview, and use jQuery and AJAX to read values from specific input elements in the main view, and pass those values to the controller action that returns the partial view with the IEnumerable model.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on NET Core 6.0, Entity Framework and the New MVC Pattern</title>
+      <link>/post/dotnet-core-6-ef-mvc/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-6-ef-mvc/</guid>
+      <description>The following mostly doesn&amp;rsquo;t refer to problems native to the .NET Core 6 Framework itself, but rather some difficulties I encountered while getting an Entity Framework Database-First model working in the MVC project template generated by Visual Studio 2022.
+Some of the problems centred around:
+Breaking changes and things that might be awkward for developers accustomed to working with legacy non-Core versions of .NET (espectially .NET MVC). Not much documentation out there, relative to what&amp;rsquo;s published for the older .</description>
+    </item>
+    
+    <item>
+      <title>Several potential fixes for the missing .NET SDK error (Docker and .NET Core)</title>
+      <link>/post/docker-missing-dotnet-sdk/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/docker-missing-dotnet-sdk/</guid>
+      <description>There have been many people asking about this on Stack Overflow, and none of the answers there brought me closer to resolving the problem, which, it later transpired, was caused by something really silly I&amp;rsquo;d overlooked. When running &amp;lsquo;docker-compose up&amp;rsquo; in the Docker CLI, for a .NET Core service, the output reports that it cannot find an installed SDK:
+It was not possible to find any installed .NET Core SDKsDid you mean to run .</description>
+    </item>
+    
+  </channel>
+</rss>

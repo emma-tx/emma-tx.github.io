@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenCart on scarbrough-trx@GitHub</title>
+    <link>/tags/opencart/</link>
+    <description>Recent content in OpenCart on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/opencart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenCart Development Notes</title>
+      <link>/post/opencart/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/opencart/</guid>
+      <description>Overview The OpenCart system follows the MVC (Model, View, Controller) pattern. A simple description of how this works is that a View determines the layout and appearance of a Web site, whereas the content itself is generated and inserted into the View by a Controller. A Model contains data objects that represent database entities being processed by the Controller.
+With OpenCart, we have a more complicated implementation of the MVC pattern, mainly because a site&amp;rsquo;s appearance isn&amp;rsquo;t actually determined by a set of HTML/CSHTML files in the /views directory.</description>
+    </item>
+    
+  </channel>
+</rss>

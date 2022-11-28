@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xUnit on scarbrough-trx@GitHub</title>
+    <link>/tags/xunit/</link>
+    <description>Recent content in xUnit on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/xunit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</title>
+      <link>/post/dotnet-core-xunit/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dotnet-core-xunit/</guid>
+      <description>After some hours of frustration and asking myself whether I should have used Unit of Work in the first place (there are already layers of abstraction in the standard .NET Core template project) I managed to get a functioning xUnit test method that mocks the repositories, populates them with data and verifies the model returned by a controller method.
+Setting Up a Unit Test Project Add a xUnit project to the solution, then add an assembly reference in that to the project being tested.</description>
+    </item>
+    
+  </channel>
+</rss>

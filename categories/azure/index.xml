@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on scarbrough-trx@GitHub</title>
+    <link>/categories/azure/</link>
+    <description>Recent content in Azure on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upgrading Azure Logic Apps</title>
+      <link>/post/azure-logic-app-upgrade/azure-logic-app-upgrade/</link>
+      <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/azure-logic-app-upgrade/azure-logic-app-upgrade/</guid>
+      <description>One of our static site generators consists of a set of Azure Logic Apps that perform various tasks, from aggregating data to constructing Web pages. The Logic Apps will each call an Azure Function to build specific elements of the Web site. For example, the myDirectoryProcessor Logic App calls the GeneratorHTML and GenerateMainIndexHTML Functions.
+Upgrading the service will involve modifications to the Function App and the Logic Apps that use it.</description>
+    </item>
+    
+    <item>
+      <title>Azure Function App Migration</title>
+      <link>/post/azure-function-app-migration/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/azure-function-app-migration/</guid>
+      <description>After clicking ‘Create’, select ‘Develop in portal’, and HTTP Trigger or Service Bus Trigger, depending on the type of Function App being added.
+Most the required information – function name, connection, queue name, etc. – can be copied from the original function’s JSON file.
+In Code + Test, copy the code from the old function or the Visual Studio Solution.
+In the Integration section, the values for Trigger, Inputs and Outputs also need to be copied over.</description>
+    </item>
+    
+  </channel>
+</rss>
