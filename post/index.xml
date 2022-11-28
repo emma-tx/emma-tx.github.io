@@ -6,16 +6,7 @@
     <description>Recent content in Posts on scarbrough-trx@GitHub</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Knowledge Management for Developers</title>
-      <link>/post/km-for-developers/</link>
-      <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/post/km-for-developers/</guid>
-      <description>As I understand it, Tiago Forte is the person credited with the term &amp;lsquo;second brain&amp;rsquo;, in reference to his solutions to the problem of personal knowledge management. I say &amp;lsquo;solutions&amp;rsquo; because he goes on to recommend using a stack of software applications for essentially one thing - email, to do list, task managers and some notebook application. In a similar vein, the &amp;lsquo;second brain&amp;rsquo; concept had spawned a number of related &amp;lsquo;solutions&amp;rsquo;, such as Zettelkasten, PARA, Roam Research, Notion.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 18 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Upgrading Azure Logic Apps</title>
       <link>/post/azure-logic-app-upgrade/azure-logic-app-upgrade/</link>
