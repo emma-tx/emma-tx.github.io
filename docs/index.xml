@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/about/about/</guid>
-      <description>My name is Michael, and my professional background is in .NET software engineering (C#, MVC, MSSQL, etc), though this is within the context of an ecosystem of other technologies related to deployment, version control, distribution and testing. Aside from that, I do have some expertise with the Linux operating system (mostly variants of Debian and openSUSE), which I have been using since ~2005.
+      <description>My professional background is in .NET software engineering (C#, MVC, MSSQL, etc), though this is within the context of an ecosystem of other technologies related to deployment, version control, distribution and testing. Aside from that, I do have some expertise with the Linux operating system (mostly variants of Debian and openSUSE), which I have been using since ~2005.
 After several years working for the public sector, where I provided technical support for secure communications networks, I decided to take this in a more academic direction, studying computer security at the University of South Wales, and managing to earn a Masters&amp;rsquo; degree in 2014.</description>
     </item>
     
@@ -22,9 +22,8 @@ After several years working for the public sector, where I provided technical su
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/projects/projects/</guid>
-      <description>Multi-Function Terminal Essentially this is a custom Web browser application based on the latest .NET Framework and WebView2, but it is configurable by the persons administrating the terminal and is designed to run on remotely-managed client machines.
-Technical Debt and Legacy Software Essentially making sure that software is more secure, robust, maintainable and documented.
-Wake On LAN Portal This is a Web portal that enables members of an organisation to wake on-premise computers, so they become accessible over Remote Desktop.</description>
+      <description>Software Security Azure Static Site Generators Developed using Microsoft Azure services, the static site generators (SSGs) consist of the following:
+Azure Functions - These implement the logic, and are roughly analogous to the controller methods in a .NET MVC application. Azure Logic Apps: An event-driven Logic App is responsible for causing the Function App to execute and for processing the output. Generally it&amp;rsquo;s what merges the HTML page templates with the content to be displayed.</description>
     </item>
     
     <item>
@@ -55,6 +54,7 @@ Dataset Lookup Service API Generic Service Bus Consumer Go&amp;hellip;</descript
 Docker Desktop
 GitHub Desktop
 LINQPad
+Live Server
 MkDocs (Material)
 Postman
 Windows Terminal
@@ -67,6 +67,8 @@ SQL and Databases Azure Data Studio
 Entity Framework Core Tools
 MySQL Server
 MySQL Workbench
+pgAdmin
+Power BI Desktop
 SQL Server Management Studio</description>
     </item>
     

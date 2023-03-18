@@ -108,7 +108,7 @@
 		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		My name is Michael, and my professional background is in .NET software engineering (C#, MVC, MSSQL, etc), though this is within the context of an ecosystem of other technologies related to deployment, version control, distribution and testing. Aside from that, I do have some expertise with the Linux operating system (mostly variants of Debian and openSUSE), which I have been using since ~2005.
+		My professional background is in .NET software engineering (C#, MVC, MSSQL, etc), though this is within the context of an ecosystem of other technologies related to deployment, version control, distribution and testing. Aside from that, I do have some expertise with the Linux operating system (mostly variants of Debian and openSUSE), which I have been using since ~2005.
 After several years working for the public sector, where I provided technical support for secure communications networks, I decided to take this in a more academic direction, studying computer security at the University of South Wales, and managing to earn a Masters&rsquo; degree in 2014.
 	</div>
 </article><article class="list__item post">
@@ -122,9 +122,8 @@ After several years working for the public sector, where I provided technical su
 		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Multi-Function Terminal Essentially this is a custom Web browser application based on the latest .NET Framework and WebView2, but it is configurable by the persons administrating the terminal and is designed to run on remotely-managed client machines.
-Technical Debt and Legacy Software Essentially making sure that software is more secure, robust, maintainable and documented.
-Wake On LAN Portal This is a Web portal that enables members of an organisation to wake on-premise computers, so they become accessible over Remote Desktop.
+		Software Security Azure Static Site Generators Developed using Microsoft Azure services, the static site generators (SSGs) consist of the following:
+Azure Functions - These implement the logic, and are roughly analogous to the controller methods in a .NET MVC application. Azure Logic Apps: An event-driven Logic App is responsible for causing the Function App to execute and for processing the output. Generally it&rsquo;s what merges the HTML page templates with the content to be displayed.
 	</div>
 </article><article class="list__item post">
 	
@@ -163,6 +162,7 @@ Dataset Lookup Service API Generic Service Bus Consumer Go&hellip;
 Docker Desktop
 GitHub Desktop
 LINQPad
+Live Server
 MkDocs (Material)
 Postman
 Windows Terminal
@@ -175,6 +175,8 @@ SQL and Databases Azure Data Studio
 Entity Framework Core Tools
 MySQL Server
 MySQL Workbench
+pgAdmin
+Power BI Desktop
 SQL Server Management Studio
 	</div>
 </article><article class="list__item post">
@@ -218,6 +220,8 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/dependency-scanning/">Dependency scanning tools as a solution to a different problem</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/azure-ssg/">A Static Site Generator Function on Azure</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/">Upgrading Azure Logic Apps</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/check-sql-server-jobs-errors/">Tracing SQL Server Integration / Job Failures</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-function-app-migration/">Azure Function App Migration</a></li>
@@ -231,8 +235,6 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 			<li class="widget__item"><a class="widget__link" href="/post/powershell/">PowerShell Notes</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-azure-ad-authentication/">Azure Active Directory Authentication for .NET Core Services</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-xunit/">.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/ef-core-cli-reference/">Entity Framework Core Command Line Reference</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/repository-pattern-and-uow/">.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work</a></li>
 		</ul>
 	</div>
 </div>
@@ -260,6 +262,7 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 		<a class="widget-taglist__link widget__link btn" href="/tags/authentication/" title="Authentication">Authentication</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure/" title="Azure">Azure</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/development/" title="Development">Development</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/devops/" title="DevOps">DevOps</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker/" title="Docker">Docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotnet/" title="DotNET">DotNET</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/entity-framework/" title="Entity Framework">Entity Framework</a>
@@ -271,6 +274,7 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 		<a class="widget-taglist__link widget__link btn" href="/tags/opencart/" title="OpenCart">OpenCart</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="PHP">PHP</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powershell/" title="PowerShell">PowerShell</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software-engineering/" title="Software Engineering">Software Engineering</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/xunit/" title="xUnit">xUnit</a>
@@ -313,7 +317,7 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 scarbrough-trx@GitHub.
+			&copy; 2023 scarbrough-trx@GitHub.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

@@ -96,6 +96,42 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/dependency-scanning/" rel="bookmark">
+			Dependency scanning tools as a solution to a different problem
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-03-18T00:00:00Z">March 18, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/security/" rel="category">Security</a>, <a class="meta__link" href="/categories/devops/" rel="category">DevOps</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Since dependency vulnerability scanning has been suggested by colleagues as something that could help with security/standards compliance and addressing legacy software, I&rsquo;ve been looking into a few services to see how useful the available options could be.
+NPM Audit Dependency scanning is performed by default with the install command for later versions of NPM, and by default, the output of npm audit will show a few lines of relevant information about each package with a reported vulnerability - its rating, a brief description of the vulnerability and whether an update is available.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/azure-ssg/" rel="bookmark">
+			A Static Site Generator Function on Azure
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-03-07T00:00:00Z">March 07, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		What follows is a heavily abbreviated version of a Function App component I&rsquo;ve been working on.
+The Function App works a lot like a controller in an MVC application, except in this case the data is provided by an API, and the Web pages are generated and stored in the Resource Group&rsquo;s storage container. Azure provides the Web server that hosts these. Apparently this is the way technology is going for organisations that want to build sites that don&rsquo;t need to be updated in real-time.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/" rel="bookmark">
 			Upgrading Azure Logic Apps
 			</a>
@@ -238,43 +274,6 @@ net7.0 net7.
 		A Docker container runs as a sandboxed process on a local system or a server, and consists of at least one image. An image is built from the source code of an application or service, and can be distributed, through a repository, to provide others the means of testing an existing software product with minimal setup.
 Containers and images can be managed through the Docker Dashboard application. As such, a Docker container will require its own configurations and script that enable it to run as intended.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/entity-framework-migrations/" rel="bookmark">
-			Entity Framework Migrations
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-09-01T00:00:00Z">September 01, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		The purpose of generating Entity Framework migrations is to apply database schema changes consistently across Staging, UAT and Production environments.
-The proposed method would involve developers generating migration a migration script whenever changes are made to the Entity Framework model in their projects. The DevOps team would apply that migration script to update the Azure environments. The services and applications being developed themselves should not have permissions to modify the environment.
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/kestrel-errors/" rel="bookmark">
-			Kestrel HTTPS Error - .Net Core and Docker
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-15T00:00:00Z">August 15, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		The following is another commonly-posted question in Stack Overflow, which I&rsquo;ve been looking at while debugging the same problem:
-System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date. The most obvious cause would be Kestrel trying to use invalid or expired HTTPS certificates. However, looking more closely, my error message was preceded by:
-[...][15:25:25 FTL] Unable to start Kestrel.
-	</div>
 </article>
 </main>
 
@@ -297,6 +296,8 @@ System.InvalidOperationException: Unable to configure HTTPS endpoint. No server 
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/dependency-scanning/">Dependency scanning tools as a solution to a different problem</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/azure-ssg/">A Static Site Generator Function on Azure</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/">Upgrading Azure Logic Apps</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/check-sql-server-jobs-errors/">Tracing SQL Server Integration / Job Failures</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-function-app-migration/">Azure Function App Migration</a></li>
@@ -310,8 +311,6 @@ System.InvalidOperationException: Unable to configure HTTPS endpoint. No server 
 			<li class="widget__item"><a class="widget__link" href="/post/powershell/">PowerShell Notes</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-azure-ad-authentication/">Azure Active Directory Authentication for .NET Core Services</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-xunit/">.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/ef-core-cli-reference/">Entity Framework Core Command Line Reference</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/repository-pattern-and-uow/">.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work</a></li>
 		</ul>
 	</div>
 </div>
@@ -339,6 +338,7 @@ System.InvalidOperationException: Unable to configure HTTPS endpoint. No server 
 		<a class="widget-taglist__link widget__link btn" href="/tags/authentication/" title="Authentication">Authentication</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure/" title="Azure">Azure</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/development/" title="Development">Development</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/devops/" title="DevOps">DevOps</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker/" title="Docker">Docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotnet/" title="DotNET">DotNET</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/entity-framework/" title="Entity Framework">Entity Framework</a>
@@ -350,6 +350,7 @@ System.InvalidOperationException: Unable to configure HTTPS endpoint. No server 
 		<a class="widget-taglist__link widget__link btn" href="/tags/opencart/" title="OpenCart">OpenCart</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="PHP">PHP</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powershell/" title="PowerShell">PowerShell</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software-engineering/" title="Software Engineering">Software Engineering</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/xunit/" title="xUnit">xUnit</a>
@@ -392,7 +393,7 @@ System.InvalidOperationException: Unable to configure HTTPS endpoint. No server 
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 scarbrough-trx@GitHub.
+			&copy; 2023 scarbrough-trx@GitHub.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

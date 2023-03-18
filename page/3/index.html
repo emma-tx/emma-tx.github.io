@@ -96,6 +96,38 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/docker-missing-dotnet-sdk/" rel="bookmark">
+			Several potential fixes for the missing .NET SDK error (Docker and .NET Core)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-04-16T00:00:00Z">April 16, 2018</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		There have been many people asking about this on Stack Overflow, and none of the answers there brought me closer to resolving the problem, which, it later transpired, was caused by something really silly I&rsquo;d overlooked. When running &lsquo;docker-compose up&rsquo; in the Docker CLI, for a .NET Core service, the output reports that it cannot find an installed SDK:
+It was not possible to find any installed .NET Core SDKsDid you mean to run .
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/docs/about/about/" rel="bookmark">
+			About
+			</a>
+		</h2>
+		
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		My professional background is in .NET software engineering (C#, MVC, MSSQL, etc), though this is within the context of an ecosystem of other technologies related to deployment, version control, distribution and testing. Aside from that, I do have some expertise with the Linux operating system (mostly variants of Debian and openSUSE), which I have been using since ~2005.
+After several years working for the public sector, where I provided technical support for secure communications networks, I decided to take this in a more academic direction, studying computer security at the University of South Wales, and managing to earn a Masters&rsquo; degree in 2014.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/docs/projects/projects/" rel="bookmark">
 			My Projects
 			</a>
@@ -103,9 +135,8 @@
 		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Multi-Function Terminal Essentially this is a custom Web browser application based on the latest .NET Framework and WebView2, but it is configurable by the persons administrating the terminal and is designed to run on remotely-managed client machines.
-Technical Debt and Legacy Software Essentially making sure that software is more secure, robust, maintainable and documented.
-Wake On LAN Portal This is a Web portal that enables members of an organisation to wake on-premise computers, so they become accessible over Remote Desktop.
+		Software Security Azure Static Site Generators Developed using Microsoft Azure services, the static site generators (SSGs) consist of the following:
+Azure Functions - These implement the logic, and are roughly analogous to the controller methods in a .NET MVC application. Azure Logic Apps: An event-driven Logic App is responsible for causing the Function App to execute and for processing the output. Generally it&rsquo;s what merges the HTML page templates with the content to be displayed.
 	</div>
 </article><article class="list__item post">
 	
@@ -144,6 +175,7 @@ Dataset Lookup Service API Generic Service Bus Consumer Go&hellip;
 Docker Desktop
 GitHub Desktop
 LINQPad
+Live Server
 MkDocs (Material)
 Postman
 Windows Terminal
@@ -156,6 +188,8 @@ SQL and Databases Azure Data Studio
 Entity Framework Core Tools
 MySQL Server
 MySQL Workbench
+pgAdmin
+Power BI Desktop
 SQL Server Management Studio
 	</div>
 </article><article class="list__item post">
@@ -202,6 +236,8 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/dependency-scanning/">Dependency scanning tools as a solution to a different problem</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/azure-ssg/">A Static Site Generator Function on Azure</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/">Upgrading Azure Logic Apps</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/check-sql-server-jobs-errors/">Tracing SQL Server Integration / Job Failures</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-function-app-migration/">Azure Function App Migration</a></li>
@@ -215,8 +251,6 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 			<li class="widget__item"><a class="widget__link" href="/post/powershell/">PowerShell Notes</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-azure-ad-authentication/">Azure Active Directory Authentication for .NET Core Services</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-xunit/">.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/ef-core-cli-reference/">Entity Framework Core Command Line Reference</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/repository-pattern-and-uow/">.NET Core 6 - Dependency Injection, Repository Pattern and Unit of Work</a></li>
 		</ul>
 	</div>
 </div>
@@ -244,6 +278,7 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 		<a class="widget-taglist__link widget__link btn" href="/tags/authentication/" title="Authentication">Authentication</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure/" title="Azure">Azure</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/development/" title="Development">Development</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/devops/" title="DevOps">DevOps</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker/" title="Docker">Docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotnet/" title="DotNET">DotNET</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/entity-framework/" title="Entity Framework">Entity Framework</a>
@@ -255,6 +290,7 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 		<a class="widget-taglist__link widget__link btn" href="/tags/opencart/" title="OpenCart">OpenCart</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="PHP">PHP</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powershell/" title="PowerShell">PowerShell</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software-engineering/" title="Software Engineering">Software Engineering</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="SQL">SQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/xunit/" title="xUnit">xUnit</a>
@@ -297,7 +333,7 @@ OWASP Top Ten Open Web Application Security Project&rsquo;s list of top applicat
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 scarbrough-trx@GitHub.
+			&copy; 2023 scarbrough-trx@GitHub.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

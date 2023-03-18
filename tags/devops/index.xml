@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on scarbrough-trx@GitHub</title>
+    <link>/tags/devops/</link>
+    <description>Recent content in DevOps on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dependency scanning tools as a solution to a different problem</title>
+      <link>/post/dependency-scanning/</link>
+      <pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dependency-scanning/</guid>
+      <description>Since dependency vulnerability scanning has been suggested by colleagues as something that could help with security/standards compliance and addressing legacy software, I&amp;rsquo;ve been looking into a few services to see how useful the available options could be.
+NPM Audit Dependency scanning is performed by default with the install command for later versions of NPM, and by default, the output of npm audit will show a few lines of relevant information about each package with a reported vulnerability - its rating, a brief description of the vulnerability and whether an update is available.</description>
+    </item>
+    
+  </channel>
+</rss>

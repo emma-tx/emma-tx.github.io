@@ -6,7 +6,17 @@
     <description>Recent content in Security on scarbrough-trx@GitHub</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dependency scanning tools as a solution to a different problem</title>
+      <link>/post/dependency-scanning/</link>
+      <pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dependency-scanning/</guid>
+      <description>Since dependency vulnerability scanning has been suggested by colleagues as something that could help with security/standards compliance and addressing legacy software, I&amp;rsquo;ve been looking into a few services to see how useful the available options could be.
+NPM Audit Dependency scanning is performed by default with the install command for later versions of NPM, and by default, the output of npm audit will show a few lines of relevant information about each package with a reported vulnerability - its rating, a brief description of the vulnerability and whether an update is available.</description>
+    </item>
+    
     <item>
       <title>Azure Active Directory Authentication for .NET Core Services</title>
       <link>/post/dotnet-core-azure-ad-authentication/</link>
