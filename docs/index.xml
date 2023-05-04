@@ -78,16 +78,20 @@ SQL Server Management Studio</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/resources/</guid>
-      <description>Codemanship Blog Codemanship&amp;rsquo;s Blog
-Babel This is a JavaScript compiler and translator. Could be useful for generating backwards-compatible code.
-Babel JavaScript Compiler
-GitHub Commands Cheat Sheet All the commonly-used GitHub commands.
+      <description>Babel JavaScript Compiler: This is a JavaScript compiler and translator. Could be useful for generating backwards-compatible code.
+Codemanship&amp;rsquo;s Blog
 GitHub Commands Cheat Sheet
-Hacker News Technology-related news items and blog posts that might be of interest.
 Hacker News
-Netlify Integrate Web site hosting with DevOps and GitHub. Also provides ready-made static site generator templates.
+Microsoft Graph Documentation
+Microsoft Graph Explorer
+Mulesoft API Reference
 Netlify
-OWASP Top Ten Open Web Application Security Project&amp;rsquo;s list of top application vulnerabilities and recommendations.</description>
+OWASP Top Ten
+React Admin
+W3C Validator
+W3Schools
+Windows Terminal
+XAMPP</description>
     </item>
     
   </channel>

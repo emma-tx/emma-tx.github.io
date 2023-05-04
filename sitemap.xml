@@ -2,13 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
+    <loc>/tags/.net/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/dependency-scanning/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
+    <loc>/tags/authentication/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/azure/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/development/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/security/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/security/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/microsoft-graph/</loc>
+    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/dependency-scanning/</loc>
     <lastmod>2023-03-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/devops/</loc>
@@ -17,25 +44,7 @@
     <loc>/categories/devops/</loc>
     <lastmod>2023-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/security/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/security/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/post/azure-ssg/</loc>
-    <lastmod>2023-03-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/azure/</loc>
     <lastmod>2023-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/azure/</loc>
@@ -106,9 +115,6 @@
   </url><url>
     <loc>/categories/windows/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/authentication/</loc>
-    <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/dotnet-core-azure-ad-authentication/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NET on scarbrough-trx@GitHub</title>
+    <link>/tags/.net/</link>
+    <description>Recent content in .NET on scarbrough-trx@GitHub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Microsoft Graph in a .NET application</title>
+      <link>/post/microsoft-graph/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/microsoft-graph/</guid>
+      <description>Recently I was tasked with implementing role-based security for a .NET API, based on the Active Directory groups the user is a member of. Easy, I thought initially, as there&amp;rsquo;s a well-documented way of doing this by adding [Authorize] annotations to controller methods.
+The first problem I ran into was the API was designed to be used by Node.js/React applications. In this case (and this is a simplified description), users obviously don&amp;rsquo;t authenticate themselves directly with the API, but instead with the React application, using the Active Directory Single Sign-On.</description>
+    </item>
+    
+  </channel>
+</rss>

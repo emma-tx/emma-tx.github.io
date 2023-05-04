@@ -97,6 +97,24 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/microsoft-graph/" rel="bookmark">
+			Using Microsoft Graph in a .NET application
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-04T00:00:00Z">May 04, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>, <a class="meta__link" href="/categories/security/" rel="category">Security</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Recently I was tasked with implementing role-based security for a .NET API, based on the Active Directory groups the user is a member of. Easy, I thought initially, as there&rsquo;s a well-documented way of doing this by adding [Authorize] annotations to controller methods.
+The first problem I ran into was the API was designed to be used by Node.js/React applications. In this case (and this is a simplified description), users obviously don&rsquo;t authenticate themselves directly with the API, but instead with the React application, using the Active Directory Single Sign-On.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/dependency-scanning/" rel="bookmark">
 			Dependency scanning tools as a solution to a different problem
 			</a>
@@ -257,24 +275,6 @@ net7.0 net7.
 	<div class="content list__excerpt post__content clearfix">
 		Migrations Using Visual Studio SQL Server Database Project Setting Up the Migration Project Add a new project to the Visual Studio solution. This project will initially be empty, without assembly references or scaffold files - it appears everything is native to Visual Studio. To this we need to add the connection to the database the schema is to be imported from. There will be a menu option for &lsquo;Import&rsquo; -&gt; &lsquo;Database&rsquo;.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/docker-basics/" rel="bookmark">
-			Docker Basics
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-09-02T00:00:00Z">September 02, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/development/" rel="category">Development</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		A Docker container runs as a sandboxed process on a local system or a server, and consists of at least one image. An image is built from the source code of an application or service, and can be distributed, through a repository, to provide others the means of testing an existing software product with minimal setup.
-Containers and images can be managed through the Docker Dashboard application. As such, a Docker container will require its own configurations and script that enable it to run as intended.
-	</div>
 </article>
 </main>
 
@@ -298,6 +298,7 @@ Containers and images can be managed through the Docker Dashboard application. A
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/microsoft-graph/">Using Microsoft Graph in a .NET application</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dependency-scanning/">Dependency scanning tools as a solution to a different problem</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-ssg/">A Static Site Generator Function on Azure</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/azure-logic-app-upgrade/azure-logic-app-upgrade/">Upgrading Azure Logic Apps</a></li>
@@ -312,7 +313,6 @@ Containers and images can be managed through the Docker Dashboard application. A
 			<li class="widget__item"><a class="widget__link" href="/post/kestrel-errors/">Kestrel HTTPS Error - .Net Core and Docker</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/powershell/">PowerShell Notes</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-azure-ad-authentication/">Azure Active Directory Authentication for .NET Core Services</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dotnet-core-xunit/">.NET Core - xUnit Tests with Repository Pattern and IUNitOfWork</a></li>
 		</ul>
 	</div>
 </div>
@@ -336,6 +336,7 @@ Containers and images can be managed through the Docker Dashboard application. A
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/.net/" title=".NET">.NET</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ajax/" title="AJAX">AJAX</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/authentication/" title="Authentication">Authentication</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure/" title="Azure">Azure</a>
